@@ -1,0 +1,929 @@
+/* HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  box-sizing: content-box; /* 2 */
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+@font-face {
+  font-family: emoji;
+  src: local('Apple Color Emoji'), local('Android Emoji'), local('Segoe UI Emoji'), local(EmojiSymbols), local(Symbola);
+/* Emoji unicode blocks */
+  unicode-range: U+1F300-1F5FF, U+1F600-1F64F, U+1F680-1F6FF, U+2600-26FF;
+}
+.emoji {
+  font-family: "Emoji";
+}
+.article-type-page .article-header {
+  text-align: center;
+  background: url("images/projects.jpg") 50% 100% no-repeat;
+  background-size: cover;
+  height: 250px;
+  padding-top: 300px;
+}
+.article-type-page .article-header h1 {
+  font-size: 6em;
+  letter-spacing: -3px;
+  margin: 25px 0 0;
+  display: inline-block;
+  padding: 0 1px;
+  line-height: 1.75;
+  color: #fff;
+}
+@media (max-width: 1000px) {
+  .article-type-page .article-header {
+    padding-top: 200px;
+    height: 150px;
+  }
+  .article-type-page .article-header h1 {
+    font-size: 4em;
+    letter-spacing: -2px;
+  }
+}
+@media (max-width: 700px) {
+  .article-type-page .article-header {
+    background: url("images/projects_small.jpg") 50% 100% no-repeat;
+    background-size: cover;
+  }
+}
+@media (max-width: 500px) {
+  .article-type-page .article-header {
+    padding-top: 100px;
+    height: 100px;
+  }
+  .article-type-page .article-header h1 {
+    letter-spacing: -1px;
+    font-size: 3em;
+  }
+}
+.article-entry {
+  padding-top: 60px;
+}
+img {
+  height: auto;
+}
+p {
+  padding: 0;
+  margin: 0 0 1.5em;
+}
+.article-meta {
+  float: right;
+  margin: 0;
+}
+.article-meta p {
+  margin: 0;
+  line-height: 32px;
+}
+@media (max-width: 500px) {
+  .article-meta {
+    float: none;
+    padding-bottom: 15px;
+  }
+  .article-meta p {
+    line-height: 24px;
+  }
+}
+footer {
+  height: 32px;
+  color: #999;
+  font-size: 12px;
+  line-height: 32px;
+  padding: 0 10px 15px;
+}
+footer .wrapper {
+  max-width: 1570px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+footer .copyright {
+  display: inline-block;
+}
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 500px) {
+  footer {
+    padding: 0;
+    line-height: 24px;
+  }
+  footer .wrapper {
+    padding: 0 25px;
+  }
+}
+.article-type-post {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 40px 75px;
+}
+@media (max-width: 550px) {
+  .article-type-post {
+    padding: 80px 25px 50px;
+  }
+}
+.article-type-post .article-header h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  display: inline-block;
+  line-height: 1.1;
+}
+.article-type-post .article-entry {
+  font-size: 20px;
+  line-height: 1.58;
+  color: #333;
+  padding-top: 0;
+}
+.article-type-post .article-entry h2,
+.article-type-post .article-entry h3 {
+  margin: 0.5em 0;
+  letter-spacing: -0.5px;
+}
+.article-type-post .article-entry figure {
+  background: #f5f5f5;
+}
+.article-type-post .article-entry img {
+  width: 100%;
+}
+.article-type-post .article-entry a {
+  color: #0084ff;
+  text-decoration: none;
+}
+.article-type-post .article-entry a:hover {
+  text-decoration: underline;
+}
+.article-type-post .article-entry .article-meta {
+  font-size: 14px;
+  color: #999;
+}
+@media (max-width: 600px) {
+  .article-type-post .article-header h1 {
+    font-size: 2.5em;
+    letter-spacing: -1px;
+  }
+  .article-type-post .article-entry {
+    font-size: 18px;
+  }
+}
+@media (max-width: 450px) {
+  .article-type-post .article-header h1 {
+    font-size: 2em;
+    letter-spacing: -0.5px;
+  }
+  .article-type-post .article-entry {
+    font-size: 16px;
+  }
+}
+.article-type-post #article-nav a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 150ms ease all;
+  font-weight: bold;
+}
+.article-type-post #article-nav a:hover {
+  background: #000;
+  color: #fff;
+}
+nav.sidebar {
+  width: 100%;
+  height: 60px;
+  transition: 500ms ease all;
+  transform-origin: left center;
+  color: #939eaa;
+  position: fixed;
+  z-index: 10;
+  padding: 0 25px;
+  display: flex;
+  box-sizing: border-box;
+  background: #000;
+}
+nav.sidebar h1 {
+  margin: 0;
+  flex: 1;
+}
+nav.sidebar h1 a {
+  text-transform: lowercase;
+  letter-spacing: -1px;
+  display: block;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: normal;
+  line-height: 60px;
+  color: #fff;
+}
+nav.sidebar h1 a:hover {
+  color: #fff;
+}
+nav.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+nav.sidebar li {
+  display: inline-block;
+}
+nav.sidebar li:last-child a {
+  padding: 0 0 0 10px;
+}
+nav.sidebar li a {
+  text-decoration: none;
+  display: block;
+  color: #fff;
+  padding: 0 10px;
+  line-height: 60px;
+  font-size: 14px;
+}
+nav.sidebar li a img {
+  padding: 0;
+  margin-right: 8px;
+}
+.home {
+  background-color: #0084ff;
+  background-image: url("images/home.jpg");
+  background-position: 50% 50%;
+  height: 100vh;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .home {
+    background-image: url("images/home_small.jpg");
+    background-size: cover;
+  }
+}
+.home h2 {
+  font-size: 5em;
+  margin: 0;
+  padding: 35vh 25px 0;
+}
+.home h3 {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.4em;
+  box-sizing: border-box;
+  padding: 0 25px;
+}
+@media (max-width: 500px) {
+  .home h2 {
+    font-size: 3em;
+  }
+  .home h3 {
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 400px) {
+  .home h2 {
+    font-size: 2.5em;
+  }
+  .home h3 {
+    font-size: 1.1em;
+  }
+}
+.big-button {
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 50px;
+  margin-top: 25px;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 25px;
+  display: inline-block;
+  transition: 300ms ease all;
+}
+.big-button:hover {
+  background: #fff;
+  color: #222;
+}
+@media (max-width: 500px) {
+  .big-button {
+    font-size: 14px;
+    margin-top: 15px;
+    padding: 7px 30px;
+  }
+}
+.banner.blog {
+  border-top: 60px solid #000;
+  text-align: center;
+  padding: 60px 0;
+}
+.banner.blog h1 {
+  font-size: 6em;
+  letter-spacing: -4px;
+  padding: 0 1px;
+  line-height: 1.75;
+  display: inline-block;
+  margin: 0 auto;
+  background: #000;
+  color: #fff;
+}
+@media (max-width: 500px) {
+  .banner.blog {
+    padding: 40px 0;
+  }
+  .banner.blog h1 {
+    letter-spacing: -3px;
+    font-size: 4em;
+  }
+}
+.archives-wrap {
+  padding: 0 25px;
+}
+.archives {
+  text-align: center;
+}
+.archive-year-wrap {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+.archive-year-wrap a {
+  color: #999;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-decoration: none;
+}
+.archive-article-inner time {
+  font-size: 0.9em;
+  color: #888;
+}
+.archive-article-inner h1 {
+  max-width: 600px;
+  margin: 0 auto 1.5em;
+  line-height: 1.33;
+}
+.archive-article-inner h1 a {
+  color: #000;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: 150ms ease all;
+}
+.archive-article-inner h1 a:hover {
+  background: #000;
+  color: #fff;
+}
+@media (max-width: 500px) {
+  .archive-article-inner h1 a {
+    font-size: 1em;
+  }
+}
+.projects {
+  padding: 25px 25px 5px;
+  font-size: 0;
+  background: #000;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.projects img {
+  width: 100%;
+}
+.projects .col {
+  vertical-align: top;
+  width: 50%;
+  display: inline-block;
+}
+.projects .project {
+  background: #111;
+  border: 2px solid #333;
+  margin: 15px 15px 30px;
+  color: #fff;
+}
+.projects .project h2 {
+  margin: 0;
+  font-size: 15px;
+  text-transform: lowercase;
+  line-height: 48px;
+  padding: 0 9px 0 20px;
+  letter-spacing: -0.5;
+}
+.projects .project p {
+  font-size: 14px;
+  margin-bottom: 0;
+  font-weight: 600;
+  padding: 10px 15px;
+}
+.projects .project a {
+  font-size: 14px;
+  text-decoration: none;
+  vertical-align: top;
+  padding: 5px 30px;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 25px;
+  display: inline-block;
+  transition: 300ms ease all;
+  float: right;
+  line-height: 1;
+  margin: 10px 0;
+}
+.projects .project a:hover {
+  background: #fff;
+  color: #000;
+}
+@media (max-width: 900px) {
+  .projects .col {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .projects {
+    padding: 15px 0 5px;
+  }
+  .projects .project {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 450px) {
+  .projects .project h2 {
+    padding: 0 20px;
+    text-align: center;
+  }
+  .projects .project a {
+    margin: 0px 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+h1.work {
+  display: inline-block;
+  height: 65px;
+  line-height: 50px;
+  padding-top: 15px;
+  margin: 0 25px;
+  border-bottom: 4px solid #000;
+  box-sizing: border-box;
+  letter-spacing: -1px;
+}
+.orbitsound {
+  height: calc(70vh - 40px);
+  background: url("images/orbitsound.jpg") 50% 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.orbitsound div {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+}
+.orbitsound img {
+  width: 420px;
+  display: block;
+  margin-left: -30px;
+}
+.orbitsound .big-button {
+  margin-top: 0;
+  border-color: #000;
+  color: #000;
+}
+.orbitsound .big-button:hover {
+  background: #000;
+  color: #fff;
+}
+.otherwork {
+  background: #000;
+  font-size: 0;
+}
+.otherwork .dymajo,
+.otherwork .hireme {
+  width: 50%;
+  display: inline-block;
+  font-size: 16px;
+  height: calc(30vh - 25px);
+  text-align: center;
+  vertical-align: top;
+}
+.otherwork .dymajo {
+  background: #ffa500;
+  background: url("images/dymajo.jpg") 50% 50%;
+  background-size: cover;
+  color: #fff;
+}
+.otherwork .dymajo h3 {
+  font-weight: normal;
+  font-size: 16px;
+  max-width: 200px;
+  margin: 15px auto 15px;
+}
+.otherwork .dymajo img {
+  margin-top: 10%;
+  width: 150px;
+}
+.otherwork a {
+  font-size: 14px;
+  text-decoration: none;
+  vertical-align: top;
+  padding: 5px 30px;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 25px;
+  display: inline-block;
+  transition: 300ms ease all;
+  line-height: 1;
+}
+.otherwork a:hover {
+  background: #fff;
+  color: #000;
+}
+.otherwork h2 {
+  margin-top: 15%;
+  font-weight: 300;
+}
+.otherwork .hireme {
+  color: #fff;
+  background: linear-gradient(63deg, #000 23%, transparent 23%) 7px 0, linear-gradient(63deg, transparent 74%, #000 78%), linear-gradient(63deg, transparent 34%, #000 38%, #000 58%, transparent 62%), #1a1a1a;
+  background-size: 16px 48px;
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers
+ */
+.hidden {
+  display: none !important;
+}
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after,
+  *:first-letter,
+  *:first-line {
+    background: transparent !important;
+    color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
