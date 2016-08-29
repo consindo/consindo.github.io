@@ -258,7 +258,7 @@ th {
 html,
 body {
   height: 100%;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -809,11 +809,13 @@ h1.work {
   letter-spacing: -1px;
 }
 .orbitsound {
-  height: calc(70vh - 40px);
+  height: 500px;
+  max-width: 1200px;
   background: url("images/orbitsound.jpg") 50% 50%;
   background-size: 100%;
   background-repeat: no-repeat;
   position: relative;
+  margin: 0 auto;
 }
 .orbitsound div {
   position: absolute;
@@ -834,24 +836,86 @@ h1.work {
   background: #000;
   color: #fff;
 }
+@media (max-width: 1050px) {
+  .orbitsound {
+    height: 400px;
+  }
+  .orbitsound div {
+    top: 25%;
+  }
+  .orbitsound img {
+    width: 320px;
+    margin-left: -25px;
+  }
+  .orbitsound .big-button {
+    font-size: 14px;
+    padding: 7px 35px;
+  }
+}
+@media (max-width: 700px) {
+  .orbitsound {
+    height: 300px;
+  }
+  .orbitsound div {
+    top: 20%;
+  }
+  .orbitsound img {
+    width: 250px;
+    margin-left: -20px;
+  }
+  .orbitsound .big-button {
+    font-size: 13px;
+    padding: 6px 30px;
+  }
+}
+@media (max-width: 500px) {
+  .orbitsound {
+    height: 300px;
+    background-position: 50% 50%;
+  }
+  .orbitsound div {
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .orbitsound img {
+    margin: 0 auto 175px;
+  }
+}
+@media (max-width: 400px) {
+  .orbitsound {
+    height: 275px;
+  }
+  .orbitsound img {
+    margin: 0 auto 150px;
+  }
+}
 .otherwork {
-  background: #000;
   font-size: 0;
+  background: linear-gradient(63deg, #000 23%, transparent 23%) 7px 0, linear-gradient(63deg, transparent 74%, #000 78%), linear-gradient(63deg, transparent 34%, #000 38%, #000 58%, transparent 62%), #1a1a1a;
+  background-size: 16px 48px;
 }
 .otherwork .dymajo,
 .otherwork .hireme {
   width: 50%;
   display: inline-block;
   font-size: 16px;
-  height: calc(30vh - 25px);
   text-align: center;
   vertical-align: top;
+}
+@media (max-width: 600px) {
+  .otherwork .dymajo,
+  .otherwork .hireme {
+    width: 100%;
+  }
 }
 .otherwork .dymajo {
   background: #ffa500;
   background: url("images/dymajo.jpg") 50% 50%;
   background-size: cover;
   color: #fff;
+  padding-bottom: 50px;
 }
 .otherwork .dymajo h3 {
   font-weight: normal;
@@ -883,13 +947,14 @@ h1.work {
   color: #000;
 }
 .otherwork h2 {
-  margin-top: 15%;
   font-weight: 300;
 }
 .otherwork .hireme {
   color: #fff;
-  background: linear-gradient(63deg, #000 23%, transparent 23%) 7px 0, linear-gradient(63deg, transparent 74%, #000 78%), linear-gradient(63deg, transparent 34%, #000 38%, #000 58%, transparent 62%), #1a1a1a;
-  background-size: 16px 48px;
+  padding-bottom: 75px;
+}
+.otherwork .hireme h2 {
+  margin-top: 75px;
 }
 /* ==========================================================================
    Helper classes
