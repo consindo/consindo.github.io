@@ -258,7 +258,7 @@ th {
 html,
 body {
   height: 100%;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -315,11 +315,6 @@ body {
 }
 .article-entry {
   padding-top: 60px;
-}
-@media (max-width: 500px) {
-  .article-entry {
-    padding-top: 48px;
-  }
 }
 img {
   height: auto;
@@ -502,88 +497,6 @@ nav.sidebar li a img {
   padding: 0;
   margin-right: 8px;
 }
-nav.sidebar #expand {
-  display: none;
-  background-color: transparent;
-  background-image: url("images/icons/menu.png");
-  background-size: 11px 11px;
-  background-repeat: no-repeat;
-  background-position: 14px 55%;
-  padding-left: 30px;
-  padding-right: 14px;
-  margin-right: -14px;
-  border: 0;
-  outline: 0;
-  color: #fff;
-}
-@media (max-width: 500px) {
-  nav.sidebar {
-    height: 48px;
-  }
-  nav.sidebar #expand {
-    display: inline-block;
-  }
-  nav.sidebar h1 a {
-    line-height: 48px;
-  }
-  nav.sidebar ul {
-    position: absolute;
-    display: none;
-    top: 48px;
-    left: 0;
-    right: 0;
-    background: #222;
-  }
-  nav.sidebar ul.visible {
-    display: block;
-    animation: show 300ms ease 1;
-  }
-  nav.sidebar ul.visible+ #expand {
-    background-color: #222;
-  }
-  nav.sidebar li {
-    display: block;
-    padding: 0 0.67em;
-  }
-  nav.sidebar li:hover {
-    background: #000;
-  }
-  nav.sidebar li a {
-    line-height: 48px;
-  }
-}
-@-moz-keyframes show {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes show {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-o-keyframes show {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes show {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .home {
   background-color: #0084ff;
   background-image: url("images/home.jpg");
@@ -669,7 +582,6 @@ nav.sidebar #expand {
 }
 @media (max-width: 500px) {
   .banner.blog {
-    border-top: 40px solid #000;
     padding: 40px 0;
   }
   .banner.blog h1 {
@@ -809,13 +721,11 @@ h1.work {
   letter-spacing: -1px;
 }
 .orbitsound {
-  height: 500px;
-  max-width: 1200px;
+  height: calc(70vh - 40px);
   background: url("images/orbitsound.jpg") 50% 50%;
   background-size: 100%;
   background-repeat: no-repeat;
   position: relative;
-  margin: 0 auto;
 }
 .orbitsound div {
   position: absolute;
@@ -836,86 +746,24 @@ h1.work {
   background: #000;
   color: #fff;
 }
-@media (max-width: 1050px) {
-  .orbitsound {
-    height: 400px;
-  }
-  .orbitsound div {
-    top: 25%;
-  }
-  .orbitsound img {
-    width: 320px;
-    margin-left: -25px;
-  }
-  .orbitsound .big-button {
-    font-size: 14px;
-    padding: 7px 35px;
-  }
-}
-@media (max-width: 700px) {
-  .orbitsound {
-    height: 300px;
-  }
-  .orbitsound div {
-    top: 20%;
-  }
-  .orbitsound img {
-    width: 250px;
-    margin-left: -20px;
-  }
-  .orbitsound .big-button {
-    font-size: 13px;
-    padding: 6px 30px;
-  }
-}
-@media (max-width: 500px) {
-  .orbitsound {
-    height: 300px;
-    background-position: 50% 50%;
-  }
-  .orbitsound div {
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-  }
-  .orbitsound img {
-    margin: 0 auto 175px;
-  }
-}
-@media (max-width: 400px) {
-  .orbitsound {
-    height: 275px;
-  }
-  .orbitsound img {
-    margin: 0 auto 150px;
-  }
-}
 .otherwork {
+  background: #000;
   font-size: 0;
-  background: linear-gradient(63deg, #000 23%, transparent 23%) 7px 0, linear-gradient(63deg, transparent 74%, #000 78%), linear-gradient(63deg, transparent 34%, #000 38%, #000 58%, transparent 62%), #1a1a1a;
-  background-size: 16px 48px;
 }
 .otherwork .dymajo,
 .otherwork .hireme {
   width: 50%;
   display: inline-block;
   font-size: 16px;
+  height: calc(30vh - 25px);
   text-align: center;
   vertical-align: top;
-}
-@media (max-width: 600px) {
-  .otherwork .dymajo,
-  .otherwork .hireme {
-    width: 100%;
-  }
 }
 .otherwork .dymajo {
   background: #ffa500;
   background: url("images/dymajo.jpg") 50% 50%;
   background-size: cover;
   color: #fff;
-  padding-bottom: 50px;
 }
 .otherwork .dymajo h3 {
   font-weight: normal;
@@ -947,14 +795,13 @@ h1.work {
   color: #000;
 }
 .otherwork h2 {
+  margin-top: 15%;
   font-weight: 300;
 }
 .otherwork .hireme {
   color: #fff;
-  padding-bottom: 75px;
-}
-.otherwork .hireme h2 {
-  margin-top: 75px;
+  background: linear-gradient(63deg, #000 23%, transparent 23%) 7px 0, linear-gradient(63deg, transparent 74%, #000 78%), linear-gradient(63deg, transparent 34%, #000 38%, #000 58%, transparent 62%), #1a1a1a;
+  background-size: 16px 48px;
 }
 /* ==========================================================================
    Helper classes
