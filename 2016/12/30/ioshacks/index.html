@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Mobile Safari Hacks | Jono Cooper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="While developing Transit, I’ve discovered that Mobile Safari is the new IE6. Most of this arises because Apple has layered on a number of fancy features that work great for most sites, but create prob">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mobile Safari Hacks">
+<meta property="og:url" content="https://jono.nz/2016/12/30/ioshacks/index.html">
+<meta property="og:site_name" content="Jono Cooper">
+<meta property="og:description" content="While developing Transit, I’ve discovered that Mobile Safari is the new IE6. Most of this arises because Apple has layered on a number of fancy features that work great for most sites, but create prob">
+<meta property="og:image" content="https://jono.nz/images/throttle.png">
+<meta property="og:image" content="https://jono.nz/images/ios-vh-issue.png">
+<meta property="og:updated_time" content="2016-12-29T19:29:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mobile Safari Hacks">
+<meta name="twitter:description" content="While developing Transit, I’ve discovered that Mobile Safari is the new IE6. Most of this arises because Apple has layered on a number of fancy features that work great for most sites, but create prob">
+<meta name="twitter:image" content="https://jono.nz/images/throttle.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<nav class="sidebar">
+  <h1><a href="/">Jono Cooper</a></h1>
+  <ul id="navigation">
+    <li><a href="/work"><img width="13" src="/css/images/icons/work.png">work</a></li>
+    <li><a href="/archives"><img width="13" src="/css/images/icons/blog.png">blog</a></li>
+    <li><a href="/projects"><img width="12" src="/css/images/icons/projects.png">projects</a></li>
+    <li><a href="/me"><img width="12" src="/css/images/icons/me.png">me</a></li>
+  </ul>
+  <button id="expand">menu</button>
+</nav>
+      <div class="outer">
+        <section id="main"><article id="post-ioshacks" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mobile Safari Hacks
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>While developing <a href="https://transit.dymajo.com">Transit</a>, I’ve discovered that Mobile Safari is the new IE6. Most of this arises because Apple has layered on a number of fancy features that work great for most sites, but create problems when you trying making a web app. Here’s a couple of issues and fixes for these things:</p>
+<h2 id="Desktop-Safari-is-completely-different-to-Mobile-Safari"><a href="#Desktop-Safari-is-completely-different-to-Mobile-Safari" class="headerlink" title="Desktop Safari is completely different to Mobile Safari"></a>Desktop Safari is completely different to Mobile Safari</h2><p><strong>Problem:</strong> Desktop Safari looks great, but the app doesn’t work on iOS.<br><strong>Solution:</strong> Unfortunately, you always have to be testing on real devices. This goes for Android too, because these devices are a lot slower than your dev machine.</p>
+<p><img src="/images/throttle.png" alt="Chrome CPU Throttling"></p>
+<p>It’s also a good idea to enable CPU Throttling in Chrome in order to get an idea of how your app will perform.</p>
+<h2 id="Viewport-Height-is-too-high"><a href="#Viewport-Height-is-too-high" class="headerlink" title="Viewport Height is too high"></a>Viewport Height is too high</h2><p><strong>Problem:</strong> 100vh includes the height of the browser controls, which are overlaid so there’s the fancy blur effect.</p>
+<p><img src="/images/ios-vh-issue.png" alt="iOS Viewport Height Issue" title="Image from https://nicolas-hoizey.com/2015/02/viewport-height-is-taller-than-the-visible-part-of-the-document-in-some-mobile-browsers.html"></p>
+<p><strong>Fix:</strong> If you can’t use height 100%, I would recommend using a CSS variable, and line of code like this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.body.style.setProperty(&apos;--real-height&apos;, document.documentElement.clientHeight + &apos;px&apos;)</div></pre></td></tr></table></figure></p>
+<p>Make sure to bind this to your window.onresize event!</p>
+<h2 id="No-Kinetic-Scrolling-in-Child-Elements"><a href="#No-Kinetic-Scrolling-in-Child-Elements" class="headerlink" title="No Kinetic Scrolling in Child Elements"></a>No Kinetic Scrolling in Child Elements</h2><p><strong>Problem:</strong> Having overflow:scroll in a container doesn’t have any inertia.<br><strong>Solution:</strong> On your element, set <code>-webkit-overflow-scrolling: touch;</code></p>
+<h2 id="webkit-overflow-scrolling-bubbles-to-page"><a href="#webkit-overflow-scrolling-bubbles-to-page" class="headerlink" title="-webkit-overflow-scrolling bubbles to page"></a>-webkit-overflow-scrolling bubbles to page</h2><p><strong>Problem:</strong> When you’re at the top of the element, the entire page scrolls, not the element.<br><strong>Solution:</strong> You’ll need two elements, something like this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;scrollable&quot;&gt;</div><div class="line">  &lt;div class=&quot;container&quot;&gt;</div><div class="line">    Content</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>On the inner element, you’ll need to set <code>min-height: 101%</code>. Then, <code>onTouchStart</code>, you’ll need some JavaScript that moves the scroll position down a single pixel at the top of the page, or up a pixel at the bottom.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">let top = e.scrollTop</div><div class="line">let totalScroll = e.scrollHeight</div><div class="line">let currentScroll = top + e.offsetHeight</div><div class="line"> </div><div class="line">if (top === 0) &#123;</div><div class="line">  e.scrollTop = 1</div><div class="line">&#125; else if (currentScroll === totalScroll) &#123;</div><div class="line">  e.scrollTop = top - 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Flexbox-is-funky-in-row-direction"><a href="#Flexbox-is-funky-in-row-direction" class="headerlink" title="Flexbox is funky in row direction"></a>Flexbox is funky in row direction</h2><p><strong>Problem:</strong> Flexbox generally doesn’t work in the row direction on iOS.<br><strong>Solution:</strong> If setting the container height with the CSS variable you made doesn’t work, use <code>calc()</code> with that variable. It’s really not ideal, but this is what I’ve found works best.</p>
+<h2 id="Force-Touch"><a href="#Force-Touch" class="headerlink" title="Force Touch"></a>Force Touch</h2><p><strong>Problem:</strong> If you force touch on an link that you styled like a button because you have fancy single page routing, it’ll pop up a preciew.<br><strong>Solution:</strong> If iOS, don’t use the anchor tag (or at least a href). Bind an event to the button, <a href="https://developer.mozilla.org/en/docs/Web/API/History">and push the new URL to the History</a>.</p>
+<h2 id="No-caching-when-pinned-to-home-screen"><a href="#No-caching-when-pinned-to-home-screen" class="headerlink" title="No caching when pinned to home screen"></a>No caching when pinned to home screen</h2><p><strong>Problem:</strong> There’s no HTTP caching when the app is pinned to home screen. Makes for long initial load times.<br><strong>Solution:</strong> You’re gonna have to use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache">AppCache</a> for this one.</p>
+<p>That’s all I can think of for now. If you have a Mobile Safari hack, message me, and I’ll add it to this post!</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  <a href="/archives">Back to Archives</a>
+</nav>
+
+  
+  
+</article>
+
+
+
+<footer>
+<div class="wrapper">
+  <div class="copyright">
+    &copy; 2016 jono.nz 
+    &middot;&nbsp;<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">some rights reserved</a>
+  </div>
+  <div class="article-meta">
+    
+      <p class="post">posted:
+    
+    <time datetime="2016-12-29T19:30:00.000Z" itemprop="datePublished">2016-12-30</time></p>
+  </div>
+</div>
+</footer></section>
+        
+      </div>
+    </div>
+    
+    <script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
