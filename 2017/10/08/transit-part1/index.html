@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>How does Transit work? - Part 1 - Jono Cooper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Matt keeps asking me how Transit works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How does Transit work? - Part 1">
+<meta property="og:url" content="https://jono.nz/2017/10/08/transit-part1/index.html">
+<meta property="og:site_name" content="Jono Cooper">
+<meta property="og:description" content="Matt keeps asking me how Transit works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-08T08:57:41.359Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How does Transit work? - Part 1">
+<meta name="twitter:description" content="Matt keeps asking me how Transit works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not.">
+  
+    <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<nav class="sidebar">
+  <h1><a href="/">Jono Cooper</a></h1>
+  <ul id="navigation">
+    <li><a href="/archives"><img width="13" src="/css/images/icons/blog.png">Blog</a></li>
+    <li><a href="/work"><img width="13" src="/css/images/icons/work.png">Portfolio</a></li>
+    <li><a href="/me"><img width="12" src="/css/images/icons/me.png">Me</a></li>
+  </ul>
+  <button id="expand">Menu</button>
+</nav>
+      <div class="outer">
+        <section id="main"><article id="post-transit-part1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      How does Transit work? - Part 1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Matt keeps asking me how Transit works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not. </p>
+<h2 id="The-Server-Stack"><a href="#The-Server-Stack" class="headerlink" title="The Server Stack"></a>The Server Stack</h2><p>Before you even try to start Transit, you’ll need:</p>
+<ul>
+<li>Windows or Linux (I develop on Windows, production on Linux)</li>
+<li>Node.js <a href="https://nodejs.org">https://nodejs.org</a></li>
+<li>Microsoft SQL Server <a href="http://downloadsqlserverexpress.com">http://downloadsqlserverexpress.com</a></li>
+<li>Azure Storage Emulator <a href="https://azure.microsoft.com/en-us/downloads/">https://azure.microsoft.com/en-us/downloads/</a></li>
+<li>Git <a href="https://git-scm.com/">https://git-scm.com/</a></li>
+</ul>
+<h3 id="Handy-Tools"><a href="#Handy-Tools" class="headerlink" title="Handy Tools"></a>Handy Tools</h3><ul>
+<li>SQL Server Management Studio (install when installing SQL Server) - Windows only though.</li>
+<li>Azure Storage Explorer (don’t use it a lot but it can be handy) <a href="https://azure.microsoft.com/en-us/features/storage-explorer/">https://azure.microsoft.com/en-us/features/storage-explorer/</a></li>
+</ul>
+<h3 id="Third-Party-API’s"><a href="#Third-Party-API’s" class="headerlink" title="Third Party API’s"></a>Third Party API’s</h3><ul>
+<li>Auckland Transport (if you want Auckland to work) <a href="https://dev-portal.at.govt.nz/">https://dev-portal.at.govt.nz/</a></li>
+<li>Sendgrid (to get the send a link emails working) <a href="https://sendgrid.com/">https://sendgrid.com/</a></li>
+<li>Azure Application Insights (only for production) <a href="https://azure.microsoft.com/en-us/services/application-insights/">https://azure.microsoft.com/en-us/services/application-insights/</a></li>
+</ul>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><ul>
+<li>First, get the code with <code>git clone https://github.com/consindo/dymajo-transit.git</code></li>
+<li>Install dependencies with <code>npm install</code>  </li>
+<li>Build the client with  <code>npm run build</code> </li>
+</ul>
+<h3 id="config-js"><a href="#config-js" class="headerlink" title="/config.js"></a>/config.js</h3><p>This is app wide config. Defaults should be fine, but change the public &amp; private ports if required. Make sure you don’t expose the private port to the web! You can also disable auto updates / worker management of cities by adjusting the <code>autoupdate</code> entry.</p>
+<h3 id="server-master-db-config-master-js-config-slave-js"><a href="#server-master-db-config-master-js-config-slave-js" class="headerlink" title="/server-master/db/config-master.js, config-slave.js"></a>/server-master/db/config-master.js, config-slave.js</h3><p>These are where the app looks for database connection strings. Make your SQL Server install allows SQL Server Authentication, and TCP/IP Network Protocol is enabled. The user set in <code>config-master.js</code> must be allowed to Create Databases, and the user set in <code>config-slave.js</code> must be allowed to access and modify the created database. You will need an already created database in <code>config-master.js</code>, but this is not needed for the slave.</p>
+<p>By default, workers in the workers table use the dbconfig of <code>slave</code>, but you can set this to <code>whatever</code> if you want to use <code>config-whatever.js</code> (if you need to distribute over multiple instances of SQL Server).</p>
+<h3 id="Environmental-Variables"><a href="#Environmental-Variables" class="headerlink" title="Environmental Variables"></a>Environmental Variables</h3><ul>
+<li><code>AZURE_STORAGE_ACCOUNT</code> - the Azure Storage Account. For the emulator, use: <code>devstoreaccount1</code></li>
+<li><code>AZURE_STORAGE_ACCESS_KEY</code> - the Azure Storage Account Key. For the emulator, use:<br><code>Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==</code></li>
+<li><code>atApiKey</code> - the Auckland Transport API Key (optional if you don’t want Auckland)</li>
+<li><code>SENDGRID_API_KEY</code> for emails (optional)</li>
+<li><code>AZURE_INSIGHTS</code> for insights (optional)</li>
+</ul>
+<h2 id="Starting"><a href="#Starting" class="headerlink" title="Starting"></a>Starting</h2><p>Yay! You’ve configured Transit. Run <code>node index.js</code> to start, and it’ll create the database and start on the port you specified.</p>
+<p>If you don’t want it to start downloading data from Auckland automatically, make sure you disable the auto updates in <code>/config.js</code>.</p>
+<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p>Transit has a master process that manages a collection of worker processes, each encapsulating a particular region &amp; version and providing the API. Each worker process uses its own database which keeps things smaller, faster, and is easier to delete when the data has expired. There’s mapping functionality which sends all requests to a particular region to a particular version. If you’re using the auto importers you shouldn’t have to worry about the mappings, but it is possible to override. </p>
+<p>Worker spawning is done through node’s child_process.fork, and all communication thereafter is done through a standard REST API - using both the public and private methods on both the master and the worker. Requests are proxied through to the mapped worker from the master. Check out all the router files for further details. </p>
+<p>Static rendering and hosting of assets is done through yet another process. For static rendering, it uses the standard public REST API, and transforms the JSON to HTML. Files in <code>/dist</code> are all hosted under <code>/</code> when a route cannot be found. If a file is not found in <code>/dist</code>, the static server returns a default or 404 page, and lets the client side JavaScript take over the rest.</p>
+<h2 id="Server-Master-Private-API"><a href="#Server-Master-Private-API" class="headerlink" title="Server-Master Private API"></a>Server-Master Private API</h2><p>If you’re not using an auto importer or just need to emergency fix things, you can do so with the private API. It’s not secured, so you have to make sure the port isn’t exposed.</p>
+<p>For most of these requests, just pop a JSON object with the prefix (region) and version in the request body. </p>
+<ul>
+<li><code>GET /worker</code> - Returns all the available workers.</li>
+<li><code>POST /worker/add</code> - Send a prefix, version to create a new worker.</li>
+<li><code>POST /worker/load</code> - Load workers from the database again (generally shouldn’t use this)</li>
+<li><code>POST /worker/start</code> - Send a prefix, version to start a particular worker.</li>
+<li><code>POST /worker/startall</code> - Starts all workers that have startpolicy ‘auto’</li>
+<li><code>POST /worker/stop</code> - Stops a worker process.</li>
+<li><code>POST /worker/delete</code> - Stops a worker, and then deletes it from the database.</li>
+<li><code>GET  /mapping</code> - Shows which prefixes are mapped to which workers.</li>
+<li><code>POST /mapping/load</code> - Loads mappings from the database again (generally shouldn’t use this)</li>
+<li><code>POST /mapping/set</code> - Send a prefix and a version to set the worker where requests are forwarded.</li>
+<li><code>POST /mapping/delete</code> - Unmaps a prefix - requests to a region will 404 after being deleted.</li>
+<li><code>POST /import-start/:mode</code> - Trigger a manual import of GTFS data. Use <code>db</code> for the database import, <code>shapes</code> for the Azure Shapes Parse &amp; Upload, or <code>all</code> for both.</li>
+<li><code>POST /import-complete</code> - Used internally from the worker - tells master that an import has completed so it can update the database and run any callbacks.</li>
+</ul>
+<h2 id="Server-Worker-amp-Server-Static-Public-API"><a href="#Server-Worker-amp-Server-Static-Public-API" class="headerlink" title="Server-Worker &amp; Server-Static Public API"></a>Server-Worker &amp; Server-Static Public API</h2><p>This is the public API. I want to get this section auto-generated, so I’ll leave this for now.</p>
+<h2 id="SQL-Migrations"><a href="#SQL-Migrations" class="headerlink" title="SQL Migrations"></a>SQL Migrations</h2><p>Because we create the database from scratch every time a new worker is created, we don’t have to worry about migrations! Simply delete the worker and try again if you’re having any issues. The SQL files which create the tables and stored procedures are located in <code>/server-worker/db/procs</code></p>
+<p>I’m not sure how to do the migrations for the master database yet, but the scripts that create it on first run are in <code>/server-master/db/procs</code></p>
+<h2 id="Tests"><a href="#Tests" class="headerlink" title="Tests"></a>Tests</h2><p>No unit tests yet 😢. There’s a couple of tests in the Auckland auto importer that does a quick check before changing the live mapping, but that’s it. There’s definitely room for improvement here.</p>
+<h2 id="Other-Things"><a href="#Other-Things" class="headerlink" title="Other Things"></a>Other Things</h2><p>Here’s some things you might want to do when modifying or using Transit as a dev.</p>
+<h3 id="Adding-a-New-City"><a href="#Adding-a-New-City" class="headerlink" title="Adding a New City"></a>Adding a New City</h3><ul>
+<li>Add an importer with countrycode-airportcode as the prefix in <code>/server-worker/importers</code></li>
+<li>Use the private API to add, start, run the importer, and set the mapping to your version.</li>
+<li>Fix anything that’s broken when you try use that city.<ul>
+<li>Lines requires special config.</li>
+<li>Realtime also requires special config.</li>
+<li>Stations, Stop Times, and Timetable should be pretty smooth sailing.</li>
+</ul>
+</li>
+<li>Add an auto importer to keep versions &amp; mappings up to date.</li>
+<li>Send a pull request!</li>
+</ul>
+<h2 id="Now-what"><a href="#Now-what" class="headerlink" title="Now what?"></a>Now what?</h2><p>Hopefully you download the code and have a play - fix a few issues, or even just file some 😃 <a href="https://github.com/consindo/dymajo-transit/issues">https://github.com/consindo/dymajo-transit/issues</a></p>
+<p>In Part 2, we’ll go over the client-side development.</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  <a href="/archives">Back to Archives</a>
+</nav>
+
+  
+  
+</article>
+
+
+
+<footer>
+<div class="wrapper">
+  <div class="copyright">
+    &copy; 2017 Jono Cooper
+  </div>
+  <div class="article-meta">
+    
+      <p class="post">Posted:
+    
+    <time datetime="2017-10-08T06:56:43.000Z" itemprop="datePublished">2017-10-08</time></p>
+  </div>
+</div>
+</footer></section>
+        
+      </div>
+    </div>
+    
+    <script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
