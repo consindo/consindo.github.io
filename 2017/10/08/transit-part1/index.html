@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>How does Transit work? - Part 1 - Jono Cooper</title>
+  <title>How does Waka work? - Part 1 - Jono Cooper</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Matt keeps asking me how Transit works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not.">
+  <meta name="description" content="Matt keeps asking me how Waka works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not.  T">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How does Transit work? - Part 1">
+<meta property="og:title" content="How does Waka work? - Part 1">
 <meta property="og:url" content="https://jono.nz/2017/10/08/transit-part1/index.html">
 <meta property="og:site_name" content="Jono Cooper">
-<meta property="og:description" content="Matt keeps asking me how Transit works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not.">
+<meta property="og:description" content="Matt keeps asking me how Waka works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not.  T">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-08T08:57:41.359Z">
+<meta property="og:updated_time" content="2018-01-13T23:04:28.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How does Transit work? - Part 1">
-<meta name="twitter:description" content="Matt keeps asking me how Transit works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not.">
+<meta name="twitter:title" content="How does Waka work? - Part 1">
+<meta name="twitter:description" content="Matt keeps asking me how Waka works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not.  T">
   
     <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
   
@@ -51,7 +51,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      How does Transit work? - Part 1
+      How does Waka work? - Part 1
     </h1>
   
 
@@ -59,8 +59,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Matt keeps asking me how Transit works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not. </p>
-<h2 id="The-Server-Stack"><a href="#The-Server-Stack" class="headerlink" title="The Server Stack"></a>The Server Stack</h2><p>Before you even try to start Transit, you’ll need:</p>
+        <p>Matt keeps asking me how Waka works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not. </p>
+<h2 id="The-Server-Stack"><a href="#The-Server-Stack" class="headerlink" title="The Server Stack"></a>The Server Stack</h2><p>Before you even try to start Waka, you’ll need:</p>
 <ul>
 <li>Windows or Linux (I develop on Windows, production on Linux)</li>
 <li>Node.js <a href="https://nodejs.org">https://nodejs.org</a></li>
@@ -78,7 +78,7 @@
 <li>Azure Application Insights (only for production) <a href="https://azure.microsoft.com/en-us/services/application-insights/">https://azure.microsoft.com/en-us/services/application-insights/</a></li>
 </ul>
 <h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><ul>
-<li>First, get the code with <code>git clone https://github.com/consindo/dymajo-transit.git</code></li>
+<li>First, get the code with <code>git clone https://github.com/consindo/waka.git</code></li>
 <li>Install dependencies with <code>npm install</code>  </li>
 <li>Build the client with  <code>npm run build</code> </li>
 </ul>
@@ -91,14 +91,16 @@
 <li><code>atApiKey</code> - the Auckland Transport API Key (optional if you don’t want Auckland)</li>
 <li><code>SENDGRID_API_KEY</code> for emails (optional)</li>
 <li><code>AZURE_INSIGHTS</code> for insights (optional)</li>
+<li><code>AGENDA21_API_KEY</code> currently a private key, returns parking information for Auckland Carparks (optional)</li>
 </ul>
-<h2 id="Starting"><a href="#Starting" class="headerlink" title="Starting"></a>Starting</h2><p>Yay! You’ve configured Transit. Run <code>node index.js</code> to start, and it’ll create the database and start on the port you specified.</p>
+<h2 id="Starting"><a href="#Starting" class="headerlink" title="Starting"></a>Starting</h2><p>Yay! You’ve configured Waka. Run <code>node index.js</code> to start, and it’ll create the database and start on the port you specified.</p>
 <p>If you don’t want it to start downloading data from Auckland automatically, make sure you disable the auto updates in <code>/config.js</code>.</p>
-<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p>Transit has a master process that manages a collection of worker processes, each encapsulating a particular region &amp; version and providing the API. Each worker process uses its own database which keeps things smaller, faster, and is easier to delete when the data has expired. There’s mapping functionality which sends all requests to a particular region to a particular version. If you’re using the auto importers you shouldn’t have to worry about the mappings, but it is possible to override. </p>
-<p>Worker spawning is done through node’s child_process.fork, and all communication thereafter is done through a standard REST API - using both the public and private methods on both the master and the worker. Requests are proxied through to the mapped worker from the master. Check out all the router files for further details. </p>
+<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p>Waka has a master process that manages a collection of worker processes, each encapsulating a particular region &amp; version and providing the API. Each worker process uses its own database which keeps things smaller, faster, and is easier to delete when the data has expired. There’s mapping functionality which sends all requests to a particular region to a particular version. If you’re using the auto importers you shouldn’t have to worry about the mappings, but it is possible to override. </p>
+<p>Worker spawning is done through node’s <code>child_process.fork</code>, and all communication thereafter is done through a standard REST API - using both the public and private methods on both the master and the worker. Requests are proxied through to the mapped worker from the master. Check out all the router files for further details. </p>
 <p>Static rendering and hosting of assets is done through yet another process. For static rendering, it uses the standard public REST API, and transforms the JSON to HTML. Files in <code>/dist</code> are all hosted under <code>/</code> when a route cannot be found. If a file is not found in <code>/dist</code>, the static server returns a default or 404 page, and lets the client side JavaScript take over the rest.</p>
 <h2 id="Server-Master-Private-API"><a href="#Server-Master-Private-API" class="headerlink" title="Server-Master Private API"></a>Server-Master Private API</h2><p>If you’re not using an auto importer or just need to emergency fix things, you can do so with the private API. It’s not secured, so you have to make sure the port isn’t exposed.</p>
 <p>For most of these requests, just pop a JSON object with the prefix (region) and version in the request body. </p>
+<p><strong>Update</strong>: You can now just head to <a href="http://localhost:8001">http://localhost:8001</a> and there’s a nice UI for running these request.</p>
 <ul>
 <li><code>GET /worker</code> - Returns all the available workers.</li>
 <li><code>POST /worker/add</code> - Send a prefix, version to create a new worker.</li>
@@ -114,11 +116,11 @@
 <li><code>POST /import-start/:mode</code> - Trigger a manual import of GTFS data. Use <code>db</code> for the database import, <code>shapes</code> for the Azure Shapes Parse &amp; Upload, or <code>all</code> for both.</li>
 <li><code>POST /import-complete</code> - Used internally from the worker - tells master that an import has completed so it can update the database and run any callbacks.</li>
 </ul>
-<h2 id="Server-Worker-amp-Server-Static-Public-API"><a href="#Server-Worker-amp-Server-Static-Public-API" class="headerlink" title="Server-Worker &amp; Server-Static Public API"></a>Server-Worker &amp; Server-Static Public API</h2><p>This is the public API. I want to get this section auto-generated, so I’ll leave this for now.</p>
+<h2 id="Server-Worker-amp-Server-Static-Public-API"><a href="#Server-Worker-amp-Server-Static-Public-API" class="headerlink" title="Server-Worker &amp; Server-Static Public API"></a>Server-Worker &amp; Server-Static Public API</h2><p>This is the public API. You can generate them with <code>npm run document</code> or just head to <a href="https://getwaka.com/docs/index.html">https://getwaka.com/docs/index.html</a>.</p>
 <h2 id="SQL-Migrations"><a href="#SQL-Migrations" class="headerlink" title="SQL Migrations"></a>SQL Migrations</h2><p>Because we create the database from scratch every time a new worker is created, we don’t have to worry about migrations! Simply delete the worker and try again if you’re having any issues. The SQL files which create the tables and stored procedures are located in <code>/server-worker/db/procs</code></p>
 <p>I’m not sure how to do the migrations for the master database yet, but the scripts that create it on first run are in <code>/server-master/db/procs</code></p>
 <h2 id="Tests"><a href="#Tests" class="headerlink" title="Tests"></a>Tests</h2><p>No unit tests yet 😢. There’s a couple of tests in the Auckland auto importer that does a quick check before changing the live mapping, but that’s it. There’s definitely room for improvement here.</p>
-<h2 id="Other-Things"><a href="#Other-Things" class="headerlink" title="Other Things"></a>Other Things</h2><p>Here’s some things you might want to do when modifying or using Transit as a dev.</p>
+<h2 id="Other-Things"><a href="#Other-Things" class="headerlink" title="Other Things"></a>Other Things</h2><p>Here’s some things you might want to do when modifying or using Waka as a dev.</p>
 <h3 id="Adding-a-New-City"><a href="#Adding-a-New-City" class="headerlink" title="Adding a New City"></a>Adding a New City</h3><ul>
 <li>Add an importer with countrycode-airportcode as the prefix in <code>/server-worker/importers</code></li>
 <li>Use the private API to add, start, run the importer, and set the mapping to your version.</li>
@@ -131,7 +133,7 @@
 <li>Add an auto importer to keep versions &amp; mappings up to date.</li>
 <li>Send a pull request!</li>
 </ul>
-<h2 id="Now-what"><a href="#Now-what" class="headerlink" title="Now what?"></a>Now what?</h2><p>Hopefully you download the code and have a play - fix a few issues, or even just file some 😃 <a href="https://github.com/consindo/dymajo-transit/issues">https://github.com/consindo/dymajo-transit/issues</a></p>
+<h2 id="Now-what"><a href="#Now-what" class="headerlink" title="Now what?"></a>Now what?</h2><p>Hopefully you download the code and have a play - fix a few issues, or even just file some 😃 <a href="https://github.com/consindo/waka/issues">https://github.com/consindo/waka/issues</a></p>
 <p>In Part 2, we’ll go over the client-side development.</p>
 
       
@@ -152,7 +154,7 @@
 <footer>
 <div class="wrapper">
   <div class="copyright">
-    &copy; 2017 Jono Cooper
+    &copy; 2018 Jono Cooper
   </div>
   <div class="article-meta">
     
