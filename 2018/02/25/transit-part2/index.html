@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>How does Waka work? - Part 2 - Jono Cooper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Finally, part two of this guide! In part two, we’ll go over how the frontend works. I managed to keep part one reasonably well updated, but contact me if you have any issues. Setting UpIf you’ve alrea">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How does Waka work? - Part 2">
+<meta property="og:url" content="https://jono.nz/2018/02/25/transit-part2/index.html">
+<meta property="og:site_name" content="Jono Cooper">
+<meta property="og:description" content="Finally, part two of this guide! In part two, we’ll go over how the frontend works. I managed to keep part one reasonably well updated, but contact me if you have any issues. Setting UpIf you’ve alrea">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-02-23T20:36:22.458Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How does Waka work? - Part 2">
+<meta name="twitter:description" content="Finally, part two of this guide! In part two, we’ll go over how the frontend works. I managed to keep part one reasonably well updated, but contact me if you have any issues. Setting UpIf you’ve alrea">
+  
+    <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<nav class="sidebar">
+  <h1><a href="/">Jono Cooper</a></h1>
+  <ul id="navigation">
+    <li><a href="/archives"><img width="13" src="/css/images/icons/blog.png">Blog</a></li>
+    <li><a href="/work"><img width="13" src="/css/images/icons/work.png">Portfolio</a></li>
+    <li><a href="/me"><img width="12" src="/css/images/icons/me.png">Me</a></li>
+  </ul>
+  <button id="expand">Menu</button>
+</nav>
+      <div class="outer">
+        <section id="main"><article id="post-transit-part2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      How does Waka work? - Part 2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Finally, part two of this guide! In part two, we’ll go over how the frontend works. I managed to keep <a href="/2017/10/08/transit-part1/">part one</a> reasonably well updated, but contact me if you have any issues.</p>
+<h2 id="Setting-Up"><a href="#Setting-Up" class="headerlink" title="Setting Up"></a>Setting Up</h2><p>If you’ve already set up the server, it’ll all good to go! If not, you’ll need node.js &amp; npm installed - <a href="https://nodejs.org">https://nodejs.org</a>. Then, three easy steps:</p>
+<ul>
+<li>First, get the code with <code>git clone https://github.com/consindo/waka.git</code></li>
+<li>Install dependencies with <code>npm install</code>  </li>
+<li>Build the client with  <code>npm run build</code> </li>
+</ul>
+<h2 id="Development"><a href="#Development" class="headerlink" title="Development"></a>Development</h2><p>If you’re only working on the frontend code, and don’t want to go to the hassle of setting up your own server, you can simply use <code>npm run watch:live</code>. If you have the server set up, you can use <code>npm run watch</code> instead.</p>
+<p>Waka uses Webpack, so you get all the fancy live reloading - just head to <a href="http://locahost:8009">http://locahost:8009</a>. In terms of code style, eslint &amp; prettier are all set up - just run it through them before you send a pull request.</p>
+<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>Waka is written in React, with React Router for the single page routing. If adding a new page or view, it’s super important to make sure it can be accessed with a URL - this is how the back button works on Android.</p>
+<p>For maps, Waka uses the DYMAJO OpenStreetMap Server, because it’s too expensive to use Mapbox or something similar. We’re currently using Leaflet with react-leaflet, but this will be replaced with mapbox-gl-js in the near future.</p>
+<p>Lots of stuff in Waka is custom because most React components are designed for the desktop. 90% of Traffic to Waka is from mobile, so make sure always build mobile first. Often, I like to plug in my phone and debug directly on that.</p>
+<h2 id="SCSS"><a href="#SCSS" class="headerlink" title="SCSS"></a>SCSS</h2><p>It’s all custom. It’s also a little bit of a mess, because the app has undergone a number of significant redesigns in its 1.5 year history. A new redesign is coming soon, so I’ll do my best to clean it up a little more.</p>
+<h2 id="Speed"><a href="#Speed" class="headerlink" title="Speed"></a>Speed</h2><p>Waka uses Service Workers to run offline, and it falls back nicely. It’s not very useful offline, but at least it will load when you’re running out of the house and there’s very bad Wi-Fi. Bundle size is also reasonably well optimized, so use dynamic imports if necessary.</p>
+<p>There’s also the percieved speed - the app uses a large amount of animation in an effort to make things feel faster. If you think something needs an animation, please add it!</p>
+<h2 id="Now-what"><a href="#Now-what" class="headerlink" title="Now what?"></a>Now what?</h2><p>Please download the code and mess around! It’s much easier to get started with the client than the server, so if there’s something you’re dying to fix or add, it would be greatly appreciated.</p>
+<p>Any questions, suggestions, or issues - <a href="http://localhost:4000/me/">contact me!</a></p>
+<p><a href="https://github.com/consindo/waka">https://github.com/consindo/waka</a></p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  <a href="/archives">Back to Archives</a>
+</nav>
+
+  
+  
+</article>
+
+
+
+<footer>
+<div class="wrapper">
+  <div class="copyright">
+    &copy; 2018 Jono Cooper
+  </div>
+  <div class="article-meta">
+    
+      <p class="post">Posted:
+    
+    <time datetime="2018-02-25T06:56:43.000Z" itemprop="datePublished">2018-02-25</time></p>
+  </div>
+</div>
+</footer></section>
+        
+      </div>
+    </div>
+    
+    <script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
