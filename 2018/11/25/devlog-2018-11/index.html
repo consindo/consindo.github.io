@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Dev Log: November 2018 - Jono Cooper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This is the second installment of the dev log. Let’s see if we can keep this streak going! WakaI’ve made some improvements to health checks - they now check if the realtime data is working in Auckland">
+<meta name="keywords" content="dev,devlog,nitro,waka">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dev Log: November 2018">
+<meta property="og:url" content="https://jono.nz/2018/11/25/devlog-2018-11/index.html">
+<meta property="og:site_name" content="Jono Cooper">
+<meta property="og:description" content="This is the second installment of the dev log. Let’s see if we can keep this streak going! WakaI’ve made some improvements to health checks - they now check if the realtime data is working in Auckland">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://jono.nz/images/waka-2018-healthchecks.jpg">
+<meta property="og:image" content="https://jono.nz/images/nitro-2018-sync-indicator.png">
+<meta property="og:updated_time" content="2018-11-24T21:29:42.592Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dev Log: November 2018">
+<meta name="twitter:description" content="This is the second installment of the dev log. Let’s see if we can keep this streak going! WakaI’ve made some improvements to health checks - they now check if the realtime data is working in Auckland">
+<meta name="twitter:image" content="https://jono.nz/images/waka-2018-healthchecks.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/turbolinks.js" defer></script>
+  <script src="/js/script.js"></script>
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <nav class="sidebar" id="main-navigation" data-turbolinks-permanent="">
+  <h1><a href="/">Jono Cooper</a></h1>
+  <ul id="navigation">
+    <li><a href="/archives/"><img width="13" src="/css/images/icons/blog.png">Blog</a></li>
+    <li><a href="/work/"><img width="13" src="/css/images/icons/work.png">Portfolio</a></li>
+    <li><a href="/me/"><img width="12" src="/css/images/icons/me.png">Me</a></li>
+  </ul>
+  <button id="expand">Menu</button>
+</nav>
+      <div class="outer">
+        <section id="main"><article id="post-devlog-2018-11" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Dev Log: November 2018
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This is the second installment of the dev log. Let’s see if we can keep this streak going!</p>
+<h2 id="Waka"><a href="#Waka" class="headerlink" title="Waka"></a>Waka</h2><p>I’ve made some improvements to health checks - they now check if the realtime data is working in Auckland. It’s still at <a href="https://assets-us-west-2.waka.app/status/index.html">https://assets-us-west-2.waka.app/status/index.html</a>, but will eventually be rolled into the app.</p>
+<p><img src="/images/waka-2018-healthchecks.jpg" alt="SMS Notifications for Health Checks"></p>
+<p>SMS notifications now trigger when the health checks fail (super simple with Amazon SNS), so I’ll know a lot sooner if Waka is down.</p>
+<p>I’m also trying to answer the question “What routes in Auckland travel the most km per week?”. I should have the answer to that tomorrow, and I’ll do a little bit of a writeup.</p>
+<p>Other than that, there’s been nothing done in actual Waka. Matt hasn’t done anything on <code>waka-importer</code> either.</p>
+<h2 id="Nitro-3"><a href="#Nitro-3" class="headerlink" title="Nitro 3"></a>Nitro 3</h2><p>I’ve spent most of my time coding Nitro this month.</p>
+<p><img src="/images/nitro-2018-sync-indicator.png" alt="Nitro Sync Indicator"></p>
+<p>The overlay position is now fixed - no matter where it’s opened from. However, it’s a bit laggy in some browsers (Edge), and can be laggy on Retina screens. I’ll fix it eventually, but not for the initial release. There’s also a new sync indicator - when a task is syncing, an icon shows up.</p>
+<p>The biggest change is from my own custom username/password auth to <a href="https://auth0.com">Auth0</a>. It provides a decent user experience, and I don’t have to worry about other things such as sign up, 2FA, and OAuth. Unfortunately it seems to log you out a lot, but it’s not a huge deal as it’s only a single click to log back in.</p>
+<p>I also fixed a couple of other bugs and papercuts:</p>
+<ul>
+<li>Added the sign out button back</li>
+<li>Added proper error messages on the login page</li>
+<li>Upgraded all dependencies</li>
+<li>Fixed the list ordering without all list</li>
+<li>Fixed a race condition when notes were being saved</li>
+</ul>
+<p>Next month, I want to continue to focus on fixing bugs and improve the performance on slower machines and phones. I also want the sync to be a bit better - stopping your browser from closing if sync is in progress, and triggering a sync if you haven’t been using Nitro for some time. Oh, and I still need to add the settings menu.</p>
+<hr>
+<p>That’s it for November! If you have any questions, flick them through to me on <a href="https://twitter.com/consindo">Twitter</a>, and I’ll try answer them in the next post.</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  <a href="/archives/">Back to Archives</a>
+</nav>
+
+  
+  
+</article>
+
+
+
+<footer>
+<div class="wrapper">
+  <div class="copyright">
+    &copy; 2018 Jono Cooper
+  </div>
+  <div class="article-meta">
+    
+      <p class="post">Posted:
+    
+    <time datetime="2018-11-24T20:00:00.000Z" itemprop="datePublished">2018-11-25</time></p>
+  </div>
+</div>
+</footer></section>
+        
+      </div>
+    </div>
+    
+    
+  </div>
+</body>
+</html>
