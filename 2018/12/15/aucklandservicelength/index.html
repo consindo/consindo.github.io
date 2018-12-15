@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Which transit services in Auckland travel the furthest? - Jono Cooper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I got this question a couple of weeks ago, and I realized I was in a pretty good position to answer it. Waka already has all the required data in it, so it was a matter of writing a couple of SQL quer">
+<meta name="keywords" content="waka,auckland,transport">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Which transit services in Auckland travel the furthest?">
+<meta property="og:url" content="https://jono.nz/2018/12/15/aucklandservicelength/index.html">
+<meta property="og:site_name" content="Jono Cooper">
+<meta property="og:description" content="I got this question a couple of weeks ago, and I realized I was in a pretty good position to answer it. Waka already has all the required data in it, so it was a matter of writing a couple of SQL quer">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-12-15T01:32:31.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Which transit services in Auckland travel the furthest?">
+<meta name="twitter:description" content="I got this question a couple of weeks ago, and I realized I was in a pretty good position to answer it. Waka already has all the required data in it, so it was a matter of writing a couple of SQL quer">
+  
+    <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/turbolinks.js" defer></script>
+  <script src="/js/script.js"></script>
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <nav class="sidebar" id="main-navigation" data-turbolinks-permanent="">
+  <h1><a href="/">Jono Cooper</a></h1>
+  <ul id="navigation">
+    <li><a href="/archives/"><img width="13" src="/css/images/icons/blog.png">Blog</a></li>
+    <li><a href="/work/"><img width="13" src="/css/images/icons/work.png">Portfolio</a></li>
+    <li><a href="/me/"><img width="12" src="/css/images/icons/me.png">Me</a></li>
+  </ul>
+  <button id="expand">Menu</button>
+</nav>
+      <div class="outer">
+        <section id="main"><article id="post-aucklandservicelength" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Which transit services in Auckland travel the furthest?
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I got this question a couple of weeks ago, and I realized I was in a pretty good position to answer it. Waka already has all the required data in it, so it was a matter of writing a couple of SQL queries.</p>
+<p>These results were obtained for the week of November 5th - 11th, 2018. All routes are bus routes if not specified otherwise.</p>
+<h2 id="What-are-the-longest-routes-in-Auckland"><a href="#What-are-the-longest-routes-in-Auckland" class="headerlink" title="What are the longest routes in Auckland?"></a>What are the longest routes in Auckland?</h2><p>The first question is simple - what are the longest routes in Auckland (school buses excluded).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Code</th>
+<th style="text-align:left">Route Description</th>
+<th style="text-align:right">Length (km)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/125X">125X</a></td>
+<td style="text-align:left">Helensville To City Centre Via Westgate Express</td>
+<td style="text-align:right">58.96</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/396">396</a></td>
+<td style="text-align:left">Pukekohe Interchange To Waiuku Loop Via Patumahoe</td>
+<td style="text-align:right">49.49</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/SKY">SKY</a></td>
+<td style="text-align:left">Airport To Albany - <em>Commercial Bus</em></td>
+<td style="text-align:right">47.68</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/399">399</a></td>
+<td style="text-align:left">Pukekohe To Port Waikato Via Tuakau</td>
+<td style="text-align:right">44.21</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/171X">171X</a></td>
+<td style="text-align:left">City Centre To New Lynn Via Laingholm</td>
+<td style="text-align:right">39.23</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/125">125</a></td>
+<td style="text-align:left">Helensville To Westgate</td>
+<td style="text-align:right">38.48</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/997">997</a></td>
+<td style="text-align:left">Warkworth To Omaha Via Matakana And Port Wells</td>
+<td style="text-align:right">37.60</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/395">395</a></td>
+<td style="text-align:left">Waiuku To Papakura Interchange</td>
+<td style="text-align:right">35.70</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/N11">N11</a></td>
+<td style="text-align:left">City To Papakura Via Great South Rd - <em>Night Bus</em></td>
+<td style="text-align:right">34.47</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/120">120</a></td>
+<td style="text-align:left">Akoranga to Henderson</td>
+<td style="text-align:right">32.82</td>
+</tr>
+</tbody>
+</table>
+<p><a href="/files/aucklandservicelength/routeDistance.csv">Full Results</a> &middot; <a href="/files/aucklandservicelength/routeDistance.sql">SQL Queries</a></p>
+<p>These results are not particularly interesting. The majority of the above services are semi rural, and don’t have great frequency.</p>
+<h2 id="What-are-the-shortest-routes-in-Auckland"><a href="#What-are-the-shortest-routes-in-Auckland" class="headerlink" title="What are the shortest routes in Auckland?"></a>What are the shortest routes in Auckland?</h2><p>Ignoring the weird routes that aren’t really routes (i.e short running services) and school buses, here are the shortest routes in Auckland.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Code</th>
+<th style="text-align:left">Route Description</th>
+<th style="text-align:right">Length (km)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/SBAY">SBAY</a></td>
+<td style="text-align:left">Auckland To Stanley Bay - <em>Ferry</em></td>
+<td style="text-align:right">2.17</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/BAYS">BAYS</a></td>
+<td style="text-align:left">Bayswater To Auckland - <em>Ferry</em></td>
+<td style="text-align:right">2.35</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/DEV">DEV</a></td>
+<td style="text-align:left">Auckland To Devonport - <em>Ferry</em></td>
+<td style="text-align:right">3.11</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/890">890</a></td>
+<td style="text-align:left">Albany Station To Corinthian Dr Loop</td>
+<td style="text-align:right">3.51</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/987">987</a></td>
+<td style="text-align:left">Arkles Bay Loop</td>
+<td style="text-align:right">3.80</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/BIRK">BIRK</a></td>
+<td style="text-align:left">Auckland To Birkenhead Via Northcote Point - <em>Ferry</em></td>
+<td style="text-align:right">4.08</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/161">161</a></td>
+<td style="text-align:left">New Lynn to Brains Park</td>
+<td style="text-align:right">4.17</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/807">807</a></td>
+<td style="text-align:left">Devonport Wharf To Cheltenham Loop</td>
+<td style="text-align:right">4.21</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/842">842</a></td>
+<td style="text-align:left">Smales Farm Station To Crown Hill Via East Coast Rd</td>
+<td style="text-align:right">4.44</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/889">889</a></td>
+<td style="text-align:left">Constellation Station To Albany Station Via Hugh Green Dr</td>
+<td style="text-align:right">5.18</td>
+</tr>
+</tbody>
+</table>
+<p>It’s interesting to see that there are no services under 2km, and most of these short services are ferries or local loops.</p>
+<h2 id="Which-routes-in-Auckland-have-most-services-per-week"><a href="#Which-routes-in-Auckland-have-most-services-per-week" class="headerlink" title="Which routes in Auckland have most services per week."></a>Which routes in Auckland have most services per week.</h2><p>This includes both short/long running services - there’s no good way split them out.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Route</th>
+<th style="text-align:right">Services per Week</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/NX1">NX1</a></td>
+<td style="text-align:right">2687</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/NX2">NX2</a></td>
+<td style="text-align:right">1788</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/INN">InnerLink</a></td>
+<td style="text-align:right">1490</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/70">70</a></td>
+<td style="text-align:right">1427</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/SKY">SkyBus</a> - <em>Commercial Bus</em></td>
+<td style="text-align:right">1387</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/18">18</a></td>
+<td style="text-align:right">1379</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/OUT">OuterLink</a></td>
+<td style="text-align:right">1304</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/82">82</a></td>
+<td style="text-align:right">1164</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/CTY">CityLink</a></td>
+<td style="text-align:right">1164</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/25B">25B</a></td>
+<td style="text-align:right">1147</td>
+</tr>
+</tbody>
+</table>
+<p><a href="/files/aucklandservicelength/servicesPerWeek.csv">Full Results</a> &middot; <a href="/files/aucklandservicelength/servicesPerWeek.sql">SQL Queries</a></p>
+<p>The NX1 has the most services by far, but there’s also a lot of services that start halfway through the route. The InnerLink &amp; OuterLink is also fairly high (and the real frequency is high), but because they’re weird loops the route can be split into a bunch of segments (the smallest being 900m).</p>
+<p>The SkyBus is deceiving, because there’s essentially 3 routes under the same code - Albany to Airport, City to Airport via Mt Eden Road, and City to Airport via Dominion Road.</p>
+<h2 id="Which-transit-services-in-Auckland-travel-the-furthest-each-week"><a href="#Which-transit-services-in-Auckland-travel-the-furthest-each-week" class="headerlink" title="Which transit services in Auckland travel the furthest each week?"></a>Which transit services in Auckland travel the furthest each week?</h2><p>Now we’ll combine the number of services with how far they go, grouping by the route code.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Route</th>
+<th style="text-align:right">Distance Traveled per Week (km)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/NX1">NX1</a></td>
+<td style="text-align:right">57,378</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/SKY">SkyBus</a> - <em>Commerical Bus</em></td>
+<td style="text-align:right">55,605</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/OUT">OuterLink</a></td>
+<td style="text-align:right">32,326</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/NX2">NX2</a></td>
+<td style="text-align:right">32,118</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/70">70</a></td>
+<td style="text-align:right">30,257</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/380">380</a></td>
+<td style="text-align:right">30,233</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/STH">Southern Line</a> - <em>Train</em></td>
+<td style="text-align:right">28,070</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/WEST">Western Line</a> - <em>Train</em></td>
+<td style="text-align:right">25,143</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/EAST">Eastern Line</a> - <em>Train</em></td>
+<td style="text-align:right">21,872</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://waka.app/l/nz-akl/83">83</a></td>
+<td style="text-align:right">21,153</td>
+</tr>
+</tbody>
+</table>
+<p><a href="/files/aucklandservicelength/kmPerWeek.csv">Full Results</a> &middot; <a href="/files/aucklandservicelength/kmPerWeek.sql">SQL Queries</a></p>
+<p>The NX1 comes out on top - the frequency is good, and as it travels a long distance on the busway and motorway. In many ways the SkyBus is similar - it travels quite far on the busway and motorway with good frequency, but it is a little deceiving as mentioned earlier.</p>
+<p>It’s not surprising to see some of our long frequent routes in here too - OUT, NX2, 70, and 83. Our trains also make an appearance - while the frequency is not as good as some of our bus network, the trains tend to travel longer distances.</p>
+<p>The most interesting apperance in here is the 380. It is not classified as a frequent service, but it has 15-20 minute service all day. As it is an airport bus, it starts extremely early (4:40am) and ends very late (12:40am) every day. It’s also a bit of a silly route - it really should be split into two halves - Airport to Manukau, and Airport to Onehunga/Mangere.</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  <a href="/archives/">Back to Archives</a>
+</nav>
+
+  
+  
+</article>
+
+
+
+<footer>
+<div class="wrapper">
+  <div class="copyright">
+    &copy; 2018 Jono Cooper
+  </div>
+  <div class="article-meta">
+    
+      <p class="post">Posted:
+    
+    <time datetime="2018-12-14T23:00:00.000Z" itemprop="datePublished">2018-12-15</time></p>
+  </div>
+</div>
+</footer></section>
+        
+      </div>
+    </div>
+    
+    
+  </div>
+</body>
+</html>
