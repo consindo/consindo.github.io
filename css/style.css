@@ -474,6 +474,17 @@ footer a:hover {
   background: #000;
   color: #fff;
 }
+.article-type-post table {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+.article-type-post table td,
+.article-type-post table th {
+  padding: 0.25rem 0.55rem;
+}
+.article-type-post table tbody tr:nth-child(odd) {
+  background: #f4f4f4;
+}
 nav.sidebar {
   width: 100%;
   height: 60px;
