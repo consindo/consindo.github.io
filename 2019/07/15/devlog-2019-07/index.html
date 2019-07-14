@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Dev Log: April - July 2019 - Jono Cooper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Yikes. Haven’t done one of these in a while. It’s mostly because I’m really busy at work - turns out, everyone wants to use Kubernetes. I also bought a house, which turns out to be quite a stressful p">
+<meta name="keywords" content="waka,dev,devlog,nitro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dev Log: April - July 2019">
+<meta property="og:url" content="https://jono.nz/2019/07/15/devlog-2019-07/index.html">
+<meta property="og:site_name" content="Jono Cooper">
+<meta property="og:description" content="Yikes. Haven’t done one of these in a while. It’s mostly because I’m really busy at work - turns out, everyone wants to use Kubernetes. I also bought a house, which turns out to be quite a stressful p">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-07-14T01:26:28.592Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dev Log: April - July 2019">
+<meta name="twitter:description" content="Yikes. Haven’t done one of these in a while. It’s mostly because I’m really busy at work - turns out, everyone wants to use Kubernetes. I also bought a house, which turns out to be quite a stressful p">
+  
+    <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/turbolinks.js" defer></script>
+  <script src="/js/script.js"></script>
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <nav class="sidebar" id="main-navigation" data-turbolinks-permanent="">
+  <h1><a href="/">Jono Cooper</a></h1>
+  <ul id="navigation">
+    <li><a href="/archives/"><img width="13" src="/css/images/icons/blog.png">Blog</a></li>
+    <li><a href="/work/"><img width="13" src="/css/images/icons/work.png">Portfolio</a></li>
+    <li><a href="/me/"><img width="12" src="/css/images/icons/me.png">Me</a></li>
+  </ul>
+  <button id="expand">Menu</button>
+</nav>
+      <div class="outer">
+        <section id="main"><article id="post-devlog-2019-07" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Dev Log: April - July 2019
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Yikes. Haven’t done one of these in a while. It’s mostly because I’m really busy at work - turns out, everyone wants to use Kubernetes. I also bought a house, which turns out to be quite a stressful process.</p>
+<h2 id="Waka"><a href="#Waka" class="headerlink" title="Waka"></a>Waka</h2><p>We’ve been reducing technical debt in Waka. The server has been entirely rewritten in TypeScript, we’re adding tests, and making it really easy to add more cities. The app itself is also getting a little bit of love, and we’re looking at improving the route page and adding service alerts in the near future. Just for fun, we also rewrote waka-proxy in golang.</p>
+<p>The architecture itself hasn’t changed a lot since the last post, but we have added a new component. It’s called waka-realtime, and it’s responsible for pulling realtime information from agencies and putting them in a Redis cache. waka-worker now pulls from the Redis cache, as opposed to doing the pulls itself, and storing it in RAM.</p>
+<p>This new component allows us to make more of Waka “serverless”, and run on AWS Lambda. Even though we run our ECS cluster on spot instances, it’s still expensive to maintain a seperate test environment.</p>
+<p>There’s a lot more coming to Waka really soon, we’re looking forward to announcing the availbility of our next two cities - Sydney &amp; Christchurch.</p>
+<h2 id="Nitro"><a href="#Nitro" class="headerlink" title="Nitro"></a>Nitro</h2><p>Unfortunately, Nitro hasn’t seen a lot of work on the last couple of months. I’ve mainly been fixing up UI bugs - the server is rock solid. Upon reflection, building a really fancy user interface isn’t a good way to get a product out quickly. While it’s a clean, simple experience, the animations and transitions have proved to be difficult to stabilize. I don’t want to abandon things, and will look to getting a public beta out soon.</p>
+<p>In terms of infrastructure changes, I’ve moved the account manager (activates accounts and invitations) from ECS to Lambda. </p>
+<hr>
+<p>That’s really it for the last couple of months. Fingers crossed that I’ll have more to post about soon!</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  <a href="/archives/">Back to Archives</a>
+</nav>
+
+  
+  
+</article>
+
+
+
+<footer>
+<div class="wrapper">
+  <div class="copyright">
+    &copy; 2019 Jono Cooper
+  </div>
+  <div class="article-meta">
+    
+      <p class="post">Posted:
+    
+    <time datetime="2019-07-15T01:10:00.000Z" itemprop="datePublished">2019-07-15</time></p>
+  </div>
+</div>
+</footer></section>
+        
+      </div>
+    </div>
+    
+    
+  </div>
+</body>
+</html>
