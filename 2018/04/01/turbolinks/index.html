@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Turbolinks - Jono Cooper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Single Page Routing is cool, because it allows your pages to load without incurring the cost a full load. It can be difficult to set up, but I would recommend checking out Turbolinks. You can Single P">
+<meta name="keywords" content="dev">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Turbolinks">
+<meta property="og:url" content="https://jono.nz/2018/04/01/turbolinks/index.html">
+<meta property="og:site_name" content="Jono Cooper">
+<meta property="og:description" content="Single Page Routing is cool, because it allows your pages to load without incurring the cost a full load. It can be difficult to set up, but I would recommend checking out Turbolinks. You can Single P">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-23T04:24:48.076Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Turbolinks">
+<meta name="twitter:description" content="Single Page Routing is cool, because it allows your pages to load without incurring the cost a full load. It can be difficult to set up, but I would recommend checking out Turbolinks. You can Single P">
+  
+    <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/turbolinks.js" defer></script>
+  <script src="/js/script.js"></script>
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <nav class="sidebar" id="main-navigation" data-turbolinks-permanent="">
+  <h1><a href="/">Jono Cooper</a></h1>
+  <ul id="navigation">
+    <li><a href="/archives/"><img width="13" src="/css/images/icons/blog.png">Blog</a></li>
+    <li><a href="/work/"><img width="13" src="/css/images/icons/work.png">Portfolio</a></li>
+    <li><a href="/me/"><img width="12" src="/css/images/icons/me.png">Me</a></li>
+  </ul>
+  <button id="expand">Menu</button>
+</nav>
+      <div class="outer">
+        <section id="main"><article id="post-turbolinks" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Turbolinks
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Single Page Routing is cool, because it allows your pages to load without incurring the cost a full load. It can be difficult to set up, but I would recommend checking out <a href="https://github.com/turbolinks/turbolinks">Turbolinks</a>. You can Single Page Routing running on your existing site in like, twenty minutes. It’s great.</p>
+<p>It’s a tiny little script that you just have to insert into your <code>&lt;head&gt;</code>, and it swaps out the body whenever you follow a link. It prevents your CSS and JS from being redownloaded, so you don’t get an unsightly white flash when your page loads.</p>
+<p>This site is already pretty fast, as it uses <a href="https://hexo.io">Hexo</a> to render the site out statically, but I still added Turbolinks, and now it’s even faster.</p>
+<p>The process was also pretty simple for this site:</p>
+<ul>
+<li>Add script tag</li>
+<li>Move other script tags to the head, with a <code>defer</code> attribute.</li>
+<li>Realize that my script only queries the elements once, so I needed to add a <code>data-turbolinks-permanent</code> to my navigation element.<br><br></li>
+</ul>
+<p>And I think that’s it. It’s really great for sites that don’t use a lot of JavaScript.</p>
+<p><a href="https://github.com/turbolinks/turbolinks">https://github.com/turbolinks/turbolinks</a></p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  <a href="/archives/">Back to Archives</a>
+</nav>
+
+  
+  
+</article>
+
+
+
+<footer>
+<div class="wrapper">
+  <div class="copyright">
+    &copy; 2019 Jono Cooper
+  </div>
+  <div class="article-meta">
+    
+      <p class="post">Posted:
+    
+    <time datetime="2018-04-01T22:28:17.000Z" itemprop="datePublished">2018-04-02</time></p>
+  </div>
+</div>
+</footer></section>
+        
+      </div>
+    </div>
+    
+    
+  </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Dev Log: October 2018 - Jono Cooper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I haven’t been posting on this blog for a while, but I have been doing things. I’m going to aim to do one of these dev logs every month or so. The idea is that I’ll be more accountable and maybe even">
+<meta name="keywords" content="waka,dev,devlog,nitro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dev Log: October 2018">
+<meta property="og:url" content="https://jono.nz/2018/10/21/devlog-2018-10/index.html">
+<meta property="og:site_name" content="Jono Cooper">
+<meta property="og:description" content="I haven’t been posting on this blog for a while, but I have been doing things. I’m going to aim to do one of these dev logs every month or so. The idea is that I’ll be more accountable and maybe even">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://jono.nz/images/wakastatus.png">
+<meta property="og:image" content="https://jono.nz/images/nitro-2018-oct-mobile.png">
+<meta property="og:image" content="https://jono.nz/images/nitro-2018-oct-desktop.png">
+<meta property="og:updated_time" content="2019-12-23T04:24:48.076Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dev Log: October 2018">
+<meta name="twitter:description" content="I haven’t been posting on this blog for a while, but I have been doing things. I’m going to aim to do one of these dev logs every month or so. The idea is that I’ll be more accountable and maybe even">
+<meta name="twitter:image" content="https://jono.nz/images/wakastatus.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/turbolinks.js" defer></script>
+  <script src="/js/script.js"></script>
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <nav class="sidebar" id="main-navigation" data-turbolinks-permanent="">
+  <h1><a href="/">Jono Cooper</a></h1>
+  <ul id="navigation">
+    <li><a href="/archives/"><img width="13" src="/css/images/icons/blog.png">Blog</a></li>
+    <li><a href="/work/"><img width="13" src="/css/images/icons/work.png">Portfolio</a></li>
+    <li><a href="/me/"><img width="12" src="/css/images/icons/me.png">Me</a></li>
+  </ul>
+  <button id="expand">Menu</button>
+</nav>
+      <div class="outer">
+        <section id="main"><article id="post-devlog-2018-10" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Dev Log: October 2018
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I haven’t been posting on this blog for a while, but I have been doing things. I’m going to aim to do one of these dev logs every month or so. The idea is that I’ll be more accountable and maybe even release something.</p>
+<p>Anyway, here’s what I’ve been doing over the last little bit.</p>
+<h2 id="Waka"><a href="#Waka" class="headerlink" title="Waka"></a>Waka</h2><p>We ended up running out of Azure Credits, and decided to move Waka to AWS. It’s generally a lot cheaper, and as I use AWS at Xero, I’m pretty familiar with how to Terraform the bits and pieces together. We had to switch from Azure Blob Storage to S3, and move from a maps server to static map tiles in a S3 Bucket. Other than that, it went fine.</p>
+<p><a href="https://mattdavidson.kiwi">Matt</a> is supposed to be working on <a href="https://github.com/dymajo/waka-importer">waka-importer</a>. The idea is that you input a GTFS file, and it’ll dump everything to a SQL Database Dump &amp; Upload Shapes to S3. Hopefully, this should make Waka a bit more modular. It’s mostly just extracting the existing functionality into a standalone app, so it should be done pretty soon. </p>
+<p><img src="/images/wakastatus.png" alt="Waka Status Page"></p>
+<p>Waka now has a <a href="https://assets-us-west-2.waka.app/status/index.html">status page</a>. It’s pretty rough right now, but it’ll be integrated into service alerts when we add them in. This will probably happen pretty soon because I now live in Wellington, and it seems that every time I go try and catch a train, it’s been replaced by a bus.</p>
+<p>In terms of a roadmap, the next things coming will be a new unified lines view, service alerts, and hopefully a switch to Docker containers.</p>
+<h2 id="Nitro-3"><a href="#Nitro-3" class="headerlink" title="Nitro 3"></a>Nitro 3</h2><p>I’m still working on Nitro! I get a lot of emails asking when Nitro 3 is coming, and the only thing I can say is “soon”.</p>
+<p>Nitro has taken a long time to build for a number of reasons. Firstly, it’s trying to ship an interface that feels native on both mobile &amp; desktop. The end result is great - a single screen, like most native apps. However, it’s much more difficult than building something in Bootstrap, with no animations, and calling it a day.</p>
+<p>The second reason for the slow development is the syncing. Nitro works perfectly offline, and it will merge changes when you go back online. I decided to write my own sync code with a standard postgres database, but definitely ran into more issues than I had envisioned.</p>
+<p>Lastly, I don’t have enough time. I’m not a uni student anymore, and have less time to work on things. This will hopefully change when Nitro is released and is earning a little bit of money, but for now, I have to balance it around other things.</p>
+<p>Anyway, here’s what Nitro looks like right now:</p>
+<p><img src="/images/nitro-2018-oct-mobile.png" alt="Nitro Mobile"></p>
+<p>And here it is on the desktop:</p>
+<p><img src="/images/nitro-2018-oct-desktop.png" alt="Nitro Desktop"></p>
+<p>As you can see, it’s taken a little bit of inspiration from Waka - that user interface works really well on mobile. It’s also very easy to adapt it to the desktop.</p>
+<p>At the moment, I’m working on the expanded task. While the inside is done, there’s quite a few weird bugs when you try open a task from a fresh reload, search, or click too fast. For performance reasons, it’s rendered as an overlay, rather than inline with an expanding height, but it does make things a bit weird.</p>
+<p>Other than that, the next task is to finish off sync (add an indicator + fix edge cases), and add a little more polish (papercuts + settings + sign up). I haven’t been adding features for some time now because I want to get a release out the door. If you haven’t already, you can sign up for the beta at <a href="http://nitrotasks.com">nitrotasks.com</a>.</p>
+<hr>
+<p>That’s it for this month! If you have any questions, flick them through to me on <a href="https://twitter.com/consindo">Twitter</a>, and I’ll try answer them in the next post.</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  <a href="/archives/">Back to Archives</a>
+</nav>
+
+  
+  
+</article>
+
+
+
+<footer>
+<div class="wrapper">
+  <div class="copyright">
+    &copy; 2019 Jono Cooper
+  </div>
+  <div class="article-meta">
+    
+      <p class="post">Posted:
+    
+    <time datetime="2018-10-21T20:00:00.000Z" itemprop="datePublished">2018-10-22</time></p>
+  </div>
+</div>
+</footer></section>
+        
+      </div>
+    </div>
+    
+    
+  </div>
+</body>
+</html>
