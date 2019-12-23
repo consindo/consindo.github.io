@@ -631,17 +631,21 @@ nav.sidebar #expand {
 }
 .home {
   background-color: #0084ff;
-  background-image: url("images/home.jpg");
+  background-image: url("images/home_2019.jpg");
   background-position: 50% 50%;
   height: 100%;
   background-size: cover;
   color: #fff;
   text-align: center;
 }
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  .home {
+    background-image: url("images/home_2019_large.jpg");
+  }
+}
 @media (max-width: 700px) {
   .home {
-    background-image: url("images/home_small.jpg");
-    background-size: cover;
+    background-image: url("images/home_2019_small.jpg");
   }
 }
 .home h2 {
