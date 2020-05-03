@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Map Creator - Jono Cooper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I’ve always liked transit maps. They not only help us get from A to B, but can also tell a story about a city. Well designed transit maps not only serve a utility, but are also public art. There’s lot">
+<meta name="keywords" content="dev,mapcreator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Map Creator">
+<meta property="og:url" content="https://jono.nz/2020/05/02/mapcreator/index.html">
+<meta property="og:site_name" content="Jono Cooper">
+<meta property="og:description" content="I’ve always liked transit maps. They not only help us get from A to B, but can also tell a story about a city. Well designed transit maps not only serve a utility, but are also public art. There’s lot">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://jono.nz/images/mapcreator/1-line.svg">
+<meta property="og:image" content="https://jono.nz/images/mapcreator/2-lines-no-fixes.svg">
+<meta property="og:image" content="https://jono.nz/images/mapcreator/2-lines-swap.svg">
+<meta property="og:image" content="https://jono.nz/images/mapcreator/storybook.png">
+<meta property="og:image" content="https://jono.nz/images/mapcreator/4-line.svg">
+<meta property="og:image" content="https://jono.nz/images/mapcreator/4-line-smoothed.svg">
+<meta property="og:updated_time" content="2020-05-03T02:31:40.127Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Map Creator">
+<meta name="twitter:description" content="I’ve always liked transit maps. They not only help us get from A to B, but can also tell a story about a city. Well designed transit maps not only serve a utility, but are also public art. There’s lot">
+<meta name="twitter:image" content="https://jono.nz/images/mapcreator/1-line.svg">
+  
+    <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/turbolinks.js" defer></script>
+  <script src="/js/script.js"></script>
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <nav class="sidebar" id="main-navigation" data-turbolinks-permanent="">
+  <h1><a href="/">Jono Cooper</a></h1>
+  <ul id="navigation">
+    <li><a href="/archives/"><img width="13" src="/css/images/icons/blog.png">Blog</a></li>
+    <li><a href="/me/"><img width="12" src="/css/images/icons/me.png">Me</a></li>
+  </ul>
+  <button id="expand">Menu</button>
+</nav>
+
+      <div class="outer">
+        <section id="main"><article id="post-mapcreator" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Map Creator
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I’ve always liked transit maps. They not only help us get from A to B, but can also tell a story about a city. Well designed transit maps not only serve a utility, but are also public art.</p>
+<p>There’s lots of different types of transit maps, but the most common is the <a href="https://tfl.gov.uk/maps/track/tube">London Underground schematic style</a>. I’ve wanted to design one of these for myself, but I’ve never had the patience to make one using Illustrator or Figma. I don’t think these tools are particularly suited towards transit maps. We should be able to define a map the same way the routes are defined—it should be as simple as specifying the nodes and connections.</p>
+<p>We’re currently in lockdown here in New Zealand, so it does feel a bit silly to work on <a href="https://waka.app">Waka</a> at the moment. Instead, I spent the last couple of weeks building a tool to help make drawing transit maps easier. The first step was the most basic scenario—a single line, with a bend in it.</p>
+<p><img src="/images/mapcreator/1-line.svg" alt="One transit line with two stations and a bend"></p>
+<p>Simple enough. Just draw a line, and use a bit of trigonometry to figure out the coordinates for the angles. Cool. Now, what happens when we add a second line?</p>
+<p><img src="/images/mapcreator/2-lines-no-fixes.svg" alt="Two transit line with two stations and a bend"></p>
+<p>It turns out, the lines overlap. This is because the lines have a width, so you need to account for that when you bend lines. I’ve made the diagram above a little bit transparent, so it’s easier to see this issue. Again, with a little bit of trigonometry, I was able to fix this all up.</p>
+<p>The lines of transit maps often swap over when the angles of the line change, so this was the next thing I accounted for. It’s a little bit difficult, as you also have to account for the change in length of line. Nevertheless, after a bit of hair pulling, I got the result I was after:</p>
+<p><img src="/images/mapcreator/2-lines-swap.svg" alt="Two transit line with two stations, a bend, and a stacking swap"></p>
+<p>Things get more and more complicated the moment you introduce 3, 4, 5+ lines. Modifying an equation to fix one case, will often break another. To keep track of all these different scenarios, I used <a href="https://storybook.js.org/">Storybook</a> and wrapped everything up as a <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">web component</a>.</p>
+<p>As the application essentially runs a <a href="https://en.wikipedia.org/wiki/Breadth-first_search">Breadth-first search</a> and outputs a SVG, I decided against using a framework like React, Vue, or Angular for now. Web components were the perfect lightweight solution I needed.</p>
+<p><img src="/images/mapcreator/storybook.png" alt="Storybook with all the different test cases"></p>
+<p>By regression testing any small tweak to my code, I was able to come up with a general solution for any angle, any number of lines, and any change in stacking. As a bonus, I was able to delete lots of code once I arrived at my pair of equations!</p>
+<p><img src="/images/mapcreator/4-line.svg" alt="Complex 4 line example"></p>
+<p>Currently, it won’t stop you from making a bad looking map, but at least the angles will be correct! The other nice thing about getting all the math right is that you can easily change the look by modifying a few parameters.</p>
+<p><img src="/images/mapcreator/4-line-smoothed.svg" alt="Complex 4 line example with different styles"></p>
+<p>I’m not totally sure where I’m going to take it next, but there’s a lot of room for improvement. I might try replicating a couple of real-life maps, and seeing how far I get. At the very least, I’m going to have to add labels for stations!</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  <a href="/archives/">Back to Archives</a>
+</nav>
+
+  
+  
+</article>
+
+
+
+<footer>
+<div class="wrapper">
+  <div class="copyright">
+    &copy; 2020 Jono Cooper
+  </div>
+  <div class="article-meta">
+    
+      <p class="post">Posted:
+    
+    <time datetime="2020-05-02T22:00:00.000Z" itemprop="datePublished">2020-05-03</time></p>
+  </div>
+</div>
+</footer></section>
+        
+      </div>
+    </div>
+    
+    
+  </div>
+</body>
+</html>
