@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <title>Dev Log: October 2018 - Jono Cooper</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="I haven’t been posting on this blog for a while, but I have been doing things. I’m going to aim to do one of these dev logs every month or so. The idea is that I’ll be more accountable and maybe even">
-<meta name="keywords" content="waka,dev,devlog,nitro">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dev Log: October 2018">
 <meta property="og:url" content="https://jono.nz/2018/10/21/devlog-2018-10/index.html">
 <meta property="og:site_name" content="Jono Cooper">
 <meta property="og:description" content="I haven’t been posting on this blog for a while, but I have been doing things. I’m going to aim to do one of these dev logs every month or so. The idea is that I’ll be more accountable and maybe even">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jono.nz/images/wakastatus.png">
 <meta property="og:image" content="https://jono.nz/images/nitro-2018-oct-mobile.png">
 <meta property="og:image" content="https://jono.nz/images/nitro-2018-oct-desktop.png">
-<meta property="og:updated_time" content="2020-07-16T01:12:32.100Z">
+<meta property="article:published_time" content="2018-10-21T20:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-23T01:35:51.651Z">
+<meta property="article:author" content="Jono Cooper">
+<meta property="article:tag" content="waka">
+<meta property="article:tag" content="dev">
+<meta property="article:tag" content="devlog">
+<meta property="article:tag" content="nitro">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dev Log: October 2018">
-<meta name="twitter:description" content="I haven’t been posting on this blog for a while, but I have been doing things. I’m going to aim to do one of these dev logs every month or so. The idea is that I’ll be more accountable and maybe even">
 <meta name="twitter:image" content="https://jono.nz/images/wakastatus.png">
   
     <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
@@ -27,15 +30,19 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   <script src="/js/turbolinks.js" defer></script>
-  <script src="/js/script.js"></script>
-</head>
-</html>
+  
+<script src="/js/script.js"></script>
+
+<meta name="generator" content="Hexo 5.1.0"></head>
+
 <body>
   <div id="container">
     <div id="wrap">
-      <nav class="sidebar" id="main-navigation" data-turbolinks-permanent="">
+      <nav class="sidebar" id="main-navigation" data-turbolinks-permanent>
   <h1><a href="/">Jono Cooper</a></h1>
   <ul id="navigation">
     <li><a href="/archives/"><img width="13" src="/css/images/icons/blog.png">Blog</a></li>
@@ -45,7 +52,7 @@
 </nav>
 
       <div class="outer">
-        <section id="main"><article id="post-devlog-2018-10" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-devlog-2018-10" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
     
@@ -65,7 +72,7 @@
         <p>I haven’t been posting on this blog for a while, but I have been doing things. I’m going to aim to do one of these dev logs every month or so. The idea is that I’ll be more accountable and maybe even release something.</p>
 <p>Anyway, here’s what I’ve been doing over the last little bit.</p>
 <h2 id="Waka"><a href="#Waka" class="headerlink" title="Waka"></a>Waka</h2><p>We ended up running out of Azure Credits, and decided to move Waka to AWS. It’s generally a lot cheaper, and as I use AWS at Xero, I’m pretty familiar with how to Terraform the bits and pieces together. We had to switch from Azure Blob Storage to S3, and move from a maps server to static map tiles in a S3 Bucket. Other than that, it went fine.</p>
-<p><a href="https://mattdavidson.kiwi">Matt</a> is supposed to be working on <a href="https://github.com/dymajo/waka-importer">waka-importer</a>. The idea is that you input a GTFS file, and it’ll dump everything to a SQL Database Dump &amp; Upload Shapes to S3. Hopefully, this should make Waka a bit more modular. It’s mostly just extracting the existing functionality into a standalone app, so it should be done pretty soon. </p>
+<p><a href="https://mattdavidson.kiwi/">Matt</a> is supposed to be working on <a href="https://github.com/dymajo/waka-importer">waka-importer</a>. The idea is that you input a GTFS file, and it’ll dump everything to a SQL Database Dump &amp; Upload Shapes to S3. Hopefully, this should make Waka a bit more modular. It’s mostly just extracting the existing functionality into a standalone app, so it should be done pretty soon. </p>
 <p><img src="/images/wakastatus.png" alt="Waka Status Page"></p>
 <p>Waka now has a <a href="https://assets-us-west-2.waka.app/status/index.html">status page</a>. It’s pretty rough right now, but it’ll be integrated into service alerts when we add them in. This will probably happen pretty soon because I now live in Wellington, and it seems that every time I go try and catch a train, it’s been replaced by a bus.</p>
 <p>In terms of a roadmap, the next things coming will be a new unified lines view, service alerts, and hopefully a switch to Docker containers.</p>
@@ -79,7 +86,7 @@
 <p><img src="/images/nitro-2018-oct-desktop.png" alt="Nitro Desktop"></p>
 <p>As you can see, it’s taken a little bit of inspiration from Waka - that user interface works really well on mobile. It’s also very easy to adapt it to the desktop.</p>
 <p>At the moment, I’m working on the expanded task. While the inside is done, there’s quite a few weird bugs when you try open a task from a fresh reload, search, or click too fast. For performance reasons, it’s rendered as an overlay, rather than inline with an expanding height, but it does make things a bit weird.</p>
-<p>Other than that, the next task is to finish off sync (add an indicator + fix edge cases), and add a little more polish (papercuts + settings + sign up). I haven’t been adding features for some time now because I want to get a release out the door. If you haven’t already, you can sign up for the beta at <a href="http://nitrotasks.com">nitrotasks.com</a>.</p>
+<p>Other than that, the next task is to finish off sync (add an indicator + fix edge cases), and add a little more polish (papercuts + settings + sign up). I haven’t been adding features for some time now because I want to get a release out the door. If you haven’t already, you can sign up for the beta at <a href="http://nitrotasks.com/">nitrotasks.com</a>.</p>
 <hr>
 <p>That’s it for this month! If you have any questions, flick them through to me on <a href="https://twitter.com/consindo">Twitter</a>, and I’ll try answer them in the next post.</p>
 

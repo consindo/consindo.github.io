@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <title>Map Creator - Jono Cooper</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="I’ve always liked transit maps. They not only help us get from A to B, but can also tell a story about a city. Well designed transit maps not only serve a utility, but are also public art. There’s lot">
-<meta name="keywords" content="dev,mapcreator">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Map Creator">
 <meta property="og:url" content="https://jono.nz/2020/05/02/mapcreator/index.html">
 <meta property="og:site_name" content="Jono Cooper">
 <meta property="og:description" content="I’ve always liked transit maps. They not only help us get from A to B, but can also tell a story about a city. Well designed transit maps not only serve a utility, but are also public art. There’s lot">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jono.nz/images/mapcreator/1-line.svg">
 <meta property="og:image" content="https://jono.nz/images/mapcreator/2-lines-no-fixes.svg">
 <meta property="og:image" content="https://jono.nz/images/mapcreator/2-lines-swap.svg">
 <meta property="og:image" content="https://jono.nz/images/mapcreator/storybook.png">
 <meta property="og:image" content="https://jono.nz/images/mapcreator/4-line.svg">
 <meta property="og:image" content="https://jono.nz/images/mapcreator/4-line-smoothed.svg">
-<meta property="og:updated_time" content="2020-07-16T01:12:32.100Z">
+<meta property="article:published_time" content="2020-05-02T22:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-23T01:35:51.651Z">
+<meta property="article:author" content="Jono Cooper">
+<meta property="article:tag" content="dev">
+<meta property="article:tag" content="mapcreator">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Map Creator">
-<meta name="twitter:description" content="I’ve always liked transit maps. They not only help us get from A to B, but can also tell a story about a city. Well designed transit maps not only serve a utility, but are also public art. There’s lot">
 <meta name="twitter:image" content="https://jono.nz/images/mapcreator/1-line.svg">
   
     <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
@@ -30,15 +31,19 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   <script src="/js/turbolinks.js" defer></script>
-  <script src="/js/script.js"></script>
-</head>
-</html>
+  
+<script src="/js/script.js"></script>
+
+<meta name="generator" content="Hexo 5.1.0"></head>
+
 <body>
   <div id="container">
     <div id="wrap">
-      <nav class="sidebar" id="main-navigation" data-turbolinks-permanent="">
+      <nav class="sidebar" id="main-navigation" data-turbolinks-permanent>
   <h1><a href="/">Jono Cooper</a></h1>
   <ul id="navigation">
     <li><a href="/archives/"><img width="13" src="/css/images/icons/blog.png">Blog</a></li>
@@ -48,7 +53,7 @@
 </nav>
 
       <div class="outer">
-        <section id="main"><article id="post-mapcreator" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-mapcreator" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
     
@@ -67,7 +72,7 @@
       
         <p>I’ve always liked transit maps. They not only help us get from A to B, but can also tell a story about a city. Well designed transit maps not only serve a utility, but are also public art.</p>
 <p>There’s lots of different types of transit maps, but the most common is the <a href="https://tfl.gov.uk/maps/track/tube">London Underground schematic style</a>. I’ve wanted to design one of these for myself, but I’ve never had the patience to make one using Illustrator or Figma. I don’t think these tools are particularly suited towards transit maps. We should be able to define a map the same way the routes are defined—it should be as simple as specifying the nodes and connections.</p>
-<p>We’re currently in lockdown here in New Zealand, so it does feel a bit silly to work on <a href="https://waka.app">Waka</a> at the moment. Instead, I spent the last couple of weeks building a tool to help make drawing transit maps easier. The first step was the most basic scenario—a single line, with a bend in it.</p>
+<p>We’re currently in lockdown here in New Zealand, so it does feel a bit silly to work on <a href="https://waka.app/">Waka</a> at the moment. Instead, I spent the last couple of weeks building a tool to help make drawing transit maps easier. The first step was the most basic scenario—a single line, with a bend in it.</p>
 <p><img src="/images/mapcreator/1-line.svg" alt="One transit line with two stations and a bend"></p>
 <p>Simple enough. Just draw a line, and use a bit of trigonometry to figure out the coordinates for the angles. Cool. Now, what happens when we add a second line?</p>
 <p><img src="/images/mapcreator/2-lines-no-fixes.svg" alt="Two transit line with two stations and a bend"></p>
