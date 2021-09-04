@@ -14,7 +14,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jono.nz/images/samescale.png">
 <meta property="article:published_time" content="2021-09-04T06:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-04T12:08:45.336Z">
+<meta property="article:modified_time" content="2021-09-04T12:10:58.536Z">
 <meta property="article:author" content="Jono Cooper">
 <meta property="article:tag" content="dev">
 <meta name="twitter:card" content="summary">
@@ -76,7 +76,7 @@
 <li><em>Canberra &amp; Washington, D.C.</em>: Both planned federal capitals, created for similar reasons</li>
 </ul>
 <h2 id="Was-it-hard-to-make"><a href="#Was-it-hard-to-make" class="headerlink" title="Was it hard to make?"></a>Was it hard to make?</h2><p>Not really! I did most of it in a morning. It was basically a matter of creating two <a href="https://mapbox.com/">Mapbox</a> maps, and syncing the events between them.</p>
-<p>The hardest part was syncing the zooms. Because of web mercator projection, the same zoom level at different latitiudes doesn’t necessarily mean things will be the same scale. I spent (admittedly too much) time on coming up with an equation to translate the zoom levels between the two maps. If you’re curious, here’s the equation:</p>
+<p>The hardest part was syncing the zooms. Because of Web Mercator projection, the same zoom level at different latitudes doesn’t necessarily mean things will be the same scale. I spent (admittedly too much) time on coming up with an equation to translate the zoom levels between the two maps. If you’re curious, here’s the equation:</p>
 <blockquote>
 <p>zoom2 = log<sub>2</sub>( |cos(lat2)| / |cos(lat1)| / 2<sup>zoom1</sup> )</p>
 </blockquote>
