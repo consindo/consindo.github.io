@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://jono.nz/images/throttle.png">
 <meta property="og:image" content="https://jono.nz/images/ios-vh-issue.png">
 <meta property="article:published_time" content="2016-12-29T19:30:00.000Z">
-<meta property="article:modified_time" content="2021-09-04T12:10:58.536Z">
+<meta property="article:modified_time" content="2022-07-14T02:45:51.668Z">
 <meta property="article:author" content="Jono Cooper">
 <meta property="article:tag" content="dev">
 <meta name="twitter:card" content="summary">
@@ -33,7 +33,7 @@
   
 <script src="/js/script.js"></script>
 
-<meta name="generator" content="Hexo 5.1.0"></head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 <body>
   <div id="container">
@@ -72,14 +72,14 @@
 <h2 id="Viewport-Height-is-too-high"><a href="#Viewport-Height-is-too-high" class="headerlink" title="Viewport Height is too high"></a>Viewport Height is too high</h2><p><strong>Problem:</strong> 100vh includes the height of the browser controls, which are overlaid so there’s the fancy blur effect.</p>
 <p><img src="/images/ios-vh-issue.png" alt="iOS Viewport Height Issue" title="Image from https://nicolas-hoizey.com/2015/02/viewport-height-is-taller-than-the-visible-part-of-the-document-in-some-mobile-browsers.html"></p>
 <p><strong>Fix:</strong> If you can’t use height 100%, I would recommend using a CSS variable, and line of code like this:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.body.style.setProperty(&#39;--real-height&#39;, document.documentElement.clientHeight + &#39;px&#39;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.body.style.setProperty(&#x27;--real-height&#x27;, document.documentElement.clientHeight + &#x27;px&#x27;)</span><br></pre></td></tr></table></figure>
 <p>Make sure to bind this to your window.onresize event!</p>
 <h2 id="No-Kinetic-Scrolling-in-Child-Elements"><a href="#No-Kinetic-Scrolling-in-Child-Elements" class="headerlink" title="No Kinetic Scrolling in Child Elements"></a>No Kinetic Scrolling in Child Elements</h2><p><strong>Problem:</strong> Having overflow:scroll in a container doesn’t have any inertia.<br><strong>Solution:</strong> On your element, set <code>-webkit-overflow-scrolling: touch;</code></p>
 <h2 id="webkit-overflow-scrolling-bubbles-to-page"><a href="#webkit-overflow-scrolling-bubbles-to-page" class="headerlink" title="-webkit-overflow-scrolling bubbles to page"></a>-webkit-overflow-scrolling bubbles to page</h2><p><strong>Problem:</strong> When you’re at the top of the element, the entire page scrolls, not the element.<br><strong>Solution:</strong> You’ll need two elements, something like this: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;scrollable&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;container&quot;&gt;</span><br><span class="line">    Content</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;scrollable&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    Content</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
 <p>On the inner element, you’ll need to set <code>min-height: 101%</code>. Then, <code>onTouchStart</code>, you’ll need some JavaScript that moves the scroll position down a single pixel at the top of the page, or up a pixel at the bottom.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let top &#x3D; e.scrollTop</span><br><span class="line">let totalScroll &#x3D; e.scrollHeight</span><br><span class="line">let currentScroll &#x3D; top + e.offsetHeight</span><br><span class="line"> </span><br><span class="line">if (top &#x3D;&#x3D;&#x3D; 0) &#123;</span><br><span class="line">  e.scrollTop &#x3D; 1</span><br><span class="line">&#125; else if (currentScroll &#x3D;&#x3D;&#x3D; totalScroll) &#123;</span><br><span class="line">  e.scrollTop &#x3D; top - 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let top = e.scrollTop</span><br><span class="line">let totalScroll = e.scrollHeight</span><br><span class="line">let currentScroll = top + e.offsetHeight</span><br><span class="line"> </span><br><span class="line">if (top === 0) &#123;</span><br><span class="line">  e.scrollTop = 1</span><br><span class="line">&#125; else if (currentScroll === totalScroll) &#123;</span><br><span class="line">  e.scrollTop = top - 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 <h2 id="Flexbox-is-funky-in-row-direction"><a href="#Flexbox-is-funky-in-row-direction" class="headerlink" title="Flexbox is funky in row direction"></a>Flexbox is funky in row direction</h2><p><strong>Problem:</strong> Flexbox generally doesn’t work in the row direction on iOS.<br><strong>Solution:</strong> If setting the container height with the CSS variable you made doesn’t work, use <code>calc()</code> with that variable. It’s really not ideal, but this is what I’ve found works best.</p>
@@ -105,7 +105,7 @@
 <footer>
 <div class="wrapper">
   <div class="copyright">
-    &copy; 2021 Jono Cooper
+    &copy; 2022 Jono Cooper
   </div>
   <div class="article-meta">
     

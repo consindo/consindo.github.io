@@ -13,7 +13,7 @@
 <meta property="og:description" content="Matt keeps asking me how Waka works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not.  T">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-10-08T06:56:43.000Z">
-<meta property="article:modified_time" content="2021-09-04T12:10:58.536Z">
+<meta property="article:modified_time" content="2022-07-14T02:45:51.668Z">
 <meta property="article:author" content="Jono Cooper">
 <meta property="article:tag" content="waka">
 <meta property="article:tag" content="dev">
@@ -31,7 +31,7 @@
   
 <script src="/js/script.js"></script>
 
-<meta name="generator" content="Hexo 5.1.0"></head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 <body>
   <div id="container">
@@ -84,10 +84,10 @@
 <h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><ul>
 <li>First, get the code with <code>git clone https://github.com/consindo/waka.git</code></li>
 <li>Install dependencies with <code>npm install</code>  </li>
-<li>Build the client with  <code>npm run build</code> </li>
+<li>Build the client with  <code>npm run build</code></li>
 </ul>
-<h3 id="config-js"><a href="#config-js" class="headerlink" title="/config.js"></a>/config.js</h3><p>This is app wide config. Defaults should be fine, but change the public &amp; private ports if required. Make sure you don’t expose the private port to the web! You can also disable auto updates / worker management of cities by adjusting the <code>autoupdate</code> entry.</p>
-<h3 id="server-master-db-config-master-js-config-slave-js"><a href="#server-master-db-config-master-js-config-slave-js" class="headerlink" title="/server-master/db/config-master.js, config-slave.js"></a>/server-master/db/config-master.js, config-slave.js</h3><p>These are where the app looks for database connection strings. Make your SQL Server install allows SQL Server Authentication, and TCP/IP Network Protocol is enabled. The user set in <code>config-master.js</code> must be allowed to Create Databases, and the user set in <code>config-slave.js</code> must be allowed to access and modify the created database. You will need an already created database in <code>config-master.js</code>, but this is not needed for the slave.</p>
+<h3 id="x2F-config-js"><a href="#x2F-config-js" class="headerlink" title="&#x2F;config.js"></a>&#x2F;config.js</h3><p>This is app wide config. Defaults should be fine, but change the public &amp; private ports if required. Make sure you don’t expose the private port to the web! You can also disable auto updates &#x2F; worker management of cities by adjusting the <code>autoupdate</code> entry.</p>
+<h3 id="x2F-server-master-x2F-db-x2F-config-master-js-config-slave-js"><a href="#x2F-server-master-x2F-db-x2F-config-master-js-config-slave-js" class="headerlink" title="&#x2F;server-master&#x2F;db&#x2F;config-master.js, config-slave.js"></a>&#x2F;server-master&#x2F;db&#x2F;config-master.js, config-slave.js</h3><p>These are where the app looks for database connection strings. Make your SQL Server install allows SQL Server Authentication, and TCP&#x2F;IP Network Protocol is enabled. The user set in <code>config-master.js</code> must be allowed to Create Databases, and the user set in <code>config-slave.js</code> must be allowed to access and modify the created database. You will need an already created database in <code>config-master.js</code>, but this is not needed for the slave.</p>
 <p>By default, workers in the workers table use the dbconfig of <code>slave</code>, but you can set this to <code>whatever</code> if you want to use <code>config-whatever.js</code> (if you need to distribute over multiple instances of SQL Server).</p>
 <h3 id="Environmental-Variables"><a href="#Environmental-Variables" class="headerlink" title="Environmental Variables"></a>Environmental Variables</h3><ul>
 <li><code>AZURE_STORAGE_ACCOUNT</code> - the Azure Storage Account. For the emulator, use: <code>devstoreaccount1</code></li>
@@ -158,7 +158,7 @@
 <footer>
 <div class="wrapper">
   <div class="copyright">
-    &copy; 2021 Jono Cooper
+    &copy; 2022 Jono Cooper
   </div>
   <div class="article-meta">
     

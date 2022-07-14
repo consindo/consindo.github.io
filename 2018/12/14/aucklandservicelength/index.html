@@ -13,7 +13,7 @@
 <meta property="og:description" content="I got this question a couple of weeks ago, and I realized I was in a pretty good position to answer it. Waka already has all the required data in it, so it was a matter of writing a couple of SQL quer">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-12-14T23:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-04T12:10:58.536Z">
+<meta property="article:modified_time" content="2022-07-14T02:45:51.668Z">
 <meta property="article:author" content="Jono Cooper">
 <meta property="article:tag" content="auckland">
 <meta property="article:tag" content="transport">
@@ -32,7 +32,7 @@
   
 <script src="/js/script.js"></script>
 
-<meta name="generator" content="Hexo 5.1.0"></head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 <body>
   <div id="container">
@@ -126,7 +126,7 @@
 <td align="right">32.82</td>
 </tr>
 </tbody></table>
-<p><a href="/files/aucklandservicelength/routeDistance.csv">Full Results</a> &middot; <a href="/files/aucklandservicelength/routeDistance.sql">SQL Queries</a></p>
+<p><a href="/files/aucklandservicelength/routeDistance.csv">Full Results</a> &amp;middot; <a href="/files/aucklandservicelength/routeDistance.sql">SQL Queries</a></p>
 <p>These results are not particularly interesting. The majority of the above services are semi rural, and don’t have great frequency.</p>
 <h2 id="What-are-the-shortest-routes-in-Auckland"><a href="#What-are-the-shortest-routes-in-Auckland" class="headerlink" title="What are the shortest routes in Auckland?"></a>What are the shortest routes in Auckland?</h2><p>Ignoring the weird routes that aren’t really routes (i.e short running services) and school buses, here are the shortest routes in Auckland.</p>
 <table>
@@ -189,7 +189,7 @@
 </tr>
 </tbody></table>
 <p>It’s interesting to see that there are no services under 2km, and most of these short services are ferries or local loops.</p>
-<h2 id="Which-routes-in-Auckland-have-most-services-per-week"><a href="#Which-routes-in-Auckland-have-most-services-per-week" class="headerlink" title="Which routes in Auckland have most services per week."></a>Which routes in Auckland have most services per week.</h2><p>This includes both short/long running services - there’s no good way split them out.</p>
+<h2 id="Which-routes-in-Auckland-have-most-services-per-week"><a href="#Which-routes-in-Auckland-have-most-services-per-week" class="headerlink" title="Which routes in Auckland have most services per week."></a>Which routes in Auckland have most services per week.</h2><p>This includes both short&#x2F;long running services - there’s no good way split them out.</p>
 <table>
 <thead>
 <tr>
@@ -238,7 +238,7 @@
 <td align="right">1147</td>
 </tr>
 </tbody></table>
-<p><a href="/files/aucklandservicelength/servicesPerWeek.csv">Full Results</a> &middot; <a href="/files/aucklandservicelength/servicesPerWeek.sql">SQL Queries</a></p>
+<p><a href="/files/aucklandservicelength/servicesPerWeek.csv">Full Results</a> &amp;middot; <a href="/files/aucklandservicelength/servicesPerWeek.sql">SQL Queries</a></p>
 <p>The NX1 has the most services by far, but there’s also a lot of services that start halfway through the route. The InnerLink &amp; OuterLink is also fairly high (and the real frequency is high), but because they’re weird loops the route can be split into a bunch of segments (the smallest being 900m).</p>
 <p>The SkyBus is deceiving, because there’s essentially 3 routes under the same code - Albany to Airport, City to Airport via Mt Eden Road, and City to Airport via Dominion Road.</p>
 <h2 id="Which-transit-services-in-Auckland-travel-the-furthest-each-week"><a href="#Which-transit-services-in-Auckland-travel-the-furthest-each-week" class="headerlink" title="Which transit services in Auckland travel the furthest each week?"></a>Which transit services in Auckland travel the furthest each week?</h2><p>Now we’ll combine the number of services with how far they go, grouping by the route code.</p>
@@ -290,10 +290,10 @@
 <td align="right">21,153</td>
 </tr>
 </tbody></table>
-<p><a href="/files/aucklandservicelength/kmPerWeek.csv">Full Results</a> &middot; <a href="/files/aucklandservicelength/kmPerWeek.sql">SQL Queries</a></p>
+<p><a href="/files/aucklandservicelength/kmPerWeek.csv">Full Results</a> &amp;middot; <a href="/files/aucklandservicelength/kmPerWeek.sql">SQL Queries</a></p>
 <p>The NX1 comes out on top - the frequency is good, and as it travels a long distance on the busway and motorway. In many ways the SkyBus is similar - it travels quite far on the busway and motorway with good frequency, but it is a little deceiving as mentioned earlier.</p>
 <p>It’s not surprising to see some of our long frequent routes in here too - OUT, NX2, 70, and 83. Our trains also make an appearance - while the frequency is not as good as some of our bus network, the trains tend to travel longer distances.</p>
-<p>The most interesting apperance in here is the 380. It is not classified as a frequent service, but it has 15-20 minute service all day. As it is an airport bus, it starts extremely early (4:40am) and ends very late (12:40am) every day. It’s also a bit of a silly route - it really should be split into two halves - Airport to Manukau, and Airport to Onehunga/Mangere.</p>
+<p>The most interesting apperance in here is the 380. It is not classified as a frequent service, but it has 15-20 minute service all day. As it is an airport bus, it starts extremely early (4:40am) and ends very late (12:40am) every day. It’s also a bit of a silly route - it really should be split into two halves - Airport to Manukau, and Airport to Onehunga&#x2F;Mangere.</p>
 
       
     </div>
@@ -313,7 +313,7 @@
 <footer>
 <div class="wrapper">
   <div class="copyright">
-    &copy; 2021 Jono Cooper
+    &copy; 2022 Jono Cooper
   </div>
   <div class="article-meta">
     
