@@ -458,7 +458,9 @@ nav.sidebar li a {
   font-weight: 600;
 }
 .home {
-  padding: 25vh 1.5rem 0;
+  padding: 25vh 1.5rem 1.5rem;
+  max-width: 1700px;
+  margin: 0 auto;
 }
 .home h1 {
   max-width: 800px;
@@ -618,6 +620,8 @@ nav.sidebar li a {
 }
 .banner.blog {
   padding: 5rem 1.5rem 1rem;
+  max-width: 1700px;
+  margin: 0 auto;
 }
 .banner.blog h1 {
   font-size: 3em;
@@ -633,6 +637,27 @@ nav.sidebar li a {
 }
 .archives-wrap {
   padding: 0 1.5rem;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+#page-nav {
+  padding: 1.5rem;
+  max-width: 1700px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+}
+#page-nav a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted #000;
+}
+#page-nav .page-number {
+  margin-right: 0.5rem;
+  display: none;
+}
+#page-nav .extend,
+#page-nav .current {
+  font-weight: bold;
 }
 .archive-year-wrap {
   margin: 3rem 0 1rem;
