@@ -43,9 +43,9 @@
 </jc-center>
 <h2 id="the-idea" tabindex="-1">The idea <a class="header-anchor" href="#the-idea">#</a></h2>
 <p>My overall goal with the app was to make the <a href="https://datafinder.stats.govt.nz/data/category/census/2018/commuter-view/">commuter view data</a> as accessible as possible, so I started by creating a visualization familiar to many people: an election map. Elections can be quite binary, so I found that this visual representation translates well to arrivals &amp; departures for a geographical area. While colours are pretty, I also wanted make this tool useful to real people, so I added some additional insights to complement the main map.</p>
-<p><picture><source type="image/avif" srcset="/img/wUGBY91g6e-1366.avif 1366w"><source type="image/webp" srcset="/img/wUGBY91g6e-1366.webp 1366w"><img alt="Waka Commuter Map View" loading="lazy" decoding="async" src="/img/wUGBY91g6e-1366.png" width="1366" height="980"></picture></p>
+<p><picture><source type="image/avif" srcset="/images/wUGBY91g6e-1366.avif 1366w"><source type="image/webp" srcset="/images/wUGBY91g6e-1366.webp 1366w"><img alt="Waka Commuter Map View" loading="lazy" decoding="async" src="/images/wUGBY91g6e-1366.png" width="1366" height="980"></picture></p>
 <p>Upon selecting a region, you're presented with a text summary and a more abstract bubble view of arrivals &amp; departures. This visualization still aims to be roughly spacial, but ignores land area and uses commuter volumes instead. A chart showing the overall travel modes is also included as this can provide additional context to people's travel patterns. Due to data suppression, I was not able to use the commuter view dataset, and used the <a href="http://nzdotstat.stats.govt.nz/WBOS/Index.aspx?DataSetCode=TABLECODE8296">aggregated census data instead</a>.</p>
-<p><picture><source type="image/avif" srcset="/img/lVSsbamXfk-1802.avif 1802w"><source type="image/webp" srcset="/img/lVSsbamXfk-1802.webp 1802w"><img alt="Waka Commuter Insights" loading="lazy" decoding="async" src="/img/lVSsbamXfk-1802.png" width="1802" height="1452"></picture></p>
+<p><picture><source type="image/avif" srcset="/images/lVSsbamXfk-1802.avif 1802w"><source type="image/webp" srcset="/images/lVSsbamXfk-1802.webp 1802w"><img alt="Waka Commuter Insights" loading="lazy" decoding="async" src="/images/lVSsbamXfk-1802.png" width="1802" height="1452"></picture></p>
 <p>I included options to filter by arrivals/departures &amp; work/education. Patterns can be quite different, so it's fun to toggle the options and see the visualizations update in real-time! As the SA2 boundaries are small, you can also Ctrl+Click to multi-select and view insights for larger areas (e.g an entire city centre).</p>
 <p>Lastly, I ensured the app worked on mobile devices to make it accessible to the largest number of people. A few features are omitted, but is still useful and should encourage people to try the app on a PC for more detailed insights.</p>
 <h2 id="how-i-built-it" tabindex="-1">How I built it <a class="header-anchor" href="#how-i-built-it">#</a></h2>
@@ -53,7 +53,7 @@
 <h3 id="serverless" tabindex="-1">Serverless <a class="header-anchor" href="#serverless">#</a></h3>
 <p>Databases are great, but they can be expensive to run. It's also just something to maintain, and I really want this app to work forever and not worry about it.</p>
 <p>As the dataset doesn't change (except when there's a new Census!), I wrote some scripts to process all the data and output a JSON file for each area unit. You end up with a lot of files (2,474), but it becomes a psuedo-API.</p>
-<p><picture><source type="image/avif" srcset="/img/mWJj5s2ioA-1238.avif 1238w"><source type="image/webp" srcset="/img/mWJj5s2ioA-1238.webp 1238w"><img alt="Waka Commuter psuedo-API" loading="lazy" decoding="async" src="/img/mWJj5s2ioA-1238.png" width="1238" height="472"></picture></p>
+<p><picture><source type="image/avif" srcset="/images/mWJj5s2ioA-1238.avif 1238w"><source type="image/webp" srcset="/images/mWJj5s2ioA-1238.webp 1238w"><img alt="Waka Commuter psuedo-API" loading="lazy" decoding="async" src="/images/mWJj5s2ioA-1238.png" width="1238" height="472"></picture></p>
 <p>I ended up using <a href="https://netlify.com">Netlify</a> to deploy it, mostly because I can't use GitHub pages with more than one custom domain (already using it for this site). I'm impressed though—you just point it to your GitHub repo, it builds everything really quickly, and then kinda just works—SSL etc is all sorted. I'll definitely be using it more in the future.</p>
 <h3 id="maps" tabindex="-1">Maps <a class="header-anchor" href="#maps">#</a></h3>
 <p><a href="https://waka.app">Waka</a> currently uses <a href="https://leafletjs.com/">Leaflet</a>, but I decided to use <a href="https://github.com/mapbox/mapbox-gl-js">mapbox-gl-js</a> for this project. I'm happy I did though, as vector maps provide a much better user experience—it not only loads faster, but you can zoom to any level, animate smoothly, rotate etc. I would love to find some time to move Waka over to vector maps in the future.</p>
@@ -86,6 +86,6 @@
 			</ul>
 		</footer>
 
-		<!-- This page `/2020/08/23/waka-commuter/` was built on 2024-08-31T21:29:52.449Z -->
+		<!-- This page `/2020/08/23/waka-commuter/` was built on 2024-08-31T21:32:56.308Z -->
 	</body>
 </html>

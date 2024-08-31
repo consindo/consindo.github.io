@@ -48,7 +48,7 @@
 <p><img src="/images/mapcreator/2-lines-swap.svg" alt="Two transit line with two stations, a bend, and a stacking swap"></p>
 <p>Things get more and more complicated the moment you introduce 3, 4, 5+ lines. Modifying an equation to fix one case, will often break another. To keep track of all these different scenarios, I used <a href="https://storybook.js.org/">Storybook</a> and wrapped everything up as a <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">web component</a>.</p>
 <p>As the application essentially runs a <a href="https://en.wikipedia.org/wiki/Breadth-first_search">Breadth-first search</a> and outputs a SVG, I decided against using a framework like React, Vue, or Angular for now. Web components were the perfect lightweight solution I needed.</p>
-<p><picture><source type="image/avif" srcset="/img/-7WDQerYQL-2400.avif 2400w"><source type="image/webp" srcset="/img/-7WDQerYQL-2400.webp 2400w"><img alt="Storybook with all the different test cases" loading="lazy" decoding="async" src="/img/-7WDQerYQL-2400.png" width="2400" height="1548"></picture></p>
+<p><picture><source type="image/avif" srcset="/images/-7WDQerYQL-2400.avif 2400w"><source type="image/webp" srcset="/images/-7WDQerYQL-2400.webp 2400w"><img alt="Storybook with all the different test cases" loading="lazy" decoding="async" src="/images/-7WDQerYQL-2400.png" width="2400" height="1548"></picture></p>
 <p>By regression testing any small tweak to my code, I was able to come up with a general solution for any angle, any number of lines, and any change in stacking. As a bonus, I was able to delete lots of code once I arrived at my pair of equations!</p>
 <p><img src="/images/mapcreator/4-line.svg" alt="Complex 4 line example"></p>
 <p>Currently, it won't stop you from making a bad looking map, but at least the angles will be correct! The other nice thing about getting all the math right is that you can easily change the look by modifying a few parameters.</p>
@@ -74,6 +74,6 @@
 			</ul>
 		</footer>
 
-		<!-- This page `/2020/05/03/mapcreator/` was built on 2024-08-31T21:29:52.448Z -->
+		<!-- This page `/2020/05/03/mapcreator/` was built on 2024-08-31T21:32:56.307Z -->
 	</body>
 </html>
