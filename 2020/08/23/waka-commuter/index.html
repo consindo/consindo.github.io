@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Waka Commuter</title>
+		<meta name="description" content="Jono Cooper is a product engineer based in Tāmaki Makaurau. He has a passion for delivering best-in-class products, from vision to execution.">
+
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="stylesheet" href="/bundle/kfvEKILYnO.css">
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link" title="Jono Cooper">JC</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/projects/">Projects</a></li>
+					<li class="nav-item"><a href="/archives/">Posts</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+
+<jc-container width="prose" class="post">
+	<h1>Waka Commuter</h1>
+
+	<ul class="post-metadata">
+		<li><time datetime="2020-08-23">23 August 2020</time></li>
+	</ul>
+
+	<p>I recently built a data visualization for a <a href="https://www.stats.govt.nz/news/winner-announced-for-2018-census-commuter-data-visualisation-competition">NZ Census data competition</a>, and ended up winning! I figured I would go through some of the thinking behind it, as well as how I built it.</p>
+<jc-center>
+  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Congrats <a href="https://twitter.com/consindo?ref_src=twsrc%5Etfw">@consindo</a>! Using Census data, Jono has developed a very cool way of showing where people all over NZ (usually) travel to and from for work and study. <a href="https://t.co/oAamoSmVjB">https://t.co/oAamoSmVjB</a> <a href="https://t.co/ieIv9LbW4h">https://t.co/ieIv9LbW4h</a></p>&mdash; James Shaw (@jamespeshaw) <a href="https://twitter.com/jamespeshaw/status/1294100223547990017?ref_src=twsrc%5Etfw">August 14, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</jc-center>
+<h2 id="the-idea" tabindex="-1">The idea <a class="header-anchor" href="#the-idea">#</a></h2>
+<p>My overall goal with the app was to make the <a href="https://datafinder.stats.govt.nz/data/category/census/2018/commuter-view/">commuter view data</a> as accessible as possible, so I started by creating a visualization familiar to many people: an election map. Elections can be quite binary, so I found that this visual representation translates well to arrivals &amp; departures for a geographical area. While colours are pretty, I also wanted make this tool useful to real people, so I added some additional insights to complement the main map.</p>
+<p><img src="/images/waka-commuter-map.png" alt="Waka Commuter Map View"></p>
+<p>Upon selecting a region, you're presented with a text summary and a more abstract bubble view of arrivals &amp; departures. This visualization still aims to be roughly spacial, but ignores land area and uses commuter volumes instead. A chart showing the overall travel modes is also included as this can provide additional context to people's travel patterns. Due to data suppression, I was not able to use the commuter view dataset, and used the <a href="http://nzdotstat.stats.govt.nz/WBOS/Index.aspx?DataSetCode=TABLECODE8296">aggregated census data instead</a>.</p>
+<p><img src="/images/waka-commuter-insights.png" alt="Waka Commuter Insights"></p>
+<p>I included options to filter by arrivals/departures &amp; work/education. Patterns can be quite different, so it's fun to toggle the options and see the visualizations update in real-time! As the SA2 boundaries are small, you can also Ctrl+Click to multi-select and view insights for larger areas (e.g an entire city centre).</p>
+<p>Lastly, I ensured the app worked on mobile devices to make it accessible to the largest number of people. A few features are omitted, but is still useful and should encourage people to try the app on a PC for more detailed insights.</p>
+<h2 id="how-i-built-it" tabindex="-1">How I built it <a class="header-anchor" href="#how-i-built-it">#</a></h2>
+<p>Quickly. It's not my best work, but I've <a href="https://github.com/consindo/commuterview">open sourced it on GitHub anyway</a>. I had a couple of goals though, and they informed the tech I used.</p>
+<h3 id="serverless" tabindex="-1">Serverless <a class="header-anchor" href="#serverless">#</a></h3>
+<p>Databases are great, but they can be expensive to run. It's also just something to maintain, and I really want this app to work forever and not worry about it.</p>
+<p>As the dataset doesn't change (except when there's a new Census!), I wrote some scripts to process all the data and output a JSON file for each area unit. You end up with a lot of files (2,474), but it becomes a psuedo-API.</p>
+<p><img src="/images/waka-commuter-api.png" alt="Waka Commuter psuedo-API"></p>
+<p>I ended up using <a href="https://netlify.com">Netlify</a> to deploy it, mostly because I can't use GitHub pages with more than one custom domain (already using it for this site). I'm impressed though—you just point it to your GitHub repo, it builds everything really quickly, and then kinda just works—SSL etc is all sorted. I'll definitely be using it more in the future.</p>
+<h3 id="maps" tabindex="-1">Maps <a class="header-anchor" href="#maps">#</a></h3>
+<p><a href="https://waka.app">Waka</a> currently uses <a href="https://leafletjs.com/">Leaflet</a>, but I decided to use <a href="https://github.com/mapbox/mapbox-gl-js">mapbox-gl-js</a> for this project. I'm happy I did though, as vector maps provide a much better user experience—it not only loads faster, but you can zoom to any level, animate smoothly, rotate etc. I would love to find some time to move Waka over to vector maps in the future.</p>
+<p>It has a pretty nice styling system, that's almost like writing a stylesheet for geojson. You define what you want it to look like when the data meets certain conditions, and it more or less just works.</p>
+<p>The only other thing to note is that I optimized the <a href="https://datafinder.stats.govt.nz/layer/98970-statistical-area-2-2019-generalised/">SA2 boundries</a>, as they are all loaded when the user loads the app. I ran the dataset through <a href="https://mapshaper.org/">mapshaper.org</a>, and it simplified the geometry somewhat. I also ripped out the unnecessary metadata, cut the filesize from 21MB to 945KB gzipped as a result.</p>
+<h3 id="visualizations" tabindex="-1">Visualizations <a class="header-anchor" href="#visualizations">#</a></h3>
+<p>I spent a few hours experimenting with other libraries, but at the end of the day, the only viable option was <a href="https://d3js.org/">D3.js</a>. I really struggled through this, spending a lot more time on building the simple bubble &amp; bar chart than I should have. As a result, the charts are much less interactive than I would like—you can hover &amp; click on them, but not much more.</p>
+<p>I wrapped all my mess up in some Web Components (via lit-element), which really simplified things. I bound plenty of event handlers on the map as well as other buttons in the UI, and then just had to update attributes on the components to get everything to update nicely. In a way, it kind of works like a jQuery app from 10 years ago.</p>
+<p>That's kinda it! Not much to it—more time was spent on the thinking &amp; design than the coding itself. That's the way it should be though—start with your customer outcomes, and the tech just becomes a means to create a solution.</p>
+<h2 id="feedback" tabindex="-1">Feedback <a class="header-anchor" href="#feedback">#</a></h2>
+<p>Have you used Waka Commuter? Give it a try, and I would love to hear what you think—reach out to me on Twitter <a href="https://twitter.com/consindo">@consindo</a> for any feedback. As it's open source, also feel free to play around with the code, or even raise a pull request.</p>
+<p><a href="https://commuter.waka.app">commuter.waka.app</a></p>
+
+
+	<ul class="post-metadata tags">
+		<li><a href="/tags/waka/" class="post-tag">waka</a>, </li>
+		<li><a href="/tags/transport/" class="post-tag">transport</a></li>
+	</ul>
+	<ul class="links-nextprev"><li>Previous: <a href="/2020/06/21/card-guide-2020/">The best NZ debit &amp; credit cards of 2020</a></li><li>Next: <a href="/2021/09/04/samescale/">Same Scale</a></li>
+	</ul>
+</jc-container>
+
+		</main>
+
+		<footer>
+			<div class="copyright">&copy; 2024 Jono Cooper</div>
+			<ul>
+				<li><a href="/feed/feed.xml">rss</a></li>
+				<li><a href="https://github.com/consindo/jono.nz">source</a></li>
+			</ul>
+		</footer>
+
+		<!-- This page `/2020/08/23/waka-commuter/` was built on 2024-08-31T09:43:35.110Z -->
+	</body>
+</html>

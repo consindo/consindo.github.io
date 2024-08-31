@@ -1,67 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>GPA Calculator - Jono Cooper</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content=".gpa-wrapper {     background: #ecf0f1;     padding: 2rem 0;   }   .gpatitle {     font-weight: 900;     color: #888;     text-shadow: 0 -1px 0 #eee;     text-transform: uppercase;     text-align:">
-<meta property="og:type" content="website">
-<meta property="og:title" content="GPA Calculator">
-<meta property="og:url" content="https://jono.nz/projects/gpa/index.html">
-<meta property="og:site_name" content="Jono Cooper">
-<meta property="og:description" content=".gpa-wrapper {     background: #ecf0f1;     padding: 2rem 0;   }   .gpatitle {     font-weight: 900;     color: #888;     text-shadow: 0 -1px 0 #eee;     text-transform: uppercase;     text-align:">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2016-10-30T23:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-14T12:46:38.448Z">
-<meta property="article:author" content="Jono Cooper">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=EB+Garamond&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="/css/style.css?2022-07">
-  <script src="/js/turbolinks.js" defer></script>
-<meta name="generator" content="Hexo 6.2.0"></head>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>GPA Calculator</title>
+		<meta name="description" content="Jono Cooper is a product engineer based in Tāmaki Makaurau. He has a passion for delivering best-in-class products, from vision to execution.">
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <nav class="sidebar" id="main-navigation" data-turbolinks-permanent>
-  <h2><a href="/">Jono Cooper</a></h2>
-  <ul id="navigation">
-    <!-- <li><a href="mailto:projects@jono.nz">projects@jono.nz</a></li> -->
-  </ul>
-</nav>
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="stylesheet" href="/bundle/jvRMfG2weE.css">
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
-      <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <style>
+		<header>
+			<a href="/" class="home-link" title="Jono Cooper">JC</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/projects/">Projects</a></li>
+					<li class="nav-item"><a href="/archives/">Posts</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<style>
   .gpa-wrapper {
-    background: #ecf0f1;
-    padding: 2rem 0;
+    padding: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
   }
   .gpatitle {
-    font-weight: 900;
+    font-weight: 800;
     color: #888;
-    text-shadow: 0 -1px 0 #eee;
     text-transform: uppercase;
     text-align: center;
     margin-top: 50px;
+    font-family: var(--font-family-sans-serif);
   }
   .gpacalc h2 {
     margin: 10px 0;
+    font-family: var(--font-family-sans-serif);
   }
   .gpacalc h2 span {
     font-weight: normal;
@@ -69,7 +53,6 @@
   .gpacalc  {
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     background: #fff;
-    max-width: 600px;
     padding: 20px;
     box-sizing: border-box;
     width: 100%;
@@ -127,7 +110,6 @@
   }
   #instructions {
     width: 100%;
-    max-width: 600px;
     margin: 10px auto 50px;
     font-size: 14px;
     color: #333;
@@ -155,6 +137,7 @@
 <p><strong>Unweighted Grades:</strong> If your number is less than one, it'll be an unweighted grade (you can also use the division). You can then use the weighting box to add a weight.</p>
 <p><strong>Weighted Grades:</strong> If your number is greater than one, it's a weighted grade - just put what it's out of in the weighting box.</p>
 </div>
+<p>Looking for a more advanced calculator? Try <a href="https://apps.apple.com/us/app/percent-grade-calculator/id1672967259">Percent</a> on the App Store.</p>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
 <script>
@@ -253,32 +236,17 @@ $(function() {
   })
 })
 </script>
-      
-    </div>
-  </div>
-  
-    
-  
-  
-</article>
 
-</section>
-        
-      </div>
-    </div>
-    <footer>
-  <a class="email" href="mailto:projects@jono.nz">projects@jono.nz</a>
-  <ul class="social">
-    <li><a href="https://twitter.com/consindo">Twitter</a></li>
-    <li><a href="https://github.com/consindo">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/jono-cooper">LinkedIn</a></li>
-    <li class="copyright">
-      &copy; 2023
-    </li>
-  </ul>
-</footer>
+		</main>
 
-    
-  </div>
-</body>
+		<footer>
+			<div class="copyright">&copy; 2024 Jono Cooper</div>
+			<ul>
+				<li><a href="/feed/feed.xml">rss</a></li>
+				<li><a href="https://github.com/consindo/jono.nz">source</a></li>
+			</ul>
+		</footer>
+
+		<!-- This page `/projects/gpa/` was built on 2024-08-31T09:43:35.099Z -->
+	</body>
 </html>

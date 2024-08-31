@@ -1,0 +1,1167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
+	<title>Jono Cooper</title>
+	<subtitle>Jono Cooper is a product engineer based in Tāmaki Makaurau. He has a passion for delivering best-in-class products, from vision to execution.</subtitle>
+	<link href="https://jono.nz/feed/feed.xml" rel="self"/>
+	<link href="https://jono.nz/"/>
+	<updated>2022-07-15T18:00:00Z</updated>
+	<id>https://jono.nz</id>
+	<author>
+		<name>Jono Cooper</name>
+		<email>jono@jono.nz</email>
+	</author>
+	
+	<entry>
+		<title>Auckland’s Rapid KFC Network</title>
+		<link href="https://jono.nz/2022/07/15/rapid-kfc/"/>
+		<updated>2022-07-15T18:00:00Z</updated>
+		<id>https://jono.nz/2022/07/15/rapid-kfc/</id>
+		<content type="html">&lt;p&gt;I spent 30 minutes making a dumb map the other day, but figured it&#39;s worth a post here as it went &lt;a href=&quot;https://www.nzherald.co.nz/lifestyle/hop-on-hop-off-tuck-in-aucklands-rapid-transit-kfc-map/YRDOFXP2V3DSJWJR2BR756SG54/&quot;&gt;somewhat viral&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/kfcmap.webp&quot; alt=&quot;Map of Auckland rapid transit stations within walking distance from a KFC&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I was mostly just messing around with Photoshop on the iPad editing Auckland Transport&#39;s excellent &lt;a href=&quot;https://at.govt.nz/media/1989560/auckland-s-rapid-transit-network-map.pdf&quot;&gt;rapid transit map&lt;/a&gt;. Photoshop on iPad on the other hand, is not so excellent. Hopefully it continues to improve.&lt;/p&gt;
+&lt;p&gt;There&#39;s a couple of spots that were on the cusp of making the cut - Manukau &amp;amp; Akoranga. It&#39;s really not the distance that&#39;s the issue for these ones, but the oversized roads that you need to cross. Otahuhu almost made it, but the station is just a bit too far from the town centre. Hopefully one day, the town centre will sprawl all the way to the station.&lt;/p&gt;
+&lt;p&gt;There is a general lack of shops integrated into stations in Auckland. With the exception of Britomart, the most you&#39;ll get is a coffee stand in the concourse. It&#39;s not for a lack of space either, just ambition. Would love to see our stations become more like Hong Kong, or even Sydney.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/kfctweet.webp&quot; alt=&quot;Tweet ended up on the KFC instagram story&quot;&gt;&lt;/p&gt;
+&lt;p&gt;How many of the KFCs have I actually visited on this map? Only Britomart, Newmarket, Panmure, Sylvia Park, and Auckland Airport. As much as I love KFC, I won&#39;t be taking up the challenge to hit all of these in a single day.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Same Scale</title>
+		<link href="https://jono.nz/2021/09/04/samescale/"/>
+		<updated>2021-09-04T18:00:00Z</updated>
+		<id>https://jono.nz/2021/09/04/samescale/</id>
+		<content type="html">&lt;p&gt;Every city is different, and those differences are reflected in our maps. I find it really interesting that our the differences in landscape and urban form manifest themselves in these maps, and it&#39;s cool to be able to directly compare two cities side by side.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/samescale.png&quot; alt=&quot;Auckland &amp;amp; Sydney Side by Side&quot;&gt;&lt;/p&gt;
+&lt;p&gt;However, I&#39;ve never been particularly happy with the tools that exist to do this. So I made one.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://scale.waka.app&quot;&gt;scale.waka.app&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;why-its-better&quot; tabindex=&quot;-1&quot;&gt;Why it&#39;s better? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2021/09/04/samescale/#why-its-better&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I think this is a huge improvement over other tools, as it uses vector maps. This means you can zoom to any fraction (no jump in zoom levels), rotate the maps, and even tilt in 3D. I&#39;ve also thrown in an option to switch to a satellite view, so you can see some of the differences in land use.&lt;/p&gt;
+&lt;p&gt;You can also search for a location, to save you having to scroll around, and it works nicely on mobile too! I&#39;ve also thrown in a few sample cities that I think are similar.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Sydney &amp;amp; Auckland:&lt;/em&gt; Both coastal cities in Oceania, founded in a similar time period&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;New York &amp;amp; Hong Kong:&lt;/em&gt; Both tiny, super dense island cities!&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Canberra &amp;amp; Washington, D.C.&lt;/em&gt;: Both planned federal capitals, created for similar reasons&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;was-it-hard-to-make&quot; tabindex=&quot;-1&quot;&gt;Was it hard to make? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2021/09/04/samescale/#was-it-hard-to-make&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Not really! I did most of it in a morning. It was basically a matter of creating two &lt;a href=&quot;https://mapbox.com&quot;&gt;Mapbox&lt;/a&gt; maps, and syncing the events between them.&lt;/p&gt;
+&lt;p&gt;The hardest part was syncing the zooms. Because of Web Mercator projection, the same zoom level at different latitudes doesn&#39;t necessarily mean things will be the same scale. I spent (admittedly too much) time on coming up with an equation to translate the zoom levels between the two maps. If you&#39;re curious, here&#39;s the equation:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;zoom2 = log&lt;sub&gt;2&lt;/sub&gt;( |cos(lat2)| / |cos(lat1)| / 2&lt;sup&gt;zoom1&lt;/sup&gt; )&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Other than that, it was pretty straightforward! The code is open source—you can go take a look over at &lt;a href=&quot;https://github.com/consindo/samescale&quot;&gt;https://github.com/consindo/samescale&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;is-it-finished&quot; tabindex=&quot;-1&quot;&gt;Is it finished? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2021/09/04/samescale/#is-it-finished&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Yes. It&#39;s nice to actually be able to call a piece of software finished.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://scale.waka.app&quot;&gt;scale.waka.app&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Waka Commuter</title>
+		<link href="https://jono.nz/2020/08/23/waka-commuter/"/>
+		<updated>2020-08-23T11:45:00Z</updated>
+		<id>https://jono.nz/2020/08/23/waka-commuter/</id>
+		<content type="html">&lt;p&gt;I recently built a data visualization for a &lt;a href=&quot;https://www.stats.govt.nz/news/winner-announced-for-2018-census-commuter-data-visualisation-competition&quot;&gt;NZ Census data competition&lt;/a&gt;, and ended up winning! I figured I would go through some of the thinking behind it, as well as how I built it.&lt;/p&gt;
+&lt;jc-center&gt;
+  &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Congrats &lt;a href=&quot;https://twitter.com/consindo?ref_src=twsrc%5Etfw&quot;&gt;@consindo&lt;/a&gt;! Using Census data, Jono has developed a very cool way of showing where people all over NZ (usually) travel to and from for work and study. &lt;a href=&quot;https://t.co/oAamoSmVjB&quot;&gt;https://t.co/oAamoSmVjB&lt;/a&gt; &lt;a href=&quot;https://t.co/ieIv9LbW4h&quot;&gt;https://t.co/ieIv9LbW4h&lt;/a&gt;&lt;/p&gt;&amp;mdash; James Shaw (@jamespeshaw) &lt;a href=&quot;https://twitter.com/jamespeshaw/status/1294100223547990017?ref_src=twsrc%5Etfw&quot;&gt;August 14, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;/jc-center&gt;
+&lt;h2 id=&quot;the-idea&quot; tabindex=&quot;-1&quot;&gt;The idea &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/08/23/waka-commuter/#the-idea&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;My overall goal with the app was to make the &lt;a href=&quot;https://datafinder.stats.govt.nz/data/category/census/2018/commuter-view/&quot;&gt;commuter view data&lt;/a&gt; as accessible as possible, so I started by creating a visualization familiar to many people: an election map. Elections can be quite binary, so I found that this visual representation translates well to arrivals &amp;amp; departures for a geographical area. While colours are pretty, I also wanted make this tool useful to real people, so I added some additional insights to complement the main map.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/waka-commuter-map.png&quot; alt=&quot;Waka Commuter Map View&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Upon selecting a region, you&#39;re presented with a text summary and a more abstract bubble view of arrivals &amp;amp; departures. This visualization still aims to be roughly spacial, but ignores land area and uses commuter volumes instead. A chart showing the overall travel modes is also included as this can provide additional context to people&#39;s travel patterns. Due to data suppression, I was not able to use the commuter view dataset, and used the &lt;a href=&quot;http://nzdotstat.stats.govt.nz/WBOS/Index.aspx?DataSetCode=TABLECODE8296&quot;&gt;aggregated census data instead&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/waka-commuter-insights.png&quot; alt=&quot;Waka Commuter Insights&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I included options to filter by arrivals/departures &amp;amp; work/education. Patterns can be quite different, so it&#39;s fun to toggle the options and see the visualizations update in real-time! As the SA2 boundaries are small, you can also Ctrl+Click to multi-select and view insights for larger areas (e.g an entire city centre).&lt;/p&gt;
+&lt;p&gt;Lastly, I ensured the app worked on mobile devices to make it accessible to the largest number of people. A few features are omitted, but is still useful and should encourage people to try the app on a PC for more detailed insights.&lt;/p&gt;
+&lt;h2 id=&quot;how-i-built-it&quot; tabindex=&quot;-1&quot;&gt;How I built it &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/08/23/waka-commuter/#how-i-built-it&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Quickly. It&#39;s not my best work, but I&#39;ve &lt;a href=&quot;https://github.com/consindo/commuterview&quot;&gt;open sourced it on GitHub anyway&lt;/a&gt;. I had a couple of goals though, and they informed the tech I used.&lt;/p&gt;
+&lt;h3 id=&quot;serverless&quot; tabindex=&quot;-1&quot;&gt;Serverless &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/08/23/waka-commuter/#serverless&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Databases are great, but they can be expensive to run. It&#39;s also just something to maintain, and I really want this app to work forever and not worry about it.&lt;/p&gt;
+&lt;p&gt;As the dataset doesn&#39;t change (except when there&#39;s a new Census!), I wrote some scripts to process all the data and output a JSON file for each area unit. You end up with a lot of files (2,474), but it becomes a psuedo-API.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/waka-commuter-api.png&quot; alt=&quot;Waka Commuter psuedo-API&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I ended up using &lt;a href=&quot;https://netlify.com&quot;&gt;Netlify&lt;/a&gt; to deploy it, mostly because I can&#39;t use GitHub pages with more than one custom domain (already using it for this site). I&#39;m impressed though—you just point it to your GitHub repo, it builds everything really quickly, and then kinda just works—SSL etc is all sorted. I&#39;ll definitely be using it more in the future.&lt;/p&gt;
+&lt;h3 id=&quot;maps&quot; tabindex=&quot;-1&quot;&gt;Maps &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/08/23/waka-commuter/#maps&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://waka.app&quot;&gt;Waka&lt;/a&gt; currently uses &lt;a href=&quot;https://leafletjs.com/&quot;&gt;Leaflet&lt;/a&gt;, but I decided to use &lt;a href=&quot;https://github.com/mapbox/mapbox-gl-js&quot;&gt;mapbox-gl-js&lt;/a&gt; for this project. I&#39;m happy I did though, as vector maps provide a much better user experience—it not only loads faster, but you can zoom to any level, animate smoothly, rotate etc. I would love to find some time to move Waka over to vector maps in the future.&lt;/p&gt;
+&lt;p&gt;It has a pretty nice styling system, that&#39;s almost like writing a stylesheet for geojson. You define what you want it to look like when the data meets certain conditions, and it more or less just works.&lt;/p&gt;
+&lt;p&gt;The only other thing to note is that I optimized the &lt;a href=&quot;https://datafinder.stats.govt.nz/layer/98970-statistical-area-2-2019-generalised/&quot;&gt;SA2 boundries&lt;/a&gt;, as they are all loaded when the user loads the app. I ran the dataset through &lt;a href=&quot;https://mapshaper.org/&quot;&gt;mapshaper.org&lt;/a&gt;, and it simplified the geometry somewhat. I also ripped out the unnecessary metadata, cut the filesize from 21MB to 945KB gzipped as a result.&lt;/p&gt;
+&lt;h3 id=&quot;visualizations&quot; tabindex=&quot;-1&quot;&gt;Visualizations &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/08/23/waka-commuter/#visualizations&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I spent a few hours experimenting with other libraries, but at the end of the day, the only viable option was &lt;a href=&quot;https://d3js.org/&quot;&gt;D3.js&lt;/a&gt;. I really struggled through this, spending a lot more time on building the simple bubble &amp;amp; bar chart than I should have. As a result, the charts are much less interactive than I would like—you can hover &amp;amp; click on them, but not much more.&lt;/p&gt;
+&lt;p&gt;I wrapped all my mess up in some Web Components (via lit-element), which really simplified things. I bound plenty of event handlers on the map as well as other buttons in the UI, and then just had to update attributes on the components to get everything to update nicely. In a way, it kind of works like a jQuery app from 10 years ago.&lt;/p&gt;
+&lt;p&gt;That&#39;s kinda it! Not much to it—more time was spent on the thinking &amp;amp; design than the coding itself. That&#39;s the way it should be though—start with your customer outcomes, and the tech just becomes a means to create a solution.&lt;/p&gt;
+&lt;h2 id=&quot;feedback&quot; tabindex=&quot;-1&quot;&gt;Feedback &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/08/23/waka-commuter/#feedback&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Have you used Waka Commuter? Give it a try, and I would love to hear what you think—reach out to me on Twitter &lt;a href=&quot;https://twitter.com/consindo&quot;&gt;@consindo&lt;/a&gt; for any feedback. As it&#39;s open source, also feel free to play around with the code, or even raise a pull request.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://commuter.waka.app&quot;&gt;commuter.waka.app&lt;/a&gt;&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>The best NZ debit &amp; credit cards of 2020</title>
+		<link href="https://jono.nz/2020/06/21/card-guide-2020/"/>
+		<updated>2020-06-21T10:30:00Z</updated>
+		<id>https://jono.nz/2020/06/21/card-guide-2020/</id>
+		<content type="html">&lt;p&gt;There&#39;s a large number of debit &amp;amp; credit card options in NZ, so it can be a little daunting when picking one out. That said, there isn&#39;t nearly as much competition as the USA or Australia, so it&#39;s actually possible to decide the definitive best cards.&lt;/p&gt;
+&lt;p&gt;A huge amount of research went into the post—we hope it saves you some time and money.&lt;/p&gt;
+&lt;p&gt;If you have any questions at all, tweet myself &lt;a href=&quot;https://twitter.com/consindo&quot;&gt;@consindo&lt;/a&gt; or &lt;a href=&quot;https://twitter.com/multithreddy/&quot;&gt;@multithreddy&lt;/a&gt;, who was a huge help writing this guide.&lt;/p&gt;
+&lt;h3 id=&quot;before-we-start&quot; tabindex=&quot;-1&quot;&gt;Before we start &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#before-we-start&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;While you can save some money with credit cards, there are definitely better ways to save money. These include (but are not limited to) the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Buying fewer things&lt;/li&gt;
+&lt;li&gt;Finding a cheaper price (visiting a different store, or find a better utility provider)&lt;/li&gt;
+&lt;li&gt;Not paying credit card surcharges (many utility providers will offer a 2-3% discount for direct debit payments)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This guide assumes you pay off your full balance each month. Make sure you do this, otherwise you&#39;ll incur interest.&lt;/p&gt;
+&lt;p&gt;It&#39;s also worth nothing that the &amp;quot;break even&amp;quot; calculations assume that you value 1 Airpoints Dollar = 1 NZD. If someone offered to trade you $100 cash for 100 Airpoints, you probably wouldn&#39;t do it.&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#The-best-debit-card&quot;&gt;The best debit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#The-best-FX-travel-card&quot;&gt;The best FX/travel card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#The-best-free-credit-card&quot;&gt;The best free credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#The-best-credit-card-for-groceries&quot;&gt;The best credit card for groceries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#The-best-credit-card-for-cashback&quot;&gt;The best credit card for cashback&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#The-best-credit-card-for-airpoints&quot;&gt;The best credit card for airpoints&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#Notable-mentions&quot;&gt;Notable mentions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;the-best-debit-card&quot; tabindex=&quot;-1&quot;&gt;The best debit card &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#the-best-debit-card&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Westpac Airpoints Debit Mastercard&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;While you&#39;ll never need to carry cash in Aotearoa, you will need a debit card. Many merchants will not accept credit cards, due to the high interchange fees (&lt;a href=&quot;https://www.westpac.co.nz/business/business-resource-centre/resources/fees/domestic-interchange/&quot;&gt;around 1.6% for credit&lt;/a&gt;). Due to COVID-19, there&#39;s recently been an increase in acceptance as banks have waived contactless debit fees, but it&#39;s unlikely to last—you&#39;ll still need a debit card for now.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://www.westpac.co.nz/bank-accounts/debit-cards/airpoints/&quot;&gt;Westpac Airpoints Debit Mastercard&lt;/a&gt; is the only debit card in NZ with rewards. While the fees are low, the rewards are also low, so you will still need to spend a reasonable amount to break even. I wouldn&#39;t open a Westpac account to get this card—you would probably be better off finding a fees free debit card, such as the &lt;a href=&quot;https://www.bnz.co.nz/personal-banking/everyday-banking/everyday-cards&quot;&gt;BNZ Flexi Debit Visa&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That said, if you&#39;re a student, this card is free. You probably can&#39;t get a credit card either, so just get this.&lt;/p&gt;
+&lt;h3 id=&quot;westpac-airpoints-debit-mastercard&quot; tabindex=&quot;-1&quot;&gt;Westpac Airpoints Debit Mastercard &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#westpac-airpoints-debit-mastercard&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.westpac.co.nz/bank-accounts/debit-cards/airpoints/&quot;&gt;westpac.co.nz/bank-accounts/debit-cards/airpoints&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/credit-cards/westpac-airpoints-debit.png&quot; alt=&quot;Westpac Airpoints Debit Mastercard&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rewards:&lt;/strong&gt; 1 Airpoints Dollar for every $250 spent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Card Fee:&lt;/strong&gt; $15 &lt;small&gt;p.a.&lt;/small&gt; (break even after $3,750 spend)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Additional Features:&lt;/strong&gt; Apple Pay&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Also consider:&lt;/strong&gt; &lt;a href=&quot;https://www.bnz.co.nz/personal-banking/everyday-banking/everyday-cards&quot;&gt;BNZ Flexi Debit Visa&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;the-best-fx-travel-card&quot; tabindex=&quot;-1&quot;&gt;The best FX/travel card &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#the-best-fx-travel-card&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;TransferWise Debit Mastercard&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://transferwise.com/invite/i/jonathanc1490&quot;&gt;TransferWise Debit Mastercard&lt;/a&gt; is great everywhere except New Zealand. It doesn&#39;t have the EFTPOS application on the SIM, so it&#39;s subject to the higher Debit Mastercard fees (~1.2%), and won&#39;t be accepted anywhere where credit isn&#39;t.&lt;/p&gt;
+&lt;p&gt;Despite this, it&#39;s great outside of the country and for online shopping &amp;amp; subscriptions in foreign currencies. TransferWise has the best foreign exchange rates, no card fees, and also makes it really easy to receive foreign currency. I used this card exclusively in the USA &amp;amp; Australia last year, and also continue to use it to pay for all of my USD online subscriptions.&lt;/p&gt;
+&lt;p&gt;You will save money if you get this card.&lt;/p&gt;
+&lt;p&gt;Another option is the &lt;a href=&quot;https://www.airnzonesmart.co.nz/&quot;&gt;Air NZ OneSmart&lt;/a&gt;. It rewards you with 1 Airpoints dollar for every $100 spent overseas, and $200 spent locally. However, the foreign currency rates are not as good as TransferWise, and it suffers from the same Debit Mastercard acceptance problems.&lt;/p&gt;
+&lt;h3 id=&quot;transferwise-debit-mastercard&quot; tabindex=&quot;-1&quot;&gt;TransferWise Debit Mastercard &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#transferwise-debit-mastercard&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://transferwise.com/invite/i/jonathanc1490&quot;&gt;transferwise.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/credit-cards/transferwise-mastercard.png&quot; alt=&quot;TransferWise Debit Mastercard&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rewards:&lt;/strong&gt; None&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Card Fee:&lt;/strong&gt; $0 &lt;small&gt;p.a.&lt;/small&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Additional Features:&lt;/strong&gt; Free ATM withdrawals up to NZ$350/month, Google Pay.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Also consider:&lt;/strong&gt; &lt;a href=&quot;https://www.airnzonesmart.co.nz/&quot;&gt;Air NZ OneSmart&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;the-best-free-credit-card&quot; tabindex=&quot;-1&quot;&gt;The best free credit card &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#the-best-free-credit-card&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;ASB Visa Light &amp;amp; SBS Visa Credit Card&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;For the best free card, we have two winners, depending on what you&#39;re looking for.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://www.asb.co.nz/credit-cards/visa-light.html&quot;&gt;ASB Visa Light&lt;/a&gt; is handy for larger purchases. It doesn&#39;t charge any interest for 6 months on purchases over $1000, so it can definitely cushion the blow for items such as appliances, jewelry, or electronics. It&#39;s also just Visa, so has wide acceptance—much more convenient than signing up to store finance, or even pay later companies such as Afterpay.&lt;/p&gt;
+&lt;p&gt;The other free card to consider is the &lt;a href=&quot;https://www.sbsbank.co.nz/credit-card&quot;&gt;SBS Visa Credit Card&lt;/a&gt;. It has no card fees, but offers $1 cashback for every $150 spent (paid quarterly). It&#39;s better than a lot of credit cards that charge fees, including ASB who charge $40/year for the same reward rate.&lt;/p&gt;
+&lt;p&gt;I would get the ASB Visa Light for the occasional large purchase, and also pick up the SBS Visa if you aren&#39;t going to get a more premium cashback or airpoints card.&lt;/p&gt;
+&lt;h3 id=&quot;asb-visa-light&quot; tabindex=&quot;-1&quot;&gt;ASB Visa Light &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#asb-visa-light&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.asb.co.nz/credit-cards/visa-light.html&quot;&gt;asb.co.nz/credit-cards/visa-light&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/credit-cards/asb-visa-light.png&quot; alt=&quot;ASB Visa Light&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rewards:&lt;/strong&gt; None&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Card Fee:&lt;/strong&gt; $0 &lt;small&gt;p.a.&lt;/small&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Additional Features:&lt;/strong&gt; 0&lt;small&gt;% p.a.&lt;/small&gt; on $1000+ purchases for 6 months (this is technically a floating rate, but hasn&#39;t changed in the last three years), 0&lt;small&gt;% p.a.&lt;/small&gt; Balance Transfer for 6 months, Apple Pay &amp;amp; Google Pay.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;sbs-visa-credit-card&quot; tabindex=&quot;-1&quot;&gt;SBS Visa Credit Card &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#sbs-visa-credit-card&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.sbsbank.co.nz/credit-card&quot;&gt;sbsbank.co.nz/credit-card&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/credit-cards/sbs-visa.png&quot; alt=&quot;SBS Visa Credit Card&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rewards:&lt;/strong&gt; $1 cashback for every $150 spent (paid quarterly)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Card Fee:&lt;/strong&gt; $0 &lt;small&gt;p.a.&lt;/small&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Additional Features:&lt;/strong&gt; None&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;the-best-credit-card-for-groceries&quot; tabindex=&quot;-1&quot;&gt;The best credit card for groceries &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#the-best-credit-card-for-groceries&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;American Express Platinum Edge&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;American Express isn&#39;t widely accepted in NZ (and their contactless standard, ExpressPay even less so). However, the cards are accepted at most large retailers including all major supermarkets and gas stations—luckily, they have a card just for this.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.americanexpress.com/nz/credit-cards/platinum-edge-credit-card/&quot;&gt;The American Express Platinum Edge&lt;/a&gt; earns you membership rewards, which you can exchange for airpoints, cashback, and many other things. The reward rate for groceries is particularly good—you receive the equivalent of 1 airpoints dollar for every $50 you spend at supermarkets. Airpoints isn&#39;t the only loyalty program though: you can exchange membership rewards for &lt;a href=&quot;https://www.americanexpress.com/en-nz/rewards/membership-rewards/travel/all&quot;&gt;other airlines&lt;/a&gt; at a rate of 1.5 miles/points for every dollar you spend on groceries. Exchanging points for cashback greatly depends on how much you are exchanging at one time. You can also maximize your rewards by purchasing gift cards at supermarkets, and then using them at other stores—good for more expensive items.&lt;/p&gt;
+&lt;p&gt;While the card fee of $149 &lt;small&gt;p.a.&lt;/small&gt; is relatively high, you receive a complimentary direct domestic return flight (with bags!) each year. It basically pays for itself, so you may as well get it and take the high reward rate for certain purchases as a bonus.&lt;/p&gt;
+&lt;p&gt;There&#39;s also the occasional Amex offer, domestic travel insurance (rare in NZ), and as it&#39;s a global card, you&#39;ll be able to get Bank Feeds in software such as &lt;a href=&quot;https://youneedabudget.com&quot;&gt;YNAB&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;American Express also offer a &lt;a href=&quot;https://www.americanexpress.com/nz/credit-cards/airnz-base-credit-card/&quot;&gt;free airpoints card&lt;/a&gt; that rewards you with 1 airpoints dollar for every $100 spent on any purchase. Even though it&#39;s better than the Platinum Edge for everything that isn&#39;t groceries or fuel, you should just use a regular credit card for those purchases.&lt;/p&gt;
+&lt;h3 id=&quot;american-express-platinum-edge&quot; tabindex=&quot;-1&quot;&gt;American Express Platinum Edge &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#american-express-platinum-edge&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.americanexpress.com/nz/credit-cards/platinum-edge-credit-card/&quot;&gt;americanexpress.com/nz/credit-cards/platinum-edge-credit-card&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/credit-cards/amex-platinum-edge.png&quot; alt=&quot;American Express Platinum Edge&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rewards:&lt;/strong&gt; 1 airpoints dollar for every $50 spent on groceries, $75 spent on petrol, and $150 on other purchases.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Card Fee:&lt;/strong&gt; $149 &lt;small&gt;p.a.&lt;/small&gt; (break even after $7,450 spend on groceries)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Additional Features:&lt;/strong&gt; Free domestic return flight each year, complimentary domestic &amp;amp; international travel insurance (35 days), Amex offers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Also consider&lt;/strong&gt;: &lt;a href=&quot;https://www.americanexpress.com/nz/credit-cards/airnz-base-credit-card/&quot;&gt;American Express Airpoints&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;the-best-credit-card-for-cashback&quot; tabindex=&quot;-1&quot;&gt;The best credit card for cashback &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#the-best-credit-card-for-cashback&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;BNZ Advantage Visa Platinum&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;If you&#39;re after cashback, the &lt;a href=&quot;https://www.bnz.co.nz/personal-banking/credit-cards/bnz-advantage&quot;&gt;BNZ Advantage Platinum&lt;/a&gt; is for you. It has a reasonable cashback rate (paid monthly), and doesn&#39;t require you to spend a minimum amount each year. It also has a number of extra goodies, including price protection—a benefit that is very rare in NZ.&lt;/p&gt;
+&lt;p&gt;Choose whether you want this airpoints or cashback, and then use this card for most of your spending (except foreign currency &amp;amp; groceries).&lt;/p&gt;
+&lt;p&gt;The other cashback card to consider is the &lt;a href=&quot;https://www.sbsbank.co.nz/credit-card&quot;&gt;SBS Visa Credit Card&lt;/a&gt;—detailed above in &lt;a href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#The-best-free-credit-card&quot;&gt;the best free credit card&lt;/a&gt; section.&lt;/p&gt;
+&lt;h3 id=&quot;bnz-advantage-visa-platinum&quot; tabindex=&quot;-1&quot;&gt;BNZ Advantage Visa Platinum &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#bnz-advantage-visa-platinum&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.bnz.co.nz/personal-banking/credit-cards/bnz-advantage&quot;&gt;bnz.co.nz/personal-banking/credit-cards/bnz-advantage&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/credit-cards/bnz-advantage-platinum.png&quot; alt=&quot;BNZ Advantage Visa Platinum&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rewards:&lt;/strong&gt; $1 cashback for every $90 spent (paid monthly)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Card Fee:&lt;/strong&gt; $90 &lt;small&gt;p.a.&lt;/small&gt; (break even after $8,100 spend)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Additional Features:&lt;/strong&gt; International travel insurance (90 days), purchase protection, price protection, Apple Pay &amp;amp; Google Pay.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Also consider:&lt;/strong&gt; &lt;a href=&quot;https://www.sbsbank.co.nz/credit-card&quot;&gt;SBS Visa Credit Card&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;the-best-credit-card-for-airpoints&quot; tabindex=&quot;-1&quot;&gt;The best credit card for airpoints &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#the-best-credit-card-for-airpoints&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Westpac Airpoints Platinum Mastercard&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;All of the Airpoints Platinum cards in New Zealand aren&#39;t particularly different—they all have similar reward rates, travel insurance, fees etc.&lt;/p&gt;
+&lt;p&gt;While the &lt;a href=&quot;https://www.westpac.co.nz/credit-cards/airpoints/airpoints-platinum-mastercard/&quot;&gt;Westpac Airpoints Platinum Mastercard&lt;/a&gt; earns status points at a slightly reduced rate to the &lt;a href=&quot;https://www.kiwibank.co.nz/personal-banking/credit-cards/airpoints-credit-cards/platinum-visa/&quot;&gt;Kiwibank Airpoints Platinum&lt;/a&gt; (they offer 1 Status Point for $200 spend), the Westpac card includes 12 months extended warranty and 90 day purchase protection. I think most people will find the extra insurance more compelling.&lt;/p&gt;
+&lt;p&gt;Choose whether you want this airpoints or cashback, and then use this card for most of your spending (except foreign currency &amp;amp; groceries).&lt;/p&gt;
+&lt;h3 id=&quot;westpac-airpoints-platinum-mastercard&quot; tabindex=&quot;-1&quot;&gt;Westpac Airpoints Platinum Mastercard &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#westpac-airpoints-platinum-mastercard&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.westpac.co.nz/credit-cards/airpoints/airpoints-platinum-mastercard/&quot;&gt;westpac.co.nz/credit-cards/airpoints/airpoints-platinum-mastercard&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/credit-cards/westpac-airpoints-platinum.png&quot; alt=&quot;Westpac Airpoints Platinum Mastercard&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rewards:&lt;/strong&gt; 1 airpoints dollar for every $75 spent. 1 Status Point for every $225 spent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Card Fee:&lt;/strong&gt; $150 p.a. (break even after $11,250 spend)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Additional Features:&lt;/strong&gt; Complimentary international travel insurance, 12 months extended warranty, 90 days purchase protection, Apple Pay.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Also consider:&lt;/strong&gt; &lt;a href=&quot;https://www.kiwibank.co.nz/personal-banking/credit-cards/airpoints-credit-cards/platinum-visa/&quot;&gt;Kiwibank Airpoints Platinum Visa&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;notable-mentions&quot; tabindex=&quot;-1&quot;&gt;Notable mentions &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#notable-mentions&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;flight-centre-mastercard&quot; tabindex=&quot;-1&quot;&gt;Flight Centre Mastercard &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#flight-centre-mastercard&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.flightcentremastercard.co.nz/&quot;&gt;flightcentremastercard.co.nz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Flight Centre Mastercard is the only credit card in NZ without international transaction fees. It&#39;s kinda weird really, given that it&#39;s a store card. You also get $1 in Flight Centre credit for every $100 you spend and they also support Apple Pay &amp;amp; Google Pay (I&#39;m looking at you, Kiwibank!)&lt;/p&gt;
+&lt;h3 id=&quot;westpac-world-airpoints&quot; tabindex=&quot;-1&quot;&gt;Westpac World Airpoints &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#westpac-world-airpoints&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.westpac.co.nz/credit-cards/airpoints/airpoints-world-mastercard/&quot;&gt;westpac.co.nz/credit-cards/airpoints/airpoints-world-mastercard&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Westpac World Airpoints is the only premium credit card in NZ. It has a great airpoints earn rate, as well as other benefits including concierge and lounge access. With a card fee of $390 per year, it probably works out if you spend a lot of money (the card fee is halved), or travel frequently internationally.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://www.westpac.co.nz/credit-cards/hotpoints/hotpoints-world-mastercard/&quot;&gt;Westpac hotpoints World&lt;/a&gt; card also exists with largely the same benefits, and it&#39;s technically the highest (non Amex) cashback card in NZ (~1.4%).&lt;/p&gt;
+&lt;h3 id=&quot;american-express-platinum&quot; tabindex=&quot;-1&quot;&gt;American Express Platinum &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#american-express-platinum&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.americanexpress.com/nz/credit-cards/platinum-card/&quot;&gt;americanexpress.com/nz/credit-cards/platinum-card&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The American Express Platinum is a charge card with a fee of $1,250 a year. It&#39;s a game of balancing the benefits with the annual card fee. If you travel internationally frequently, it may work out for you, but you probably won&#39;t be traveling internationally much for a while.&lt;/p&gt;
+&lt;h3 id=&quot;kiwibank-platinum-visa&quot; tabindex=&quot;-1&quot;&gt;Kiwibank Platinum Visa &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/21/card-guide-2020/#kiwibank-platinum-visa&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.kiwibank.co.nz/personal-banking/credit-cards/low-interest-cards/platinum-visa/&quot;&gt;kiwibank.co.nz/personal-banking/credit-cards/low-interest-cards/platinum-visa&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Kiwibank Platinum Visa offers no rewards or cashback. It costs $80 per year.&lt;/p&gt;
+&lt;p&gt;I have no idea why you would get this.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Phew. We got there. I hope you found this helpful! A huge amount of research went into this post—thanks to &lt;a href=&quot;https://twitter.com/multithreddy/&quot;&gt;@multithreddy&lt;/a&gt; again for helping me out.&lt;/p&gt;
+&lt;p&gt;If you have any questions or comments at all (about any NZ card honestly), tweet us &lt;a href=&quot;https://twitter.com/consindo/&quot;&gt;@consindo&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://twitter.com/multithreddy/&quot;&gt;@multithreddy&lt;/a&gt;.&lt;/p&gt;
+&lt;style&gt;
+  .post img {
+    max-width: 240px;
+    border: 0;
+    margin: 0;
+  }
+&lt;/style&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>I bought some things</title>
+		<link href="https://jono.nz/2020/06/15/kiwibuild/"/>
+		<updated>2020-06-15T08:00:00Z</updated>
+		<id>https://jono.nz/2020/06/15/kiwibuild/</id>
+		<content type="html">&lt;p&gt;Everyone kept saying &lt;a href=&quot;https://www.kiwibuild.govt.nz/&quot;&gt;KiwiBuild&lt;/a&gt; was a &lt;a href=&quot;https://twitter.com/NZNationalParty/status/1208635781516025858&quot;&gt;failure&lt;/a&gt;, so I decided to try it myself. I also bought a bunch of other things—here&#39;s my attempt at reviewing them.&lt;/p&gt;
+&lt;h2 id=&quot;kiwibuild-the-scheme&quot; tabindex=&quot;-1&quot;&gt;KiwiBuild (the scheme) &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/15/kiwibuild/#kiwibuild-the-scheme&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It was fine, I guess? Apart from signing a covenant saying I can&#39;t sell or rent the place for a year, there wasn&#39;t much to it. I don&#39;t think there was a discount either—half the units in the building were on the open market, and the prices look mostly the same. That said, without KiwiBuild, the apartment block may not have been built.&lt;/p&gt;
+&lt;p&gt;I was also able to withdraw my &lt;a href=&quot;https://kaingaora.govt.nz/home-ownership/kiwisaver-first-home-withdrawal/&quot;&gt;KiwiSaver&lt;/a&gt;, and get a &lt;a href=&quot;https://kaingaora.govt.nz/home-ownership/first-home-grant/&quot;&gt;First Home Grant&lt;/a&gt;. Without these schemes, I wouldn&#39;t have been able to get a deposit together.&lt;/p&gt;
+&lt;p&gt;A year elapsed between purchasing the unit off the plans and moving in. The build was mostly on-time, but ended up being delayed a few months due to &lt;a href=&quot;https://shorthand.radionz.co.nz/coronavirus-timeline/index.html&quot;&gt;New Zealand&#39;s lockdown&lt;/a&gt; to prevent the spread of COVID-19.&lt;/p&gt;
+&lt;h2 id=&quot;kiwibuild-the-house-itself&quot; tabindex=&quot;-1&quot;&gt;KiwiBuild (the house itself) &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/15/kiwibuild/#kiwibuild-the-house-itself&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I&#39;m really happy with the place! It&#39;s just really nice living in a new apartment and having modern amenities such as air conditioning, insulation, and double glazing (man, I wish this was more common in NZ). The neighborhood is also pretty good—while it&#39;s not in the CBD, it&#39;s only a five minute walk to the train+bus interchange and other shops. As a result, the apartment doesn&#39;t come with car parking (although it does come with bike parking &amp;amp; lockers), which ends up reducing the total cost of the place.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/house.jpg&quot; alt=&quot;Fisher &amp;amp; Paykel Kitchen&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The apartment itself is pretty spacious for a one bedroom (54m&lt;sup&gt;2&lt;/sup&gt;) and is reasonably well designed. There&#39;s large windows which get lots of light and it has a sun room, which is way more practical than a balcony. If I had to nitpick, the kitchen has some weird design (the microwave space isn&#39;t big enough for a microwave) and the shower pressure could be better (this is actually to save water—&lt;a href=&quot;https://aucklandwatersupply.co.nz/&quot;&gt;Auckland is in a drought&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Overall, it&#39;s really good. I would highly recommend a KiwiBuild home.&lt;/p&gt;
+&lt;h2 id=&quot;banks&quot; tabindex=&quot;-1&quot;&gt;Banks &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/15/kiwibuild/#banks&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Avoid, if possible. I wasn&#39;t expecting much, but there was a whole lot of drama getting a mortgage, delaying settlement by two days. Lots of stupid stuff, like not accepting digital signatures, requiring a higher deposit than agreed upon, and needing to run into a physical branch multiple times. At least I ended getting a mortgage, and a pretty good interest rate.&lt;/p&gt;
+&lt;p&gt;I ended up going with &lt;a href=&quot;https://westpac.co.nz&quot;&gt;Westpac&lt;/a&gt;, but I think they&#39;re all pretty bad.&lt;/p&gt;
+&lt;h2 id=&quot;fisher-and-paykel-appliances&quot; tabindex=&quot;-1&quot;&gt;Fisher &amp;amp; Paykel Appliances &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/15/kiwibuild/#fisher-and-paykel-appliances&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/fisher-paykel.jpg&quot; alt=&quot;Fisher &amp;amp; Paykel Kitchen&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The apartment came with the usual (oven, rangehood, stove, dishdrawer), and I got a matching &lt;a href=&quot;https://www.fisherpaykel.com/nz/kitchen/fridges-freezers/fridges/activesmartfridge-635mm-bottom-freezer-403l-5.RF402BRGX6.html&quot;&gt;fridge&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://www.fisherpaykel.com/nz/laundry/washing-machines/front-loaders/fabricsmart-8-0kg.WH8060F1.html&quot;&gt;washing machine&lt;/a&gt;. They seem to do what they&#39;re supposed to, look nice, and weren&#39;t expensive. Unfortunately, the apartment didn&#39;t allow any customization, but I&#39;ll probably upgrade to a Fisher &amp;amp; Paykel induction stove in the future.&lt;/p&gt;
+&lt;h2 id=&quot;ikea-friheten&quot; tabindex=&quot;-1&quot;&gt;IKEA FRIHETEN &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/15/kiwibuild/#ikea-friheten&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We don&#39;t have IKEA in NZ yet, but this sofa was too good to pass up. It unfolds into a sofa bed, but in a unique way—the seat slides out, and the back folds down. As a result, it&#39;s much more comfortable than most sofa beds. There&#39;s also plenty of storage in the base.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/ikea-friheten.jpg&quot; alt=&quot;IKEA FRIHETEN&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The only downside is that it weighs 115kg! I purchased it from &lt;a href=&quot;https://www.urbansales.co.nz/ikea-friheten-three-seat-sofa-bed-skiftebo-dark-grey&quot;&gt;Urban Sales&lt;/a&gt;, and it arrived in about six weeks (even with the lockdown).&lt;/p&gt;
+&lt;h2 id=&quot;napp-mattress&quot; tabindex=&quot;-1&quot;&gt;Napp Mattress &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/15/kiwibuild/#napp-mattress&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://napp.co.nz/&quot;&gt;Napp&lt;/a&gt; is a mattresses-in-a-box, and it&#39;s definitely one of the nicer mattresses I&#39;ve slept on. It&#39;s on the firmer side, but I&#39;ve been sleeping well over the past few days. They&#39;re made in New Zealand but the foam is from Australia, so shipping delays meant I was sleeping on an air bed for a few weeks.&lt;/p&gt;
+&lt;p&gt;It also didn&#39;t come in a box—it just came rolled up in the back seat of some dude&#39;s Ford Falcon.&lt;/p&gt;
+&lt;h2 id=&quot;target-furniture&quot; tabindex=&quot;-1&quot;&gt;Target Furniture &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/15/kiwibuild/#target-furniture&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/target-furniture.jpg&quot; alt=&quot;Target Furniture Showroom&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I bought a &lt;a href=&quot;https://www.targetfurniture.co.nz/veno-1500-extension-table&quot;&gt;table&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://www.targetfurniture.co.nz/dining/furniture/chairs/liva-dining-chair-dark-grey&quot;&gt;chairs&lt;/a&gt; from Target, and I&#39;ll definitely be going back to get more furniture. They have nice things, are reasonably cheap, and their showroom contains most of what they sell online. I went to their store in Botany and was able to pick up the table the same day, but had to wait a week for the chairs to arrive from Wellington.&lt;/p&gt;
+&lt;h2 id=&quot;ikea-nisse&quot; tabindex=&quot;-1&quot;&gt;IKEA Nisse &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/15/kiwibuild/#ikea-nisse&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;As my chairs took a week to arrive, I bought some folding chairs from &lt;a href=&quot;https://www.urbansales.co.nz/ikea-nisse-folding-chair-black&quot;&gt;Urban Sales&lt;/a&gt;. They look nice enough, and are surprisingly comfortable—I was pretty happy working from home on them.&lt;/p&gt;
+&lt;h2 id=&quot;nvidia-shield-tv&quot; tabindex=&quot;-1&quot;&gt;NVIDIA Shield TV &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/15/kiwibuild/#nvidia-shield-tv&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It&#39;s expensive, but worth it. The hardware is very nice—the device itself just hides away (like a Chromecast), and the remote has just the right amount of buttons. Except maybe, the giant Netflix button. It also has an IR blaster, so I don&#39;t have to use the gross remote supplied with my TV.&lt;/p&gt;
+&lt;p&gt;Android TV is pretty simple, but it has apps for all the streaming services I use (except Apple TV+). The AI Upscaling in the Shield works surprisingly well, especially with &lt;a href=&quot;https://www.matthuisman.nz/2018/12/how-to-live-nz-iptv-channels-on-android.html&quot;&gt;NZ&#39;s 720p IPTV streams&lt;/a&gt;. I also have an NVIDIA graphics card, and GameStream seems to work well (both through the official app, and &lt;a href=&quot;https://moonlight-stream.org/&quot;&gt;Moonlight&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;That said, it&#39;s almost the same price as an Xbox. If you don&#39;t already have a gaming PC, I would probably just get an Xbox.&lt;/p&gt;
+&lt;h2 id=&quot;2degrees-broadband&quot; tabindex=&quot;-1&quot;&gt;2degrees Broadband &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2020/06/15/kiwibuild/#2degrees-broadband&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The speeds ain&#39;t bad, but I&#39;m still looking forward to &lt;a href=&quot;https://hyperfibre.chorus.co.nz/&quot;&gt;Hyperfibre&lt;/a&gt;.&lt;/p&gt;
+&lt;img class=&quot;speedtest&quot; alt=&quot;2ms ping, 915.49mbps down, 392.66mbps up&quot; src=&quot;https://www.speedtest.net/result/9602841682.png&quot;&gt;
+&lt;style&gt;
+  img.speedtest {
+    width: 350px !important;
+    height: 200px !important;
+  }
+&lt;/style&gt;
+&lt;hr&gt;
+&lt;p&gt;Hope you enjoyed this little review of things! I&#39;m still in the process of getting new things, so I might review those in a future post.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Map Creator</title>
+		<link href="https://jono.nz/2020/05/03/mapcreator/"/>
+		<updated>2020-05-03T10:00:00Z</updated>
+		<id>https://jono.nz/2020/05/03/mapcreator/</id>
+		<content type="html">&lt;p&gt;I&#39;ve always liked transit maps. They not only help us get from A to B, but can also tell a story about a city. Well designed transit maps not only serve a utility, but are also public art.&lt;/p&gt;
+&lt;p&gt;There&#39;s lots of different types of transit maps, but the most common is the &lt;a href=&quot;https://tfl.gov.uk/maps/track/tube&quot;&gt;London Underground schematic style&lt;/a&gt;. I&#39;ve wanted to design one of these for myself, but I&#39;ve never had the patience to make one using Illustrator or Figma. I don&#39;t think these tools are particularly suited towards transit maps. We should be able to define a map the same way the routes are defined—it should be as simple as specifying the nodes and connections.&lt;/p&gt;
+&lt;p&gt;We&#39;re currently in lockdown here in New Zealand, so it does feel a bit silly to work on &lt;a href=&quot;https://waka.app&quot;&gt;Waka&lt;/a&gt; at the moment. Instead, I spent the last couple of weeks building a tool to help make drawing transit maps easier. The first step was the most basic scenario—a single line, with a bend in it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/mapcreator/1-line.svg&quot; alt=&quot;One transit line with two stations and a bend&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Simple enough. Just draw a line, and use a bit of trigonometry to figure out the coordinates for the angles. Cool. Now, what happens when we add a second line?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/mapcreator/2-lines-no-fixes.svg&quot; alt=&quot;Two transit line with two stations and a bend&quot;&gt;&lt;/p&gt;
+&lt;p&gt;It turns out, the lines overlap. This is because the lines have a width, so you need to account for that when you bend lines. I&#39;ve made the diagram above a little bit transparent, so it&#39;s easier to see this issue. Again, with a little bit of trigonometry, I was able to fix this all up.&lt;/p&gt;
+&lt;p&gt;The lines of transit maps often swap over when the angles of the line change, so this was the next thing I accounted for. It&#39;s a little bit difficult, as you also have to account for the change in length of line. Nevertheless, after a bit of hair pulling, I got the result I was after:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/mapcreator/2-lines-swap.svg&quot; alt=&quot;Two transit line with two stations, a bend, and a stacking swap&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Things get more and more complicated the moment you introduce 3, 4, 5+ lines. Modifying an equation to fix one case, will often break another. To keep track of all these different scenarios, I used &lt;a href=&quot;https://storybook.js.org/&quot;&gt;Storybook&lt;/a&gt; and wrapped everything up as a &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Web_Components&quot;&gt;web component&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As the application essentially runs a &lt;a href=&quot;https://en.wikipedia.org/wiki/Breadth-first_search&quot;&gt;Breadth-first search&lt;/a&gt; and outputs a SVG, I decided against using a framework like React, Vue, or Angular for now. Web components were the perfect lightweight solution I needed.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/mapcreator/storybook.png&quot; alt=&quot;Storybook with all the different test cases&quot;&gt;&lt;/p&gt;
+&lt;p&gt;By regression testing any small tweak to my code, I was able to come up with a general solution for any angle, any number of lines, and any change in stacking. As a bonus, I was able to delete lots of code once I arrived at my pair of equations!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/mapcreator/4-line.svg&quot; alt=&quot;Complex 4 line example&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Currently, it won&#39;t stop you from making a bad looking map, but at least the angles will be correct! The other nice thing about getting all the math right is that you can easily change the look by modifying a few parameters.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/mapcreator/4-line-smoothed.svg&quot; alt=&quot;Complex 4 line example with different styles&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I&#39;m not totally sure where I&#39;m going to take it next, but there&#39;s a lot of room for improvement. I might try replicating a couple of real-life maps, and seeing how far I get. At the very least, I&#39;m going to have to add labels for stations!&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Waka Local Guidebooks</title>
+		<link href="https://jono.nz/2020/02/02/dymajo-waka-guidebooks/"/>
+		<updated>2020-02-02T12:00:00Z</updated>
+		<id>https://jono.nz/2020/02/02/dymajo-waka-guidebooks/</id>
+		<content type="html">&lt;p&gt;There&#39;s a lot more to a transport network than maps and timetables. Each city has its own quirks, and you&#39;ll often only discover these by experiencing them for yourself. Even the smallest things such as paying a fare can be confusing if you&#39;ve never done it before.&lt;/p&gt;
+&lt;p&gt;That&#39;s why we&#39;re introducing local guidebooks in Waka. These are local guides to help you understand your city&#39;s transport and get around more effectively. They&#39;re designed to be super handy if you&#39;ve never used the network before, but you might still learn a thing or two if you&#39;re a long-time user! They&#39;re also a quick &amp;amp; easy reference to things like zones &amp;amp; fares. Additionally, these guides are open source and &lt;em&gt;editable by anyone!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/waka-guides.jpg&quot; alt=&quot;Waka Guidebooks&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Te Whanganui-a-Tara, Wellington&lt;/em&gt; is our first city with a guidebook. We&#39;ve currently just got the basics in there - some fare information, and how to get to the airport. We would love to &lt;a href=&quot;https://waka.app/feedback&quot;&gt;get your feedback&lt;/a&gt; to see what you think and decide whether we should roll out these guides to more cities!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://waka.app/guide/nz-wlg&quot;&gt;https://waka.app/guide/nz-wlg&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For code changes, please see the GitHub releases:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka/releases/tag/v2.4.5&quot;&gt;Waka Release&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-guidebooks&quot;&gt;Waka Guidebooks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Every Lot Bot</title>
+		<link href="https://jono.nz/2020/01/23/every-lot-bot/"/>
+		<updated>2020-01-23T10:00:00Z</updated>
+		<id>https://jono.nz/2020/01/23/every-lot-bot/</id>
+		<content type="html">&lt;p&gt;&lt;strong&gt;Update: These accounts are no longer online as Twitter no longer allows automated bots. Additionally, the Tokyo account is no longer available.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Over the long weekend, &lt;a href=&quot;https://twitter.com/nzsd&quot;&gt;@nzsd&lt;/a&gt; &amp;amp; I set up a bunch of bots that tweet a street view photo of every lot for a bunch of cities. They tweet every 20-30 minutes, and you can follow them here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Auckalnd: &lt;a href=&quot;https://twitter.com/everylotakl&quot;&gt;@everylotakl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Christchurch: &lt;a href=&quot;https://twitter.com/everylotchc&quot;&gt;@everylotchc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tokyo: &lt;a href=&quot;https://twitter.com/everylottokyo&quot;&gt;@everylottokyo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Wellington: &lt;a href=&quot;https://twitter.com/everylotwlg&quot;&gt;@everylotwlg&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;They&#39;ve already tweeted some fun stuff:&lt;/p&gt;
+&lt;jc-center&gt;
+  &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;1A Waitomo Avenue, Mount Eden &lt;a href=&quot;https://t.co/SN2Of4yKna&quot;&gt;pic.twitter.com/SN2Of4yKna&lt;/a&gt;&lt;/p&gt;&amp;mdash; every lot auckland (@everylotakl) &lt;a href=&quot;https://twitter.com/everylotakl/status/1219479779746824193?ref_src=twsrc%5Etfw&quot;&gt;January 21, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/jc-center&gt;
+&lt;jc-center&gt;
+  &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;2B Mount Street, Te Aro &lt;a href=&quot;https://t.co/4Yc1jiLRy6&quot;&gt;pic.twitter.com/4Yc1jiLRy6&lt;/a&gt;&lt;/p&gt;&amp;mdash; every lot wellington (@everylotwlg) &lt;a href=&quot;https://twitter.com/everylotwlg/status/1219130230993911808?ref_src=twsrc%5Etfw&quot;&gt;January 20, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/jc-center&gt;
+&lt;jc-center&gt;
+  &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;zh&quot; dir=&quot;ltr&quot;&gt;中央区八重洲一丁目 6-14 &lt;a href=&quot;https://t.co/8kEoJ85b6Z&quot;&gt;pic.twitter.com/8kEoJ85b6Z&lt;/a&gt;&lt;/p&gt;&amp;mdash; every lot tokyo / 東京のすべての土地 (@everylottokyo) &lt;a href=&quot;https://twitter.com/everylottokyo/status/1218835538540498944?ref_src=twsrc%5Etfw&quot;&gt;January 19, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/jc-center&gt;
+&lt;p&gt;However, the main thing I&#39;ve noticed so far is just how ugly the average New Zealand house is. We&#39;re now living in an age where we&#39;re going to demolish a lot of them, but honestly, it&#39;s for the best.&lt;/p&gt;
+&lt;jc-center&gt;
+  &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;162 Grahams Road, Burnside &lt;a href=&quot;https://t.co/pvC5xAKRpT&quot;&gt;pic.twitter.com/pvC5xAKRpT&lt;/a&gt;&lt;/p&gt;&amp;mdash; every lot christchurch (@everylotchc) &lt;a href=&quot;https://twitter.com/everylotchc/status/1220232739774844928?ref_src=twsrc%5Etfw&quot;&gt;January 23, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/jc-center&gt;
+&lt;p&gt;The bots use the &lt;a href=&quot;https://github.com/fitnr/everylotbot&quot;&gt;same open source code&lt;/a&gt; as some of the &lt;a href=&quot;https://twitter.com/fitnr/lists/every-lot&quot;&gt;other every lot bots&lt;/a&gt; around the world. However, ours runs as CronJob on Kubernetes (it&#39;s using the same cluster that Waka uses!). I can&#39;t speak too much creating the GIS database, but you can deploy your own bot with the Terraform here: &lt;a href=&quot;https://github.com/consindo/everylotbot-k8s&quot;&gt;https://github.com/consindo/everylotbot-k8s&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Leave Feedback in Waka</title>
+		<link href="https://jono.nz/2020/01/08/dymajo-leave-waka-feedback/"/>
+		<updated>2020-01-08T12:00:00Z</updated>
+		<id>https://jono.nz/2020/01/08/dymajo-leave-waka-feedback/</id>
+		<content type="html">&lt;p&gt;You can now send us feedback inside Waka! You can get there from the home page, or by heading to &lt;a href=&quot;https://waka.app/feedback&quot;&gt;waka.app/feedback&lt;/a&gt;. You&#39;ll also be able offered to provide feedback if Waka crashes in any way. We really value your feedback, so we would love to hear what you think.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/waka-galaxy-fold.jpg&quot; alt=&quot;Waka on Samsung Galaxy Fold&quot;&gt;&lt;/p&gt;
+&lt;p&gt;There&#39;s also been a few changes behind the scenes. We&#39;ve made a few minor layout improvements to support devices that are larger than phones, but smaller than tablets - the Galaxy Fold is one example. We&#39;ve also moved our infrastructure off Amazon ECS, and onto &lt;a href=&quot;https://kubernetes.io&quot;&gt;Kubernetes&lt;/a&gt; on Digital Ocean. It makes our lives easier, but hopefully you don&#39;t notice a difference!&lt;/p&gt;
+&lt;p&gt;For code changes, please see the GitHub releases:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka/releases/tag/v2.4.4&quot;&gt;Waka Release&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-server/releases/tag/v2.4.2&quot;&gt;Waka Server Release&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-importer/releases/tag/v2.4.3&quot;&gt;Waka Importer Release&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Kubernetes Forum Sydney</title>
+		<link href="https://jono.nz/2019/12/16/kubernetes-forum-sydney-2019/"/>
+		<updated>2019-12-16T20:07:00Z</updated>
+		<id>https://jono.nz/2019/12/16/kubernetes-forum-sydney-2019/</id>
+		<content type="html">&lt;p&gt;I recently had the privilege to speak about Xero&#39;s Kubernetes platform at &lt;a href=&quot;https://events.linuxfoundation.org/events/kubernetes-forum-sydney-2019/&quot;&gt;Kubernetes Forum Sydney 2019&lt;/a&gt;. I focused on how we adopted the mindset of a platform as a product, in order to empower our development teams.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/jono-speaking-k8s-forum.jpg&quot; alt=&quot;Jono presenting the keynote at Kubernetes Forum Sydney 2019&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I think it went really well, and received a lot of great feedback afterwards! A recording is now available online for those who missed it.&lt;/p&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://jono.nz/embed/lite-yt-embed.css&quot;&gt;
+&lt;script src=&quot;https://jono.nz/embed/lite-yt-embed.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid=&quot;k3CLW8siogE&quot;&gt;&lt;/lite-youtube&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=k3CLW8siogE&quot;&gt;https://www.youtube.com/watch?v=k3CLW8siogE&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The talk has also been adapted into a post, for the Humans of Xero Blog. &lt;a href=&quot;https://medium.com/humans-of-xero/enabling-world-class-engineering-with-kubernetes-5ff514924ec8&quot;&gt;https://medium.com/humans-of-xero/enabling-world-class-engineering-with-kubernetes-5ff514924ec8&lt;/a&gt;&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Waka Christchurch</title>
+		<link href="https://jono.nz/2019/09/17/dymajo-hello-christchurch/"/>
+		<updated>2019-09-17T09:00:00Z</updated>
+		<id>https://jono.nz/2019/09/17/dymajo-hello-christchurch/</id>
+		<content type="html">&lt;p&gt;We&#39;ve brought Waka to Ōtautahi, Christchurch! You can now track your bus in realtime, and check if your service will be delayed. To get started, you can simply tap the &amp;quot;locate me&amp;quot; button on Waka&#39;s map (if you&#39;re in Christchurch!), or choose &lt;a href=&quot;https://waka.app/region&quot;&gt;Switch City&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/waka-christchurch.jpg&quot; alt=&quot;Waka Route Map&quot;&gt;&lt;/p&gt;
+&lt;p&gt;We hope Waka makes your Christchurch commute easier!&lt;/p&gt;
+&lt;p&gt;For code changes, please see the GitHub releases:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka/releases/tag/v2.4.1&quot;&gt;Waka Release&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-server/releases/tag/v2.4.1&quot;&gt;Waka Server Release&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-importer/releases/tag/v2.4.1&quot;&gt;Waka Importer Release&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>New Route Maps in Waka</title>
+		<link href="https://jono.nz/2019/09/04/dymajo-new-route-map/"/>
+		<updated>2019-09-04T12:00:00Z</updated>
+		<id>https://jono.nz/2019/09/04/dymajo-new-route-map/</id>
+		<content type="html">&lt;p&gt;We&#39;ve added a great new route map to Waka today. After choosing a line from the routes page, or a service from a station, you&#39;ll now have an overview of all the next departures.&lt;/p&gt;
+&lt;p&gt;You&#39;re able to see long it takes to get to each station, and transfers you can make at each station. To view services in other directions, or with different stopping patterns, you can tap the route icon in the top corner.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/waka-route-map.png&quot; alt=&quot;Waka Route Map&quot;&gt;&lt;/p&gt;
+&lt;p&gt;We hope you love using the new route map!&lt;/p&gt;
+&lt;p&gt;We also did a lot of housekeeping to prepare for adding more new cities. Please see the following GitHub releases for code changes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka/releases/tag/2.4&quot;&gt;Waka Release&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-server/releases/tag/2.4&quot;&gt;Waka Server Release&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-importer/releases/tag/v2.4&quot;&gt;Waka Importer Release&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Dev Log: April - July 2019</title>
+		<link href="https://jono.nz/2019/07/15/devlog-2019-07/"/>
+		<updated>2019-07-15T13:10:00Z</updated>
+		<id>https://jono.nz/2019/07/15/devlog-2019-07/</id>
+		<content type="html">&lt;p&gt;Yikes. Haven&#39;t done one of these in a while. It&#39;s mostly because I&#39;m really busy at work - turns out, everyone wants to use Kubernetes. I also bought a house, which turns out to be quite a stressful process.&lt;/p&gt;
+&lt;h2 id=&quot;waka&quot; tabindex=&quot;-1&quot;&gt;Waka &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/07/15/devlog-2019-07/#waka&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We&#39;ve been reducing technical debt in Waka. The server has been entirely rewritten in TypeScript, we&#39;re adding tests, and making it really easy to add more cities. The app itself is also getting a little bit of love, and we&#39;re looking at improving the route page and adding service alerts in the near future. Just for fun, we also rewrote waka-proxy in golang.&lt;/p&gt;
+&lt;p&gt;The architecture itself hasn&#39;t changed a lot since the last post, but we have added a new component. It&#39;s called waka-realtime, and it&#39;s responsible for pulling realtime information from agencies and putting them in a Redis cache. waka-worker now pulls from the Redis cache, as opposed to doing the pulls itself, and storing it in RAM.&lt;/p&gt;
+&lt;p&gt;This new component allows us to make more of Waka &amp;quot;serverless&amp;quot;, and run on AWS Lambda. Even though we run our ECS cluster on spot instances, it&#39;s still expensive to maintain a seperate test environment.&lt;/p&gt;
+&lt;p&gt;There&#39;s a lot more coming to Waka really soon, we&#39;re looking forward to announcing the availbility of our next two cities - Sydney &amp;amp; Christchurch.&lt;/p&gt;
+&lt;h2 id=&quot;nitro&quot; tabindex=&quot;-1&quot;&gt;Nitro &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/07/15/devlog-2019-07/#nitro&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Unfortunately, Nitro hasn&#39;t seen a lot of work on the last couple of months. I&#39;ve mainly been fixing up UI bugs - the server is rock solid. Upon reflection, building a really fancy user interface isn&#39;t a good way to get a product out quickly. While it&#39;s a clean, simple experience, the animations and transitions have proved to be difficult to stabilize. I don&#39;t want to abandon things, and will look to getting a public beta out soon.&lt;/p&gt;
+&lt;p&gt;In terms of infrastructure changes, I&#39;ve moved the account manager (activates accounts and invitations) from ECS to Lambda.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;That&#39;s really it for the last couple of months. Fingers crossed that I&#39;ll have more to post about soon!&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>A Cloud Native Waka</title>
+		<link href="https://jono.nz/2019/04/19/waka-cloud-native/"/>
+		<updated>2019-04-19T12:15:00Z</updated>
+		<id>https://jono.nz/2019/04/19/waka-cloud-native/</id>
+		<content type="html">&lt;p&gt;Recently, Waka has a had a bit of a rewrite to make it much easier to get started locally, and is now able to be run in a high-availability, cloud native configuration.&lt;/p&gt;
+&lt;h2 id=&quot;old-waka&quot; tabindex=&quot;-1&quot;&gt;Old Waka &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/04/19/waka-cloud-native/#old-waka&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Old Waka was a little bit of a monolith. Everything was bundled together into the &lt;a href=&quot;https://github.com/dymajo/waka&quot;&gt;dymajo/waka&lt;/a&gt; repository. The barrier to entry was high - you had to get everything going if you wanted to develop it.&lt;/p&gt;
+&lt;p&gt;Everything also used a crazy, multi-process architecture /2017/10/08/transit-part1/. It provided a way to split cities processes from each other. This was helpful when the software was less stable - an import of a new Auckland timetable could crash Wellington. &lt;strong&gt;I would not recommend this&lt;/strong&gt;. It&#39;s way more sensible to use a proper application orchestration technology, such as Amazon ECS or Kubernetes.&lt;/p&gt;
+&lt;h2 id=&quot;new-waka&quot; tabindex=&quot;-1&quot;&gt;New Waka &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/04/19/waka-cloud-native/#new-waka&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;New Waka addresses all these issues. The application has been split into a number of components, but still delivers an excellent development experience. It also &lt;strong&gt;doesn&#39;t require any set-up&lt;/strong&gt; to get going.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka&quot;&gt;waka&lt;/a&gt; - the front end&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-importer&quot;&gt;waka-importer&lt;/a&gt; - task that downloads GTFS feeds, and imports them into SQL Server&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-server&quot;&gt;waka-orchestrator&lt;/a&gt; - service that manages manages timetable updates&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-server&quot;&gt;waka-proxy&lt;/a&gt; - service that discovers running workers, and redirects map requests&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-server&quot;&gt;waka-worker&lt;/a&gt; - service that provides gtfs and realtime information for each city&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-healthcheck&quot;&gt;waka-healthcheck&lt;/a&gt; - a lambda to &lt;a href=&quot;https://assets-us-west-2.waka.app/status/index.html&quot;&gt;check if waka is up&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dymajo/waka-maps&quot;&gt;waka-maps&lt;/a&gt; - scripts that generate map tiles, and upload them to S3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;how-was-it-done&quot; tabindex=&quot;-1&quot;&gt;How was it done? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/04/19/waka-cloud-native/#how-was-it-done&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;developer-experience&quot; tabindex=&quot;-1&quot;&gt;Developer Experience &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/04/19/waka-cloud-native/#developer-experience&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The developer experience has been vastly improved because no config is required to get started. This was done by making a number of assumptions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use local disk instead of DynamoDB for configuration locally.&lt;/li&gt;
+&lt;li&gt;Assume SQL Server is running in Docker, but is configurable.&lt;/li&gt;
+&lt;li&gt;Missing API Keys will disable external requests.&lt;/li&gt;
+&lt;li&gt;waka-importer does not need to be called directly.&lt;/li&gt;
+&lt;li&gt;Auto-discovery of regions.&lt;/li&gt;
+&lt;li&gt;Disabled import of line shapes into S3.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With the split into multiple components, it was important to keep the development experience as good as a monolith - developing in Docker containers is not fun. Originally, I thought this was going to be difficult to do - we need multiple waka-workers for each city. I didn&#39;t want to go back to the multi-process mess. Then it hit me. &lt;strong&gt;Every component should be a class that can be instantiated&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This is awesome. When it&#39;s running locally, the class exposes some routes that are added to waka-orchestrator&#39;s router. When it&#39;s running in a Docker container, it sets up its own web server, and grabs config from environmental variables.&lt;/p&gt;
+&lt;h3 id=&quot;cloud-native&quot; tabindex=&quot;-1&quot;&gt;Cloud Native &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/04/19/waka-cloud-native/#cloud-native&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;With each component being a Docker container, we now run Waka on Amazon ECS. We chose ECS over Kubernetes, because ECS is easier and cheaper to get set-up with. I also spend a lot of time working with Kubernetes at work, so I&#39;m fully aware that it&#39;s a much better system!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/waka-ecs.png&quot; alt=&quot;Waka ECS Services&quot;&gt;&lt;/p&gt;
+&lt;p&gt;waka-orchestrator speaks to the Amazon ECS API to adjust the active version, as well as launching Fargate waka-importer tasks. For bonus points, our SQL server instance also runs on ECS with an EBS mount (there&#39;s only timetables in there), and our cluster runs on 75% spot instances! Our stage environment runs on 100% spot instances, and auto-scales so is only available when we&#39;re awake.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/waka-alb.png&quot; alt=&quot;Waka ALB Routes&quot;&gt;&lt;/p&gt;
+&lt;p&gt;As waka has been designed in a way where no components actually talk to each other (apart from waka-proxy, which is doing auto-discovery), we effectively have a zero-trust network. All the components sit behind an Amazon Application Load Balancer (ALB), with routes to the ECS target groups. We also have the Waka admin console on the ALB, but using &lt;a href=&quot;https://auth0.com&quot;&gt;Auth0&lt;/a&gt; to authenticate these requests on the Load Balancer.&lt;/p&gt;
+&lt;h2 id=&quot;help-us-build-waka&quot; tabindex=&quot;-1&quot;&gt;Help us build Waka! &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/04/19/waka-cloud-native/#help-us-build-waka&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;With these changes, Waka is ready for the future. We&#39;ve got new cities in the pipeline and other exciting ideas!&lt;/p&gt;
+&lt;p&gt;If you want to help us build Waka, you can now get going in a matter of minutes. Check out the &lt;a href=&quot;https://github.com/dymajo/waka&quot;&gt;front-end&lt;/a&gt; or &lt;a href=&quot;https://github.com/dymajo/waka-server&quot;&gt;server&lt;/a&gt; to get started.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Dev Log: Febuary &amp; March 2019</title>
+		<link href="https://jono.nz/2019/03/10/devlog-2019-02/"/>
+		<updated>2019-03-10T18:45:00Z</updated>
+		<id>https://jono.nz/2019/03/10/devlog-2019-02/</id>
+		<content type="html">&lt;p&gt;Oops. I&#39;ve been a bit busy and forgot to do the dev log. As well as going on holiday, I&#39;ve now &amp;quot;ungraduated&amp;quot; and now I&#39;m an engineer on the Kubernetes team at &lt;a href=&quot;https://xero.com&quot;&gt;Xero&lt;/a&gt;. It&#39;s fun though, and I also made a logo for the team:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/platform.png&quot; alt=&quot;Xero Compute Platform Logo&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;waka&quot; tabindex=&quot;-1&quot;&gt;Waka &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/03/10/devlog-2019-02/#waka&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.dymajo.waka&quot;&gt;Waka is now in the Google Play Store!&lt;/a&gt; It&#39;s a trusted web activity, so it&#39;s really just a PWA running in Chrome. The only difference between the Play Store and &lt;a href=&quot;https://waka.app&quot;&gt;waka.app&lt;/a&gt; is an adaptive icon, but I might add more system integration in the future.&lt;/p&gt;
+&lt;p&gt;I&#39;ve also been working on rewriting the server. Currently it&#39;s a bit of a weird monolith that uses subprocesses, but I&#39;m moving it to use containers. The idea is that when you run it in the cloud, it&#39;s all load balanced and nice, but still just works when developing it on a single computer.&lt;/p&gt;
+&lt;p&gt;I&#39;m going to be going into more depth in my next post, so stay tuned!&lt;/p&gt;
+&lt;h2 id=&quot;nitro&quot; tabindex=&quot;-1&quot;&gt;Nitro &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/03/10/devlog-2019-02/#nitro&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;After receiving the first round of feedback, I realized that priorities and Magic Sort were missing from Nitro 3. I&#39;ve now added both these features to Nitro 3, and they work great!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/magicsort.png&quot; alt=&quot;Nitro 3 Magic Sort&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I find Magic Sort is really good when you have a large list with deadlines, dates, and priorities, and just need to know what to do first. Magic Sort was already built into the Today list, but you can now activate it on any list.&lt;/p&gt;
+&lt;p&gt;The second round of beta invites has also been sent, and I&#39;ll be looking to send a third round in a couple of weeks!&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Dev Log: January 2019</title>
+		<link href="https://jono.nz/2019/01/17/devlog-2019-01/"/>
+		<updated>2019-01-17T12:00:00Z</updated>
+		<id>https://jono.nz/2019/01/17/devlog-2019-01/</id>
+		<content type="html">&lt;p&gt;Happy New Year!&lt;/p&gt;
+&lt;h2 id=&quot;nitro-3&quot; tabindex=&quot;-1&quot;&gt;Nitro 3 ⚡ &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/01/17/devlog-2019-01/#nitro-3&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I&#39;ve sent the first couple of invites to the Nitro 3 private beta. It looks like everything went smoothly - the emails went out, and people were able to sign in and start using Nitro.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/nitro-2019-beta-wave-1.png&quot; alt=&quot;Nitro Beta Wave 1 Sent&quot;&gt;&lt;/p&gt;
+&lt;p&gt;A couple of things happened to get Nitro to production: I fixed all the critical bugs, added JS Module support, but also had to build a new component to onboard new users. It ended up being pretty simple - if you have a valid invite code, you can login, and it&#39;ll set some metadata on your user in Auth0. If you try to login to Nitro without having activated your account (and thus having no metadata), it&#39;ll tell you that you don&#39;t have access to the application.&lt;/p&gt;
+&lt;p&gt;I also added a rudimentary stats page for Admin users, as I decided not to add Google Analytics. At the moment, it&#39;s just a count of the lists, tasks, users, and archived tasks in Nitro, but is still useful. I implemented this properly too - it doesn&#39;t just connect straight to the database, but calls the Nitro API authenticating as a machine.&lt;/p&gt;
+&lt;p&gt;It&#39;s common in a lot of environments to not have any authentication and simply trust other traffic because it&#39;s coming from the same network. The problem with this approach is that it&#39;s not only hard to audit what is requesting what, but ties you a little bit more into your cloud provider (peering VPCs can be a pain). If you use machine to machine authentication, you don&#39;t need to build a BFF (your private and public APIs are the same) but you can also make requests over a zero trust network. For example, I could run Nitro API as a container on AWS and Account Manager as a serverless function on Azure with no special networking. Auth0 made this really easy to do - you can grant an application access to an API by just flicking a switch and choosing some scopes.&lt;/p&gt;
+&lt;p&gt;I&#39;ve been using Nitro for months in a test environment - it&#39;s always a good idea to dogfood your own app! However, I didn&#39;t have any production infrastructure deployed. I&#39;ve been using &lt;a href=&quot;https://terraform.io&quot;&gt;Terraform&lt;/a&gt; to provision infrastructure, so deploying to production was as easy as renaming some configuration. I would highly recommend everyone to check out Terraform - you write your infrastructure as code, and it&#39;ll be built out like magic, even over multiple cloud server providers.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/ecs-cluster-2019-jan.png&quot; alt=&quot;Nitro ECS Cluster&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Nitro itself is running on AWS, on an ECS Cluster (EC2 launch type) behind a load balancer. The Nitro client is deployed into a S3 bucket, sitting behind Cloudflare. Currently, all the Docker containers are running on a single instance, but I&#39;ll add some auto scaling when I onboard a few more people. Additionally, the database is fully managed by AWS (Postgres RDS), and again, I&#39;m using Auth0 to provide login. This is all aided by Nitro being fully functional while offline, so if there is an outage, it&#39;s unlikely you&#39;ll even notice it 😁.&lt;/p&gt;
+&lt;p&gt;In terms of what&#39;s next, I&#39;m actually not sure! I&#39;ll definitely be checking out the feedback from the first beta users, as well as onboarding more people. Based off the feedback, I&#39;ll be able to prioritize the most important issues, and go from there!&lt;/p&gt;
+&lt;h2 id=&quot;waka&quot; tabindex=&quot;-1&quot;&gt;Waka &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/01/17/devlog-2019-01/#waka&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Because I actually managed to run out of things to do on Nitro, I put a little bit of work into Waka. After choosing a line on the lines screen, it&#39;ll show the live vehicle locations if there&#39;s any! It&#39;ll also show the services you can transfer to at each stop. I then removed the existing route map that is visible when you press route map on the stations page - it now sends you to the unified lines page.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/waka-unified-lines-2019-jan.png&quot; alt=&quot;Waka Unified Lines - Screenshot of OuterLink&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This change is live for both Auckland and Wellington, and works for buses and trains!&lt;/p&gt;
+&lt;p&gt;I&#39;m definitely going to make it better though - here&#39;s a couple of plans for that page:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Show transfers at transport hubs (e.g Otahuhu, Albany, Kilbirnie)&lt;/li&gt;
+&lt;li&gt;Show how long it takes between stations&lt;/li&gt;
+&lt;li&gt;A better way to select the route variant (e.g The NX1 can run to either Albany or the Hibiscus Coast, the 1 can run to one of three possible destinations)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And if you&#39;ve jumped in from the station page, or have selected a station:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Show the live service info&lt;/li&gt;
+&lt;li&gt;Show the time that a service yields at each station&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once that work is all done, it should lead into a few other changes. Notably, showing the inactive stops on the station page, and making transport hubs more prominent on the map. There&#39;s also other work where we&#39;re disassembling the Waka monolith (okay, it&#39;s not really a monolith, but we want to split out the data import from the runtime).&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;That&#39;s all for January. I&#39;m off to take a well needed holiday! ✈&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Dev Log: December 2018</title>
+		<link href="https://jono.nz/2018/12/27/devlog-2018-12/"/>
+		<updated>2018-12-27T09:00:00Z</updated>
+		<id>https://jono.nz/2018/12/27/devlog-2018-12/</id>
+		<content type="html">&lt;p&gt;Here&#39;s the last update for 2018!&lt;/p&gt;
+&lt;h2 id=&quot;waka&quot; tabindex=&quot;-1&quot;&gt;Waka &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/12/27/devlog-2018-12/#waka&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I didn&#39;t work on Waka this month as I wanted to focus on Nitro. However, I did finish the analysis on Auckland routes - check out the post if you haven&#39;t already. /2018/12/15/aucklandservicelength/&lt;/p&gt;
+&lt;h2 id=&quot;nitro-3&quot; tabindex=&quot;-1&quot;&gt;Nitro 3 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/12/27/devlog-2018-12/#nitro-3&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The big thing this month is keyboard shortcuts. I took some inspiration from Slack and Instant Search on Windows, and put that experience into Nitro. You can now hit Ctrl+K, type, and jump straight into any list or task. You can also quickly navigate through your tasks, reorder them, and either triage them for today, or mark them as complete. Nitro isn&#39;t 100% keyboard accessible yet, but I would really like to get there in the future. There&#39;s also a nice modal which has quick reference to all the shortcuts.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/nitro-2018-dec-keyboardshortcuts.png&quot; alt=&quot;Nitro Keyboard Shortcuts&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I also cleaned up all the rough edges of the Auth0 implementation. You&#39;ll now be redirected to the login page if your authentication does expire, and usually it just passes you all the way through and back to Nitro. I&#39;ve also made sure the other Nitro Sync bits such as the WebSockets and BroadcastChannel play nicely with Auth0. It&#39;s a pretty seamless experience, and I would highly recommend using Auth0 for your own project.&lt;/p&gt;
+&lt;p&gt;I&#39;ve also fixed a lot of bugs, and added a number of quality of life improvements. The big one is that assets are now stored properly on a CDN. Combined with Service Workers, this means that Nitro loads really fast, and works when you are 100% offline. I wasn&#39;t intending to, but ending up vastly improving the speed of the task overlay, so it&#39;s now really smooth on my little Surface Go.&lt;/p&gt;
+&lt;p&gt;Over the next month I want to fix the final remaining issues:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix the the remaining bugs on mobile&lt;/li&gt;
+&lt;li&gt;Improve the sync on slow connections&lt;/li&gt;
+&lt;li&gt;Find and fix any last bugs!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Expect to see the initial beta invites to be sent out in January 2019!&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Which transit services in Auckland travel the furthest?</title>
+		<link href="https://jono.nz/2018/12/15/aucklandservicelength/"/>
+		<updated>2018-12-15T12:00:00Z</updated>
+		<id>https://jono.nz/2018/12/15/aucklandservicelength/</id>
+		<content type="html">&lt;p&gt;I got this question a couple of weeks ago, and I realized I was in a pretty good position to answer it. Waka already has all the required data in it, so it was a matter of writing a couple of SQL queries.&lt;/p&gt;
+&lt;p&gt;These results were obtained for the week of November 5th - 11th, 2018. All routes are bus routes if not specified otherwise.&lt;/p&gt;
+&lt;h2 id=&quot;what-are-the-longest-routes-in-auckland&quot; tabindex=&quot;-1&quot;&gt;What are the longest routes in Auckland? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/12/15/aucklandservicelength/#what-are-the-longest-routes-in-auckland&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The first question is simple - what are the longest routes in Auckland (school buses excluded).&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Code&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Route Description&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;Length (km)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/125X&quot;&gt;125X&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Helensville To City Centre Via Westgate Express&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;58.96&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/396&quot;&gt;396&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Pukekohe Interchange To Waiuku Loop Via Patumahoe&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;49.49&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/SKY&quot;&gt;SKY&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Airport To Albany - &lt;em&gt;Commercial Bus&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;47.68&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/399&quot;&gt;399&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Pukekohe To Port Waikato Via Tuakau&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;44.21&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/171X&quot;&gt;171X&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;City Centre To New Lynn Via Laingholm&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;39.23&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/125&quot;&gt;125&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Helensville To Westgate&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;38.48&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/997&quot;&gt;997&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Warkworth To Omaha Via Matakana And Port Wells&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;37.60&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/395&quot;&gt;395&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Waiuku To Papakura Interchange&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;35.70&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/N11&quot;&gt;N11&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;City To Papakura Via Great South Rd - &lt;em&gt;Night Bus&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;34.47&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/120&quot;&gt;120&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Akoranga to Henderson&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;32.82&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;a href=&quot;https://jono.nz/files/aucklandservicelength/routeDistance.csv&quot;&gt;Full Results&lt;/a&gt; · &lt;a href=&quot;https://jono.nz/files/aucklandservicelength/routeDistance.sql&quot;&gt;SQL Queries&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;These results are not particularly interesting. The majority of the above services are semi rural, and don&#39;t have great frequency.&lt;/p&gt;
+&lt;h2 id=&quot;what-are-the-shortest-routes-in-auckland&quot; tabindex=&quot;-1&quot;&gt;What are the shortest routes in Auckland? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/12/15/aucklandservicelength/#what-are-the-shortest-routes-in-auckland&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ignoring the weird routes that aren&#39;t really routes (i.e short running services) and school buses, here are the shortest routes in Auckland.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Code&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Route Description&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;Length (km)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/SBAY&quot;&gt;SBAY&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Auckland To Stanley Bay - &lt;em&gt;Ferry&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;2.17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/BAYS&quot;&gt;BAYS&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Bayswater To Auckland - &lt;em&gt;Ferry&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;2.35&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/DEV&quot;&gt;DEV&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Auckland To Devonport - &lt;em&gt;Ferry&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;3.11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/890&quot;&gt;890&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Albany Station To Corinthian Dr Loop&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;3.51&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/987&quot;&gt;987&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Arkles Bay Loop&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;3.80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/BIRK&quot;&gt;BIRK&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Auckland To Birkenhead Via Northcote Point - &lt;em&gt;Ferry&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;4.08&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/161&quot;&gt;161&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;New Lynn to Brains Park&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;4.17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/807&quot;&gt;807&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Devonport Wharf To Cheltenham Loop&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;4.21&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/842&quot;&gt;842&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Smales Farm Station To Crown Hill Via East Coast Rd&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;4.44&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/889&quot;&gt;889&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Constellation Station To Albany Station Via Hugh Green Dr&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;5.18&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;It&#39;s interesting to see that there are no services under 2km, and most of these short services are ferries or local loops.&lt;/p&gt;
+&lt;h2 id=&quot;which-routes-in-auckland-have-most-services-per-week&quot; tabindex=&quot;-1&quot;&gt;Which routes in Auckland have most services per week. &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/12/15/aucklandservicelength/#which-routes-in-auckland-have-most-services-per-week&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This includes both short/long running services - there&#39;s no good way split them out.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Route&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;Services per Week&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/NX1&quot;&gt;NX1&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;2687&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/NX2&quot;&gt;NX2&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;1788&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/INN&quot;&gt;InnerLink&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;1490&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/70&quot;&gt;70&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;1427&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/SKY&quot;&gt;SkyBus&lt;/a&gt; - &lt;em&gt;Commercial Bus&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;1387&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/18&quot;&gt;18&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;1379&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/OUT&quot;&gt;OuterLink&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;1304&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/82&quot;&gt;82&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;1164&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/CTY&quot;&gt;CityLink&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;1164&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/25B&quot;&gt;25B&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;1147&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;a href=&quot;https://jono.nz/files/aucklandservicelength/servicesPerWeek.csv&quot;&gt;Full Results&lt;/a&gt; · &lt;a href=&quot;https://jono.nz/files/aucklandservicelength/servicesPerWeek.sql&quot;&gt;SQL Queries&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The NX1 has the most services by far, but there&#39;s also a lot of services that start halfway through the route. The InnerLink &amp;amp; OuterLink is also fairly high (and the real frequency is high), but because they&#39;re weird loops the route can be split into a bunch of segments (the smallest being 900m).&lt;/p&gt;
+&lt;p&gt;The SkyBus is deceiving, because there&#39;s essentially 3 routes under the same code - Albany to Airport, City to Airport via Mt Eden Road, and City to Airport via Dominion Road.&lt;/p&gt;
+&lt;h2 id=&quot;which-transit-services-in-auckland-travel-the-furthest-each-week&quot; tabindex=&quot;-1&quot;&gt;Which transit services in Auckland travel the furthest each week? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/12/15/aucklandservicelength/#which-transit-services-in-auckland-travel-the-furthest-each-week&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Now we&#39;ll combine the number of services with how far they go, grouping by the route code.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Route&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;Distance Traveled per Week (km)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/NX1&quot;&gt;NX1&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;57,378&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/SKY&quot;&gt;SkyBus&lt;/a&gt; - &lt;em&gt;Commerical Bus&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;55,605&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/OUT&quot;&gt;OuterLink&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;32,326&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/NX2&quot;&gt;NX2&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;32,118&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/70&quot;&gt;70&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;30,257&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/380&quot;&gt;380&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;30,233&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/STH&quot;&gt;Southern Line&lt;/a&gt; - &lt;em&gt;Train&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;28,070&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/WEST&quot;&gt;Western Line&lt;/a&gt; - &lt;em&gt;Train&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;25,143&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/EAST&quot;&gt;Eastern Line&lt;/a&gt; - &lt;em&gt;Train&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;21,872&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://waka.app/l/nz-akl/83&quot;&gt;83&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;21,153&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;a href=&quot;https://jono.nz/files/aucklandservicelength/kmPerWeek.csv&quot;&gt;Full Results&lt;/a&gt; · &lt;a href=&quot;https://jono.nz/files/aucklandservicelength/kmPerWeek.sql&quot;&gt;SQL Queries&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The NX1 comes out on top - the frequency is good, and as it travels a long distance on the busway and motorway. In many ways the SkyBus is similar - it travels quite far on the busway and motorway with good frequency, but it is a little deceiving as mentioned earlier.&lt;/p&gt;
+&lt;p&gt;It&#39;s not surprising to see some of our long frequent routes in here too - OUT, NX2, 70, and 83. Our trains also make an appearance - while the frequency is not as good as some of our bus network, the trains tend to travel longer distances.&lt;/p&gt;
+&lt;p&gt;The most interesting apperance in here is the 380. It is not classified as a frequent service, but it has 15-20 minute service all day. As it is an airport bus, it starts extremely early (4:40am) and ends very late (12:40am) every day. It&#39;s also a bit of a silly route - it really should be split into two halves - Airport to Manukau, and Airport to Onehunga/Mangere.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Dev Log: November 2018</title>
+		<link href="https://jono.nz/2018/11/25/devlog-2018-11/"/>
+		<updated>2018-11-25T09:00:00Z</updated>
+		<id>https://jono.nz/2018/11/25/devlog-2018-11/</id>
+		<content type="html">&lt;p&gt;This is the second installment of the dev log. Let&#39;s see if we can keep this streak going!&lt;/p&gt;
+&lt;h2 id=&quot;waka&quot; tabindex=&quot;-1&quot;&gt;Waka &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/11/25/devlog-2018-11/#waka&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I&#39;ve made some improvements to health checks - they now check if the realtime data is working in Auckland. It&#39;s still at &lt;a href=&quot;https://assets-us-west-2.waka.app/status/index.html&quot;&gt;https://assets-us-west-2.waka.app/status/index.html&lt;/a&gt;, but will eventually be rolled into the app.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/waka-2018-healthchecks.jpg&quot; alt=&quot;SMS Notifications for Health Checks&quot;&gt;&lt;/p&gt;
+&lt;p&gt;SMS notifications now trigger when the health checks fail (super simple with Amazon SNS), so I&#39;ll know a lot sooner if Waka is down.&lt;/p&gt;
+&lt;p&gt;I&#39;m also trying to answer the question &amp;quot;What routes in Auckland travel the most km per week?&amp;quot;. I should have the answer to that tomorrow, and I&#39;ll do a little bit of a writeup.&lt;/p&gt;
+&lt;p&gt;Other than that, there&#39;s been nothing done in actual Waka. Matt hasn&#39;t done anything on &lt;code&gt;waka-importer&lt;/code&gt; either.&lt;/p&gt;
+&lt;h2 id=&quot;nitro-3&quot; tabindex=&quot;-1&quot;&gt;Nitro 3 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/11/25/devlog-2018-11/#nitro-3&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I&#39;ve spent most of my time coding Nitro this month.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/nitro-2018-sync-indicator.png&quot; alt=&quot;Nitro Sync Indicator&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The overlay position is now fixed - no matter where it&#39;s opened from. However, it&#39;s a bit laggy in some browsers (Edge), and can be laggy on Retina screens. I&#39;ll fix it eventually, but not for the initial release. There&#39;s also a new sync indicator - when a task is syncing, an icon shows up.&lt;/p&gt;
+&lt;p&gt;The biggest change is from my own custom username/password auth to &lt;a href=&quot;https://auth0.com&quot;&gt;Auth0&lt;/a&gt;. It provides a decent user experience, and I don&#39;t have to worry about other things such as sign up, 2FA, and OAuth. Unfortunately it seems to log you out a lot, but it&#39;s not a huge deal as it&#39;s only a single click to log back in.&lt;/p&gt;
+&lt;p&gt;I also fixed a couple of other bugs and papercuts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Added the sign out button back&lt;/li&gt;
+&lt;li&gt;Added proper error messages on the login page&lt;/li&gt;
+&lt;li&gt;Upgraded all dependencies&lt;/li&gt;
+&lt;li&gt;Fixed the list ordering without all list&lt;/li&gt;
+&lt;li&gt;Fixed a race condition when notes were being saved&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Next month, I want to continue to focus on fixing bugs and improve the performance on slower machines and phones. I also want the sync to be a bit better - stopping your browser from closing if sync is in progress, and triggering a sync if you haven&#39;t been using Nitro for some time. Oh, and I still need to add the settings menu.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;That&#39;s it for November! If you have any questions, flick them through to me on &lt;a href=&quot;https://twitter.com/consindo&quot;&gt;Twitter&lt;/a&gt;, and I&#39;ll try answer them in the next post.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Dev Log: October 2018</title>
+		<link href="https://jono.nz/2018/10/22/devlog-2018-10/"/>
+		<updated>2018-10-22T09:00:00Z</updated>
+		<id>https://jono.nz/2018/10/22/devlog-2018-10/</id>
+		<content type="html">&lt;p&gt;I haven&#39;t been posting on this blog for a while, but I have been doing things. I&#39;m going to aim to do one of these dev logs every month or so. The idea is that I&#39;ll be more accountable and maybe even release something.&lt;/p&gt;
+&lt;p&gt;Anyway, here&#39;s what I&#39;ve been doing over the last little bit.&lt;/p&gt;
+&lt;h2 id=&quot;waka&quot; tabindex=&quot;-1&quot;&gt;Waka &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/10/22/devlog-2018-10/#waka&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We ended up running out of Azure Credits, and decided to move Waka to AWS. It&#39;s generally a lot cheaper, and as I use AWS at Xero, I&#39;m pretty familiar with how to Terraform the bits and pieces together. We had to switch from Azure Blob Storage to S3, and move from a maps server to static map tiles in a S3 Bucket. Other than that, it went fine.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://mattdavidson.kiwi&quot;&gt;Matt&lt;/a&gt; is supposed to be working on &lt;a href=&quot;https://github.com/dymajo/waka-importer&quot;&gt;waka-importer&lt;/a&gt;. The idea is that you input a GTFS file, and it&#39;ll dump everything to a SQL Database Dump &amp;amp; Upload Shapes to S3. Hopefully, this should make Waka a bit more modular. It&#39;s mostly just extracting the existing functionality into a standalone app, so it should be done pretty soon.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/wakastatus.png&quot; alt=&quot;Waka Status Page&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Waka now has a &lt;a href=&quot;https://assets-us-west-2.waka.app/status/index.html&quot;&gt;status page&lt;/a&gt;. It&#39;s pretty rough right now, but it&#39;ll be integrated into service alerts when we add them in. This will probably happen pretty soon because I now live in Wellington, and it seems that every time I go try and catch a train, it&#39;s been replaced by a bus.&lt;/p&gt;
+&lt;p&gt;In terms of a roadmap, the next things coming will be a new unified lines view, service alerts, and hopefully a switch to Docker containers.&lt;/p&gt;
+&lt;h2 id=&quot;nitro-3&quot; tabindex=&quot;-1&quot;&gt;Nitro 3 &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/10/22/devlog-2018-10/#nitro-3&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I&#39;m still working on Nitro! I get a lot of emails asking when Nitro 3 is coming, and the only thing I can say is &amp;quot;soon&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Nitro has taken a long time to build for a number of reasons. Firstly, it&#39;s trying to ship an interface that feels native on both mobile &amp;amp; desktop. The end result is great - a single screen, like most native apps. However, it&#39;s much more difficult than building something in Bootstrap, with no animations, and calling it a day.&lt;/p&gt;
+&lt;p&gt;The second reason for the slow development is the syncing. Nitro works perfectly offline, and it will merge changes when you go back online. I decided to write my own sync code with a standard postgres database, but definitely ran into more issues than I had envisioned.&lt;/p&gt;
+&lt;p&gt;Lastly, I don&#39;t have enough time. I&#39;m not a uni student anymore, and have less time to work on things. This will hopefully change when Nitro is released and is earning a little bit of money, but for now, I have to balance it around other things.&lt;/p&gt;
+&lt;p&gt;Anyway, here&#39;s what Nitro looks like right now:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/nitro-2018-oct-mobile.png&quot; alt=&quot;Nitro Mobile&quot;&gt;&lt;/p&gt;
+&lt;p&gt;And here it is on the desktop:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/nitro-2018-oct-desktop.png&quot; alt=&quot;Nitro Desktop&quot;&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, it&#39;s taken a little bit of inspiration from Waka - that user interface works really well on mobile. It&#39;s also very easy to adapt it to the desktop.&lt;/p&gt;
+&lt;p&gt;At the moment, I&#39;m working on the expanded task. While the inside is done, there&#39;s quite a few weird bugs when you try open a task from a fresh reload, search, or click too fast. For performance reasons, it&#39;s rendered as an overlay, rather than inline with an expanding height, but it does make things a bit weird.&lt;/p&gt;
+&lt;p&gt;Other than that, the next task is to finish off sync (add an indicator + fix edge cases), and add a little more polish (papercuts + settings + sign up). I haven&#39;t been adding features for some time now because I want to get a release out the door. If you haven&#39;t already, you can sign up for the beta at &lt;a href=&quot;http://nitrotasks.com&quot;&gt;nitrotasks.com&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;That&#39;s it for this month! If you have any questions, flick them through to me on &lt;a href=&quot;https://twitter.com/consindo&quot;&gt;Twitter&lt;/a&gt;, and I&#39;ll try answer them in the next post.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Turbolinks</title>
+		<link href="https://jono.nz/2018/04/02/turbolinks/"/>
+		<updated>2018-04-02T10:28:17Z</updated>
+		<id>https://jono.nz/2018/04/02/turbolinks/</id>
+		<content type="html">&lt;p&gt;Single Page Routing is cool, because it allows your pages to load without incurring the cost a full load. It can be difficult to set up, but I would recommend checking out &lt;a href=&quot;https://github.com/turbolinks/turbolinks&quot;&gt;Turbolinks&lt;/a&gt;. You can Single Page Routing running on your existing site in like, twenty minutes. It&#39;s great.&lt;/p&gt;
+&lt;p&gt;It&#39;s a tiny little script that you just have to insert into your &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;, and it swaps out the body whenever you follow a link. It prevents your CSS and JS from being redownloaded, so you don&#39;t get an unsightly white flash when your page loads.&lt;/p&gt;
+&lt;p&gt;This site is already pretty fast, as it uses &lt;a href=&quot;https://hexo.io&quot;&gt;Hexo&lt;/a&gt; to render the site out statically, but I still added Turbolinks, and now it&#39;s even faster.&lt;/p&gt;
+&lt;p&gt;The process was also pretty simple for this site:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add script tag&lt;/li&gt;
+&lt;li&gt;Move other script tags to the head, with a &lt;code&gt;defer&lt;/code&gt; attribute.&lt;/li&gt;
+&lt;li&gt;Realize that my script only queries the elements once, so I needed to add a &lt;code&gt;data-turbolinks-permanent&lt;/code&gt; to my navigation element.
+&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And I think that&#39;s it. It&#39;s really great for sites that don&#39;t use a lot of JavaScript.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/turbolinks/turbolinks&quot;&gt;https://github.com/turbolinks/turbolinks&lt;/a&gt;&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>How does Waka work? - Part 2</title>
+		<link href="https://jono.nz/2018/02/25/transit-part2/"/>
+		<updated>2018-02-25T19:56:43Z</updated>
+		<id>https://jono.nz/2018/02/25/transit-part2/</id>
+		<content type="html">&lt;p&gt;Finally, part two of this guide! In part two, we&#39;ll go over how the frontend works. I managed to keep &lt;a href=&quot;https://jono.nz/2017/10/08/transit-part1/&quot;&gt;part one&lt;/a&gt; reasonably well updated, but contact me if you have any issues.&lt;/p&gt;
+&lt;h2 id=&quot;setting-up&quot; tabindex=&quot;-1&quot;&gt;Setting Up &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/02/25/transit-part2/#setting-up&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you&#39;ve already set up the server, it&#39;ll all good to go! If not, you&#39;ll need node.js &amp;amp; npm installed - https://nodejs.org. Then, three easy steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, get the code with &lt;code&gt;git clone https://github.com/consindo/waka.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install dependencies with &lt;code&gt;npm install&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Build the client with  &lt;code&gt;npm run build&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;development&quot; tabindex=&quot;-1&quot;&gt;Development &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/02/25/transit-part2/#development&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you&#39;re only working on the frontend code, and don&#39;t want to go to the hassle of setting up your own server, you can simply use &lt;code&gt;npm run watch:live&lt;/code&gt;. If you have the server set up, you can use &lt;code&gt;npm run watch&lt;/code&gt; instead.&lt;/p&gt;
+&lt;p&gt;Waka uses Webpack, so you get all the fancy live reloading - just head to http://locahost:8009. In terms of code style, eslint &amp;amp; prettier are all set up - just run it through them before you send a pull request.&lt;/p&gt;
+&lt;h2 id=&quot;react&quot; tabindex=&quot;-1&quot;&gt;React &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/02/25/transit-part2/#react&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Waka is written in React, with React Router for the single page routing. If adding a new page or view, it&#39;s super important to make sure it can be accessed with a URL - this is how the back button works on Android.&lt;/p&gt;
+&lt;p&gt;For maps, Waka uses the DYMAJO OpenStreetMap Server, because it&#39;s too expensive to use Mapbox or something similar. We&#39;re currently using Leaflet with react-leaflet, but this will be replaced with mapbox-gl-js in the near future.&lt;/p&gt;
+&lt;p&gt;Lots of stuff in Waka is custom because most React components are designed for the desktop. 90% of Traffic to Waka is from mobile, so make sure always build mobile first. Often, I like to plug in my phone and debug directly on that.&lt;/p&gt;
+&lt;h2 id=&quot;scss&quot; tabindex=&quot;-1&quot;&gt;SCSS &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/02/25/transit-part2/#scss&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It&#39;s all custom. It&#39;s also a little bit of a mess, because the app has undergone a number of significant redesigns in its 1.5 year history. A new redesign is coming soon, so I&#39;ll do my best to clean it up a little more.&lt;/p&gt;
+&lt;h2 id=&quot;speed&quot; tabindex=&quot;-1&quot;&gt;Speed &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/02/25/transit-part2/#speed&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Waka uses Service Workers to run offline, and it falls back nicely. It&#39;s not very useful offline, but at least it will load when you&#39;re running out of the house and there&#39;s very bad Wi-Fi. Bundle size is also reasonably well optimized, so use dynamic imports if necessary.&lt;/p&gt;
+&lt;p&gt;There&#39;s also the percieved speed - the app uses a large amount of animation in an effort to make things feel faster. If you think something needs an animation, please add it!&lt;/p&gt;
+&lt;h2 id=&quot;now-what&quot; tabindex=&quot;-1&quot;&gt;Now what? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2018/02/25/transit-part2/#now-what&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Please download the code and mess around! It&#39;s much easier to get started with the client than the server, so if there&#39;s something you&#39;re dying to fix or add, it would be greatly appreciated.&lt;/p&gt;
+&lt;p&gt;Any questions, suggestions, or issues - &lt;a href=&quot;http://localhost:4000/me/&quot;&gt;contact me!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;https://github.com/consindo/waka&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>How does Waka work? - Part 1</title>
+		<link href="https://jono.nz/2017/10/08/transit-part1/"/>
+		<updated>2017-10-08T19:56:43Z</updated>
+		<id>https://jono.nz/2017/10/08/transit-part1/</id>
+		<content type="html">&lt;p&gt;Matt keeps asking me how Waka works, so I’ve decided to write a guide. In Part 1, we go over how the server does things. I’ll try make an effort to keep this guide updated - contact me if it’s not.&lt;/p&gt;
+&lt;h2 id=&quot;the-server-stack&quot; tabindex=&quot;-1&quot;&gt;The Server Stack &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#the-server-stack&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Before you even try to start Waka, you’ll need:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows or Linux (I develop on Windows, production on Linux)&lt;/li&gt;
+&lt;li&gt;Node.js https://nodejs.org&lt;/li&gt;
+&lt;li&gt;Microsoft SQL Server http://downloadsqlserverexpress.com&lt;/li&gt;
+&lt;li&gt;Azure Storage Emulator https://azure.microsoft.com/en-us/downloads/&lt;/li&gt;
+&lt;li&gt;Git https://git-scm.com/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;handy-tools&quot; tabindex=&quot;-1&quot;&gt;Handy Tools &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#handy-tools&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;SQL Server Management Studio (install when installing SQL Server) - Windows only though.&lt;/li&gt;
+&lt;li&gt;Azure Storage Explorer (don’t use it a lot but it can be handy) https://azure.microsoft.com/en-us/features/storage-explorer/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;third-party-api-s&quot; tabindex=&quot;-1&quot;&gt;Third Party API’s &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#third-party-api-s&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Auckland Transport (if you want Auckland to work) https://dev-portal.at.govt.nz/&lt;/li&gt;
+&lt;li&gt;Sendgrid (to get the send a link emails working) https://sendgrid.com/&lt;/li&gt;
+&lt;li&gt;Azure Application Insights (only for production) https://azure.microsoft.com/en-us/services/application-insights/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;configuration&quot; tabindex=&quot;-1&quot;&gt;Configuration &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#configuration&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;First, get the code with &lt;code&gt;git clone https://github.com/consindo/waka.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install dependencies with &lt;code&gt;npm install&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Build the client with  &lt;code&gt;npm run build&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;config-js&quot; tabindex=&quot;-1&quot;&gt;/config.js &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#config-js&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This is app wide config. Defaults should be fine, but change the public &amp;amp; private ports if required. Make sure you don’t expose the private port to the web! You can also disable auto updates / worker management of cities by adjusting the &lt;code&gt;autoupdate&lt;/code&gt; entry.&lt;/p&gt;
+&lt;h3 id=&quot;server-master-db-config-master-js-config-slave-js&quot; tabindex=&quot;-1&quot;&gt;/server-master/db/config-master.js, config-slave.js &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#server-master-db-config-master-js-config-slave-js&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;These are where the app looks for database connection strings. Make your SQL Server install allows SQL Server Authentication, and TCP/IP Network Protocol is enabled. The user set in &lt;code&gt;config-master.js&lt;/code&gt; must be allowed to Create Databases, and the user set in &lt;code&gt;config-slave.js&lt;/code&gt; must be allowed to access and modify the created database. You will need an already created database in &lt;code&gt;config-master.js&lt;/code&gt;, but this is not needed for the slave.&lt;/p&gt;
+&lt;p&gt;By default, workers in the workers table use the dbconfig of &lt;code&gt;slave&lt;/code&gt;, but you can set this to &lt;code&gt;whatever&lt;/code&gt; if you want to use &lt;code&gt;config-whatever.js&lt;/code&gt; (if you need to distribute over multiple instances of SQL Server).&lt;/p&gt;
+&lt;h3 id=&quot;environmental-variables&quot; tabindex=&quot;-1&quot;&gt;Environmental Variables &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#environmental-variables&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AZURE_STORAGE_ACCOUNT&lt;/code&gt; - the Azure Storage Account. For the emulator, use: &lt;code&gt;devstoreaccount1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AZURE_STORAGE_ACCESS_KEY&lt;/code&gt; - the Azure Storage Account Key. For the emulator, use:
+&lt;code&gt;Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;atApiKey&lt;/code&gt; - the Auckland Transport API Key (optional if you don’t want Auckland)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SENDGRID_API_KEY&lt;/code&gt; for emails (optional)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AZURE_INSIGHTS&lt;/code&gt; for insights (optional)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AGENDA21_API_KEY&lt;/code&gt; currently a private key, returns parking information for Auckland Carparks (optional)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;starting&quot; tabindex=&quot;-1&quot;&gt;Starting &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#starting&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Yay! You’ve configured Waka. Run &lt;code&gt;node index.js&lt;/code&gt; to start, and it’ll create the database and start on the port you specified.&lt;/p&gt;
+&lt;p&gt;If you don’t want it to start downloading data from Auckland automatically, make sure you disable the auto updates in &lt;code&gt;/config.js&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;architecture&quot; tabindex=&quot;-1&quot;&gt;Architecture &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#architecture&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Waka has a master process that manages a collection of worker processes, each encapsulating a particular region &amp;amp; version and providing the API. Each worker process uses its own database which keeps things smaller, faster, and is easier to delete when the data has expired. There’s mapping functionality which sends all requests to a particular region to a particular version. If you’re using the auto importers you shouldn’t have to worry about the mappings, but it is possible to override.&lt;/p&gt;
+&lt;p&gt;Worker spawning is done through node’s &lt;code&gt;child_process.fork&lt;/code&gt;, and all communication thereafter is done through a standard REST API - using both the public and private methods on both the master and the worker. Requests are proxied through to the mapped worker from the master. Check out all the router files for further details.&lt;/p&gt;
+&lt;p&gt;Static rendering and hosting of assets is done through yet another process. For static rendering, it uses the standard public REST API, and transforms the JSON to HTML. Files in &lt;code&gt;/dist&lt;/code&gt; are all hosted under &lt;code&gt;/&lt;/code&gt; when a route cannot be found. If a file is not found in &lt;code&gt;/dist&lt;/code&gt;, the static server returns a default or 404 page, and lets the client side JavaScript take over the rest.&lt;/p&gt;
+&lt;h2 id=&quot;server-master-private-api&quot; tabindex=&quot;-1&quot;&gt;Server-Master Private API &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#server-master-private-api&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you’re not using an auto importer or just need to emergency fix things, you can do so with the private API. It’s not secured, so you have to make sure the port isn’t exposed.&lt;/p&gt;
+&lt;p&gt;For most of these requests, just pop a JSON object with the prefix (region) and version in the request body.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: You can now just head to &lt;a href=&quot;http://localhost:8001&quot;&gt;http://localhost:8001&lt;/a&gt; and there&#39;s a nice UI for running these request.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;GET /worker&lt;/code&gt; - Returns all the available workers.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;POST /worker/add&lt;/code&gt; - Send a prefix, version to create a new worker.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;POST /worker/load&lt;/code&gt; - Load workers from the database again (generally shouldn’t use this)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;POST /worker/start&lt;/code&gt; - Send a prefix, version to start a particular worker.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;POST /worker/startall&lt;/code&gt; - Starts all workers that have startpolicy ‘auto’&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;POST /worker/stop&lt;/code&gt; - Stops a worker process.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;POST /worker/delete&lt;/code&gt; - Stops a worker, and then deletes it from the database.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GET  /mapping&lt;/code&gt; - Shows which prefixes are mapped to which workers.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;POST /mapping/load&lt;/code&gt; - Loads mappings from the database again (generally shouldn’t use this)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;POST /mapping/set&lt;/code&gt; - Send a prefix and a version to set the worker where requests are forwarded.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;POST /mapping/delete&lt;/code&gt; - Unmaps a prefix - requests to a region will 404 after being deleted.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;POST /import-start/:mode&lt;/code&gt; - Trigger a manual import of GTFS data. Use &lt;code&gt;db&lt;/code&gt; for the database import, &lt;code&gt;shapes&lt;/code&gt; for the Azure Shapes Parse &amp;amp; Upload, or &lt;code&gt;all&lt;/code&gt; for both.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;POST /import-complete&lt;/code&gt; - Used internally from the worker - tells master that an import has completed so it can update the database and run any callbacks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;server-worker-and-server-static-public-api&quot; tabindex=&quot;-1&quot;&gt;Server-Worker &amp;amp; Server-Static Public API &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#server-worker-and-server-static-public-api&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is the public API. You can generate them with &lt;code&gt;npm run document&lt;/code&gt; or just head to &lt;a href=&quot;https://waka.app/docs/index.html&quot;&gt;https://waka.app/docs/index.html&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;sql-migrations&quot; tabindex=&quot;-1&quot;&gt;SQL Migrations &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#sql-migrations&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Because we create the database from scratch every time a new worker is created, we don’t have to worry about migrations! Simply delete the worker and try again if you’re having any issues. The SQL files which create the tables and stored procedures are located in &lt;code&gt;/server-worker/db/procs&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I’m not sure how to do the migrations for the master database yet, but the scripts that create it on first run are in &lt;code&gt;/server-master/db/procs&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;tests&quot; tabindex=&quot;-1&quot;&gt;Tests &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#tests&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;No unit tests yet 😢. There’s a couple of tests in the Auckland auto importer that does a quick check before changing the live mapping, but that’s it. There’s definitely room for improvement here.&lt;/p&gt;
+&lt;h2 id=&quot;other-things&quot; tabindex=&quot;-1&quot;&gt;Other Things &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#other-things&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Here’s some things you might want to do when modifying or using Waka as a dev.&lt;/p&gt;
+&lt;h3 id=&quot;adding-a-new-city&quot; tabindex=&quot;-1&quot;&gt;Adding a New City &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#adding-a-new-city&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Add an importer with countrycode-airportcode as the prefix in &lt;code&gt;/server-worker/importers&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use the private API to add, start, run the importer, and set the mapping to your version.&lt;/li&gt;
+&lt;li&gt;Fix anything that’s broken when you try use that city.
+&lt;ul&gt;
+&lt;li&gt;Lines requires special config.&lt;/li&gt;
+&lt;li&gt;Realtime also requires special config.&lt;/li&gt;
+&lt;li&gt;Stations, Stop Times, and Timetable should be pretty smooth sailing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Add an auto importer to keep versions &amp;amp; mappings up to date.&lt;/li&gt;
+&lt;li&gt;Send a pull request!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;now-what&quot; tabindex=&quot;-1&quot;&gt;Now what? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2017/10/08/transit-part1/#now-what&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Hopefully you download the code and have a play - fix a few issues, or even just file some 😃 https://github.com/consindo/waka/issues&lt;/p&gt;
+&lt;p&gt;In &lt;a href=&quot;https://jono.nz/2018/02/25/transit-part2/&quot;&gt;Part 2&lt;/a&gt;, we’ll go over the client-side development.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Mobile Safari Hacks</title>
+		<link href="https://jono.nz/2016/12/30/ioshacks/"/>
+		<updated>2016-12-30T08:30:00Z</updated>
+		<id>https://jono.nz/2016/12/30/ioshacks/</id>
+		<content type="html">&lt;p&gt;While developing &lt;a href=&quot;https://waka.app&quot;&gt;Waka&lt;/a&gt;, I&#39;ve discovered that Mobile Safari is the new IE6. Most of this arises because Apple has layered on a number of fancy features that work great for most sites, but create problems when you trying making a web app. Here&#39;s a couple of issues and fixes for these things:&lt;/p&gt;
+&lt;h2 id=&quot;desktop-safari-is-completely-different-to-mobile-safari&quot; tabindex=&quot;-1&quot;&gt;Desktop Safari is completely different to Mobile Safari &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2016/12/30/ioshacks/#desktop-safari-is-completely-different-to-mobile-safari&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt; Desktop Safari looks great, but the app doesn&#39;t work on iOS.
+&lt;strong&gt;Solution:&lt;/strong&gt; Unfortunately, you always have to be testing on real devices. This goes for Android too, because these devices are a lot slower than your dev machine.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/throttle.png&quot; alt=&quot;Chrome CPU Throttling&quot;&gt;&lt;/p&gt;
+&lt;p&gt;It&#39;s also a good idea to enable CPU Throttling in Chrome in order to get an idea of how your app will perform.&lt;/p&gt;
+&lt;h2 id=&quot;viewport-height-is-too-high&quot; tabindex=&quot;-1&quot;&gt;Viewport Height is too high &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2016/12/30/ioshacks/#viewport-height-is-too-high&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt; 100vh includes the height of the browser controls, which are overlaid so there&#39;s the fancy blur effect.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/ios-vh-issue.png&quot; alt=&quot;iOS Viewport Height Issue&quot; title=&quot;Image from https://nicolas-hoizey.com/2015/02/viewport-height-is-taller-than-the-visible-part-of-the-document-in-some-mobile-browsers.html&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fix:&lt;/strong&gt; If you can&#39;t use height 100%, I would recommend using a CSS variable, and line of code like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;document.body.style.setProperty(&#39;--real-height&#39;, document.documentElement.clientHeight + &#39;px&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Make sure to bind this to your window.onresize event!&lt;/p&gt;
+&lt;h2 id=&quot;no-kinetic-scrolling-in-child-elements&quot; tabindex=&quot;-1&quot;&gt;No Kinetic Scrolling in Child Elements &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2016/12/30/ioshacks/#no-kinetic-scrolling-in-child-elements&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt; Having overflow:scroll in a container doesn&#39;t have any inertia.
+&lt;strong&gt;Solution:&lt;/strong&gt; On your element, set &lt;code&gt;-webkit-overflow-scrolling: touch;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;webkit-overflow-scrolling-bubbles-to-page&quot; tabindex=&quot;-1&quot;&gt;-webkit-overflow-scrolling bubbles to page &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2016/12/30/ioshacks/#webkit-overflow-scrolling-bubbles-to-page&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt; When you&#39;re at the top of the element, the entire page scrolls, not the element.
+&lt;strong&gt;Solution:&lt;/strong&gt; You&#39;ll need two elements, something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;scrollable&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;
+    Content
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On the inner element, you&#39;ll need to set &lt;code&gt;min-height: 101%&lt;/code&gt;. Then, &lt;code&gt;onTouchStart&lt;/code&gt;, you&#39;ll need some JavaScript that moves the scroll position down a single pixel at the top of the page, or up a pixel at the bottom.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let top = e.scrollTop
+let totalScroll = e.scrollHeight
+let currentScroll = top + e.offsetHeight
+ 
+if (top === 0) {
+  e.scrollTop = 1
+} else if (currentScroll === totalScroll) {
+  e.scrollTop = top - 1
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;flexbox-is-funky-in-row-direction&quot; tabindex=&quot;-1&quot;&gt;Flexbox is funky in row direction &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2016/12/30/ioshacks/#flexbox-is-funky-in-row-direction&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt; Flexbox generally doesn&#39;t work in the row direction on iOS.
+&lt;strong&gt;Solution:&lt;/strong&gt; If setting the container height with the CSS variable you made doesn&#39;t work, use &lt;code&gt;calc()&lt;/code&gt; with that variable. It&#39;s really not ideal, but this is what I&#39;ve found works best.&lt;/p&gt;
+&lt;h2 id=&quot;force-touch&quot; tabindex=&quot;-1&quot;&gt;Force Touch &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2016/12/30/ioshacks/#force-touch&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt; If you force touch on an link that you styled like a button because you have fancy single page routing, it&#39;ll pop up a preview.
+&lt;strong&gt;Solution:&lt;/strong&gt; If iOS, don&#39;t use the anchor tag (or at least a href). Bind an event to the button, &lt;a href=&quot;https://developer.mozilla.org/en/docs/Web/API/History&quot;&gt;and push the new URL to the History&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;no-caching-when-pinned-to-home-screen&quot; tabindex=&quot;-1&quot;&gt;No caching when pinned to home screen &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2016/12/30/ioshacks/#no-caching-when-pinned-to-home-screen&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt; There&#39;s no HTTP caching when the app is pinned to home screen. Makes for long initial load times.
+&lt;strong&gt;Solution:&lt;/strong&gt; You&#39;re gonna have to use &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache&quot;&gt;AppCache&lt;/a&gt; for this one.&lt;/p&gt;
+&lt;p&gt;That&#39;s all I can think of for now. If you have a Mobile Safari hack, message me, and I&#39;ll add it to this post!&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>XPS 13 vs Surface</title>
+		<link href="https://jono.nz/2016/08/31/xps13/"/>
+		<updated>2016-08-31T22:00:00Z</updated>
+		<id>https://jono.nz/2016/08/31/xps13/</id>
+		<content type="html">&lt;p&gt;I recently bought a Dell XPS 13, to replace my Surface Pro 3. These devices roughly cost the same, but I managed to snag a last generation XPS with the improved screen for the same price as a current generation with the regular HD display. I miss out on USB-C and improved graphics, but that&#39;s not a huge deal.&lt;/p&gt;
+&lt;p&gt;While both of these devices are a generation behind, they&#39;re very similar to the current model, so this comparison is still valid.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/xps13.jpg&quot; alt=&quot;My XPS 13&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;what-the-xps-does-better&quot; tabindex=&quot;-1&quot;&gt;What the XPS does better &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2016/08/31/xps13/#what-the-xps-does-better&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Screen&lt;/strong&gt; This is the best part of the XPS 13. The 3200x1800 resolution is great, and apps like Photoshop look great at 200% scaling. There&#39;s more pixels on this thing than the 15&amp;quot; MacBook Pro! Oh, and the tiny bezels are beautiful.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Battery&lt;/strong&gt; Even with the crazy screen, the XPS lasts 9 hours. The Surface with a fresh battery only lasts 5 hours. The power management also seems a lot better - the Surface always used to randomly turn on in my bag.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Connectivity&lt;/strong&gt; The XPS has an extra USB port, lock slot and a full sized SD card reader. The newer model even has Thunderbolt over USB-C! Oh, and if you thought Broadcom Wi-Fi was bad, the Atheros chip in the Surface will drive your head through a wall.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;what-the-surface-does-better&quot; tabindex=&quot;-1&quot;&gt;What the Surface does better &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2016/08/31/xps13/#what-the-surface-does-better&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Stylus&lt;/strong&gt; The Surface has pen support, which works really well. It&#39;s great if you want to annotate things, or draw. However, I find paper better because you can spread it around on a table and refer back a bit easier. Oh, and since printing is an enormous hassle, I just handwrite my assignments anyway. ¯&#92;_(ツ)_/¯&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Keyboard&lt;/strong&gt; The Type Cover 4 is less mushy, even though it has less travel.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Audio&lt;/strong&gt; The Surface has front facing speakers and never any software issues. On the XPS, very occasionally headphones aren&#39;t detected or the sound quality deteriorates (a reboot fixes this).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;things-other-people-have-issues-with&quot; tabindex=&quot;-1&quot;&gt;Things other people have issues with &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2016/08/31/xps13/#things-other-people-have-issues-with&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Webcam&lt;/strong&gt; The XPS 13 has stupid webcam placement, but I use my phone for video calling.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Form Factor&lt;/strong&gt; The Surface is also a tablet.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows Hello&lt;/strong&gt; Only the Surface Pro 4 has this, but it&#39;s really cool.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows 10 Pro&lt;/strong&gt; The Surface comes with it, but I had a spare license for my XPS.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;what-both-could-do-better&quot; tabindex=&quot;-1&quot;&gt;What both could do better &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2016/08/31/xps13/#what-both-could-do-better&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Trackpad&lt;/strong&gt; The trackpad on the Type Cover 4 is too small. The XPS 13 doesn&#39;t support four finger gestures. I just wish I could switch desktops with 3 fingers. There&#39;s also a lot of apps in Windows that don&#39;t handle precision scrolling well *&lt;em&gt;cough&lt;/em&gt;* &lt;em&gt;Electron&lt;/em&gt; *&lt;em&gt;cough&lt;/em&gt;*.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Windows 10&lt;/strong&gt; Sometimes Windows Explorer messes up and I can&#39;t use instant search. It&#39;s very annoying, and I need to restart the process.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;the-verdict&quot; tabindex=&quot;-1&quot;&gt;The Verdict &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2016/08/31/xps13/#the-verdict&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I like the XPS more, if only because of the nicer screen and significantly better battery. If a tablet and stylus is important to you, get a Surface.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>This is my awesome website</title>
+		<link href="https://jono.nz/2016/07/17/hi/"/>
+		<updated>2016-07-17T16:54:21Z</updated>
+		<id>https://jono.nz/2016/07/17/hi/</id>
+		<content type="html">&lt;p&gt;Hi, I&#39;m Jono. I&#39;ve had a couple of blogs over the years, but they tend to disappear as I abandon side projects and domain names. I finally have a domain name that I like, so I&#39;ve decided to build a proper website. I haven&#39;t completely finished yet, but the aim is to have all my work, projects, and writing in one place.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jono.nz/images/hi.jpg&quot; alt=&quot;Picture of Jono&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Who am I? Well, that page isn&#39;t done yet, but I&#39;m a student currently living in Auckland, New Zealand. At the moment, I study Computer Science &amp;amp; Applied Mathematics at the University of Auckland. On the side, I build websites for other people, make apps and travel the world.&lt;/p&gt;
+&lt;p&gt;I&#39;m currently building a beautiful FTP + SFTP app for Windows 10. It&#39;s not released yet, but you can check it out and sign up to the beta at &lt;a href=&quot;https://dymajo.com&quot;&gt;dymajo.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That&#39;s really it for now. Feel free to copy and share anything written on the blog, with attribution. The website design and source code is also freely available on &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;. Do whatever you like with it, but linking back is highly appreciated.&lt;/p&gt;
+</content>
+	</entry>
+</feed>

@@ -1,128 +1,93 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
-  <title>Dev Log: January 2019 - Jono Cooper</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Happy New Year! Nitro 3 ⚡I’ve sent the first couple of invites to the Nitro 3 private beta. It looks like everything went smoothly - the emails went out, and people were able to sign in and start usin">
-<meta name="keywords" content="dev,devlog,nitro,waka">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Dev Log: January 2019">
-<meta property="og:url" content="https://jono.nz/2019/01/17/devlog-2019-01/index.html">
-<meta property="og:site_name" content="Jono Cooper">
-<meta property="og:description" content="Happy New Year! Nitro 3 ⚡I’ve sent the first couple of invites to the Nitro 3 private beta. It looks like everything went smoothly - the emails went out, and people were able to sign in and start usin">
-<meta property="og:locale" content="en">
-<meta property="og:image" content="https://jono.nz/images/nitro-2019-beta-wave-1.png">
-<meta property="og:image" content="https://jono.nz/images/ecs-cluster-2019-jan.png">
-<meta property="og:image" content="https://jono.nz/images/waka-unified-lines-2019-jan.png">
-<meta property="og:updated_time" content="2019-12-16T08:25:51.090Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dev Log: January 2019">
-<meta name="twitter:description" content="Happy New Year! Nitro 3 ⚡I’ve sent the first couple of invites to the Nitro 3 private beta. It looks like everything went smoothly - the emails went out, and people were able to sign in and start usin">
-<meta name="twitter:image" content="https://jono.nz/images/nitro-2019-beta-wave-1.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Jono Cooper" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/turbolinks.js" defer></script>
-  <script src="/js/script.js"></script>
-</head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <nav class="sidebar" id="main-navigation" data-turbolinks-permanent="">
-  <h1><a href="/">Jono Cooper</a></h1>
-  <ul id="navigation">
-    <li><a href="/archives/"><img width="13" src="/css/images/icons/blog.png">Blog</a></li>
-    <li><a href="/work/"><img width="13" src="/css/images/icons/work.png">Portfolio</a></li>
-    <li><a href="/me/"><img width="12" src="/css/images/icons/me.png">Me</a></li>
-  </ul>
-  <button id="expand">Menu</button>
-</nav>
-      <div class="outer">
-        <section id="main"><article id="post-devlog-2019-01" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Dev Log: January 2019
-    </h1>
-  
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Dev Log: January 2019</title>
+		<meta name="description" content="Jono Cooper is a product engineer based in Tāmaki Makaurau. He has a passion for delivering best-in-class products, from vision to execution.">
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Happy New Year!</p>
-<h2 id="Nitro-3-⚡"><a href="#Nitro-3-⚡" class="headerlink" title="Nitro 3 ⚡"></a>Nitro 3 ⚡</h2><p>I’ve sent the first couple of invites to the Nitro 3 private beta. It looks like everything went smoothly - the emails went out, and people were able to sign in and start using Nitro.</p>
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="stylesheet" href="/bundle/kfvEKILYnO.css">
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link" title="Jono Cooper">JC</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/projects/">Projects</a></li>
+					<li class="nav-item"><a href="/archives/">Posts</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+
+<jc-container width="prose" class="post">
+	<h1>Dev Log: January 2019</h1>
+
+	<ul class="post-metadata">
+		<li><time datetime="2019-01-17">17 January 2019</time></li>
+	</ul>
+
+	<p>Happy New Year!</p>
+<h2 id="nitro-3" tabindex="-1">Nitro 3 ⚡ <a class="header-anchor" href="#nitro-3">#</a></h2>
+<p>I've sent the first couple of invites to the Nitro 3 private beta. It looks like everything went smoothly - the emails went out, and people were able to sign in and start using Nitro.</p>
 <p><img src="/images/nitro-2019-beta-wave-1.png" alt="Nitro Beta Wave 1 Sent"></p>
-<p>A couple of things happened to get Nitro to production: I fixed all the critical bugs, added JS Module support, but also had to build a new component to onboard new users. It ended up being pretty simple - if you have a valid invite code, you can login, and it’ll set some metadata on your user in Auth0. If you try to login to Nitro without having activated your account (and thus having no metadata), it’ll tell you that you don’t have access to the application.</p>
-<p>I also added a rudimentary stats page for Admin users, as I decided not to add Google Analytics. At the moment, it’s just a count of the lists, tasks, users, and archived tasks in Nitro, but is still useful. I implemented this properly too - it doesn’t just connect straight to the database, but calls the Nitro API authenticating as a machine.</p>
-<p>It’s common in a lot of environments to not have any authentication and simply trust other traffic because it’s coming from the same network. The problem with this approach is that it’s not only hard to audit what is requesting what, but ties you a little bit more into your cloud provider (peering VPCs can be a pain). If you use machine to machine authentication, you don’t need to build a BFF (your private and public APIs are the same) but you can also make requests over a zero trust network. For example, I could run Nitro API as a container on AWS and Account Manager as a serverless function on Azure with no special networking. Auth0 made this really easy to do - you can grant an application access to an API by just flicking a switch and choosing some scopes.</p>
-<p>I’ve been using Nitro for months in a test environment - it’s always a good idea to dogfood your own app! However, I didn’t have any production infrastructure deployed. I’ve been using <a href="https://terraform.io">Terraform</a> to provision infrastructure, so deploying to production was as easy as renaming some configuration. I would highly recommend everyone to check out Terraform - you write your infrastructure as code, and it’ll be built out like magic, even over multiple cloud server providers.</p>
+<p>A couple of things happened to get Nitro to production: I fixed all the critical bugs, added JS Module support, but also had to build a new component to onboard new users. It ended up being pretty simple - if you have a valid invite code, you can login, and it'll set some metadata on your user in Auth0. If you try to login to Nitro without having activated your account (and thus having no metadata), it'll tell you that you don't have access to the application.</p>
+<p>I also added a rudimentary stats page for Admin users, as I decided not to add Google Analytics. At the moment, it's just a count of the lists, tasks, users, and archived tasks in Nitro, but is still useful. I implemented this properly too - it doesn't just connect straight to the database, but calls the Nitro API authenticating as a machine.</p>
+<p>It's common in a lot of environments to not have any authentication and simply trust other traffic because it's coming from the same network. The problem with this approach is that it's not only hard to audit what is requesting what, but ties you a little bit more into your cloud provider (peering VPCs can be a pain). If you use machine to machine authentication, you don't need to build a BFF (your private and public APIs are the same) but you can also make requests over a zero trust network. For example, I could run Nitro API as a container on AWS and Account Manager as a serverless function on Azure with no special networking. Auth0 made this really easy to do - you can grant an application access to an API by just flicking a switch and choosing some scopes.</p>
+<p>I've been using Nitro for months in a test environment - it's always a good idea to dogfood your own app! However, I didn't have any production infrastructure deployed. I've been using <a href="https://terraform.io">Terraform</a> to provision infrastructure, so deploying to production was as easy as renaming some configuration. I would highly recommend everyone to check out Terraform - you write your infrastructure as code, and it'll be built out like magic, even over multiple cloud server providers.</p>
 <p><img src="/images/ecs-cluster-2019-jan.png" alt="Nitro ECS Cluster"></p>
-<p>Nitro itself is running on AWS, on an ECS Cluster (EC2 launch type) behind a load balancer. The Nitro client is deployed into a S3 bucket, sitting behind Cloudflare. Currently, all the Docker containers are running on a single instance, but I’ll add some auto scaling when I onboard a few more people. Additionally, the database is fully managed by AWS (Postgres RDS), and again, I’m using Auth0 to provide login. This is all aided by Nitro being fully functional while offline, so if there is an outage, it’s unlikely you’ll even notice it 😁.</p>
-<p>In terms of what’s next, I’m actually not sure! I’ll definitely be checking out the feedback from the first beta users, as well as onboarding more people. Based off the feedback, I’ll be able to prioritize the most important issues, and go from there!</p>
-<h2 id="Waka"><a href="#Waka" class="headerlink" title="Waka"></a>Waka</h2><p>Because I actually managed to run out of things to do on Nitro, I put a little bit of work into Waka. After choosing a line on the lines screen, it’ll show the live vehicle locations if there’s any! It’ll also show the services you can transfer to at each stop. I then removed the existing route map that is visible when you press route map on the stations page - it now sends you to the unified lines page.</p>
+<p>Nitro itself is running on AWS, on an ECS Cluster (EC2 launch type) behind a load balancer. The Nitro client is deployed into a S3 bucket, sitting behind Cloudflare. Currently, all the Docker containers are running on a single instance, but I'll add some auto scaling when I onboard a few more people. Additionally, the database is fully managed by AWS (Postgres RDS), and again, I'm using Auth0 to provide login. This is all aided by Nitro being fully functional while offline, so if there is an outage, it's unlikely you'll even notice it 😁.</p>
+<p>In terms of what's next, I'm actually not sure! I'll definitely be checking out the feedback from the first beta users, as well as onboarding more people. Based off the feedback, I'll be able to prioritize the most important issues, and go from there!</p>
+<h2 id="waka" tabindex="-1">Waka <a class="header-anchor" href="#waka">#</a></h2>
+<p>Because I actually managed to run out of things to do on Nitro, I put a little bit of work into Waka. After choosing a line on the lines screen, it'll show the live vehicle locations if there's any! It'll also show the services you can transfer to at each stop. I then removed the existing route map that is visible when you press route map on the stations page - it now sends you to the unified lines page.</p>
 <p><img src="/images/waka-unified-lines-2019-jan.png" alt="Waka Unified Lines - Screenshot of OuterLink"></p>
 <p>This change is live for both Auckland and Wellington, and works for buses and trains!</p>
-<p>I’m definitely going to make it better though - here’s a couple of plans for that page:</p>
+<p>I'm definitely going to make it better though - here's a couple of plans for that page:</p>
 <ul>
 <li>Show transfers at transport hubs (e.g Otahuhu, Albany, Kilbirnie)</li>
 <li>Show how long it takes between stations</li>
 <li>A better way to select the route variant (e.g The NX1 can run to either Albany or the Hibiscus Coast, the 1 can run to one of three possible destinations)</li>
 </ul>
-<p>And if you’ve jumped in from the station page, or have selected a station:</p>
+<p>And if you've jumped in from the station page, or have selected a station:</p>
 <ul>
 <li>Show the live service info</li>
 <li>Show the time that a service yields at each station</li>
 </ul>
-<p>Once that work is all done, it should lead into a few other changes. Notably, showing the inactive stops on the station page, and making transport hubs more prominent on the map. There’s also other work where we’re disassembling the Waka monolith (okay, it’s not really a monolith, but we want to split out the data import from the runtime).</p>
+<p>Once that work is all done, it should lead into a few other changes. Notably, showing the inactive stops on the station page, and making transport hubs more prominent on the map. There's also other work where we're disassembling the Waka monolith (okay, it's not really a monolith, but we want to split out the data import from the runtime).</p>
 <hr>
-<p>That’s all for January. I’m off to take a well needed holiday! ✈</p>
-
-      
-    </div>
-  </div>
-  
-    
-<nav id="article-nav">
-  <a href="/archives/">Back to Archives</a>
-</nav>
-
-  
-  
-</article>
+<p>That's all for January. I'm off to take a well needed holiday! ✈</p>
 
 
+	<ul class="post-metadata tags">
+		<li><a href="/tags/dev/" class="post-tag">dev</a>, </li>
+		<li><a href="/tags/devlog/" class="post-tag">devlog</a>, </li>
+		<li><a href="/tags/nitro/" class="post-tag">nitro</a>, </li>
+		<li><a href="/tags/waka/" class="post-tag">waka</a></li>
+	</ul>
+	<ul class="links-nextprev"><li>Previous: <a href="/2018/12/27/devlog-2018-12/">Dev Log: December 2018</a></li><li>Next: <a href="/2019/03/10/devlog-2019-02/">Dev Log: Febuary &amp; March 2019</a></li>
+	</ul>
+</jc-container>
 
-<footer>
-<div class="wrapper">
-  <div class="copyright">
-    &copy; 2019 Jono Cooper
-  </div>
-  <div class="article-meta">
-    
-      <p class="post">Posted:
-    
-    <time datetime="2019-01-16T23:00:00.000Z" itemprop="datePublished">2019-01-17</time></p>
-  </div>
-</div>
-</footer></section>
-        
-      </div>
-    </div>
-    
-    
-  </div>
-</body>
+		</main>
+
+		<footer>
+			<div class="copyright">&copy; 2024 Jono Cooper</div>
+			<ul>
+				<li><a href="/feed/feed.xml">rss</a></li>
+				<li><a href="https://github.com/consindo/jono.nz">source</a></li>
+			</ul>
+		</footer>
+
+		<!-- This page `/2019/01/17/devlog-2019-01/` was built on 2024-08-31T09:43:35.108Z -->
+	</body>
 </html>
