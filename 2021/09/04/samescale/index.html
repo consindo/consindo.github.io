@@ -11,7 +11,7 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
 		<meta name="generator" content="Eleventy v3.0.0">
-		<link rel="stylesheet" href="/bundle/Yp03E4HbuI.css">
+		<link rel="stylesheet" href="/bundle/pYH9WslUe_.css">
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -37,13 +37,13 @@
 		<li><time datetime="2021-09-04">04 September 2021</time></li>
 	</ul>
 
-	<p>Every city is different, and those differences are reflected in our maps. I find it really interesting that our the differences in landscape and urban form manifest themselves in these maps, and it's cool to be able to directly compare two cities side by side.</p>
+	<p>Every city is different, and those differences are reflected in our maps. I find it really interesting that our the differences in landscape and urban form manifest themselves in these maps, and it’s cool to be able to directly compare two cities side by side.</p>
 <p><picture><source type="image/avif" srcset="/images/78x7cusjoh-1428.avif 1428w"><source type="image/webp" srcset="/images/78x7cusjoh-1428.webp 1428w"><img alt="Auckland &amp; Sydney Side by Side" loading="lazy" decoding="async" src="/images/78x7cusjoh-1428.png" width="1428" height="905"></picture></p>
-<p>However, I've never been particularly happy with the tools that exist to do this. So I made one.</p>
+<p>However, I’ve never been particularly happy with the tools that exist to do this. So I made one.</p>
 <p><strong><a href="https://scale.waka.app">scale.waka.app</a></strong></p>
-<h2 id="why-its-better" tabindex="-1">Why it's better? <a class="header-anchor" href="#why-its-better">#</a></h2>
-<p>I think this is a huge improvement over other tools, as it uses vector maps. This means you can zoom to any fraction (no jump in zoom levels), rotate the maps, and even tilt in 3D. I've also thrown in an option to switch to a satellite view, so you can see some of the differences in land use.</p>
-<p>You can also search for a location, to save you having to scroll around, and it works nicely on mobile too! I've also thrown in a few sample cities that I think are similar.</p>
+<h2 id="why-it-s-better" tabindex="-1">Why it’s better? <a class="header-anchor" href="#why-it-s-better">#</a></h2>
+<p>I think this is a huge improvement over other tools, as it uses vector maps. This means you can zoom to any fraction (no jump in zoom levels), rotate the maps, and even tilt in 3D. I’ve also thrown in an option to switch to a satellite view, so you can see some of the differences in land use.</p>
+<p>You can also search for a location, to save you having to scroll around, and it works nicely on mobile too! I’ve also thrown in a few sample cities that I think are similar.</p>
 <ul>
 <li><em>Sydney &amp; Auckland:</em> Both coastal cities in Oceania, founded in a similar time period</li>
 <li><em>New York &amp; Hong Kong:</em> Both tiny, super dense island cities!</li>
@@ -51,13 +51,13 @@
 </ul>
 <h2 id="was-it-hard-to-make" tabindex="-1">Was it hard to make? <a class="header-anchor" href="#was-it-hard-to-make">#</a></h2>
 <p>Not really! I did most of it in a morning. It was basically a matter of creating two <a href="https://mapbox.com">Mapbox</a> maps, and syncing the events between them.</p>
-<p>The hardest part was syncing the zooms. Because of Web Mercator projection, the same zoom level at different latitudes doesn't necessarily mean things will be the same scale. I spent (admittedly too much) time on coming up with an equation to translate the zoom levels between the two maps. If you're curious, here's the equation:</p>
+<p>The hardest part was syncing the zooms. Because of Web Mercator projection, the same zoom level at different latitudes doesn’t necessarily mean things will be the same scale. I spent (admittedly too much) time on coming up with an equation to translate the zoom levels between the two maps. If you’re curious, here’s the equation:</p>
 <blockquote>
 <p>zoom2 = log<sub>2</sub>( |cos(lat2)| / |cos(lat1)| / 2<sup>zoom1</sup> )</p>
 </blockquote>
 <p>Other than that, it was pretty straightforward! The code is open source—you can go take a look over at <a href="https://github.com/consindo/samescale">https://github.com/consindo/samescale</a>.</p>
 <h2 id="is-it-finished" tabindex="-1">Is it finished? <a class="header-anchor" href="#is-it-finished">#</a></h2>
-<p>Yes. It's nice to actually be able to call a piece of software finished.</p>
+<p>Yes. It’s nice to actually be able to call a piece of software finished.</p>
 <p><strong><a href="https://scale.waka.app">scale.waka.app</a></strong></p>
 
 
@@ -78,6 +78,6 @@
 			</ul>
 		</footer>
 
-		<!-- This page `/2021/09/04/samescale/` was built on 2024-08-31T21:32:56.307Z -->
+		<!-- This page `/2021/09/04/samescale/` was built on 2024-09-01T11:43:33.179Z -->
 	</body>
 </html>

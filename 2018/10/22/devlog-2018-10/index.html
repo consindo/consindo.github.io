@@ -11,7 +11,7 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
 		<meta name="generator" content="Eleventy v3.0.0">
-		<link rel="stylesheet" href="/bundle/Yp03E4HbuI.css">
+		<link rel="stylesheet" href="/bundle/pYH9WslUe_.css">
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -37,28 +37,28 @@
 		<li><time datetime="2018-10-22">22 October 2018</time></li>
 	</ul>
 
-	<p>I haven't been posting on this blog for a while, but I have been doing things. I'm going to aim to do one of these dev logs every month or so. The idea is that I'll be more accountable and maybe even release something.</p>
-<p>Anyway, here's what I've been doing over the last little bit.</p>
+	<p>I haven’t been posting on this blog for a while, but I have been doing things. I’m going to aim to do one of these dev logs every month or so. The idea is that I’ll be more accountable and maybe even release something.</p>
+<p>Anyway, here’s what I’ve been doing over the last little bit.</p>
 <h2 id="waka" tabindex="-1">Waka <a class="header-anchor" href="#waka">#</a></h2>
-<p>We ended up running out of Azure Credits, and decided to move Waka to AWS. It's generally a lot cheaper, and as I use AWS at Xero, I'm pretty familiar with how to Terraform the bits and pieces together. We had to switch from Azure Blob Storage to S3, and move from a maps server to static map tiles in a S3 Bucket. Other than that, it went fine.</p>
-<p><a href="https://mattdavidson.kiwi">Matt</a> is supposed to be working on <a href="https://github.com/dymajo/waka-importer">waka-importer</a>. The idea is that you input a GTFS file, and it'll dump everything to a SQL Database Dump &amp; Upload Shapes to S3. Hopefully, this should make Waka a bit more modular. It's mostly just extracting the existing functionality into a standalone app, so it should be done pretty soon.</p>
+<p>We ended up running out of Azure Credits, and decided to move Waka to AWS. It’s generally a lot cheaper, and as I use AWS at Xero, I’m pretty familiar with how to Terraform the bits and pieces together. We had to switch from Azure Blob Storage to S3, and move from a maps server to static map tiles in a S3 Bucket. Other than that, it went fine.</p>
+<p><a href="https://mattdavidson.kiwi">Matt</a> is supposed to be working on <a href="https://github.com/dymajo/waka-importer">waka-importer</a>. The idea is that you input a GTFS file, and it’ll dump everything to a SQL Database Dump &amp; Upload Shapes to S3. Hopefully, this should make Waka a bit more modular. It’s mostly just extracting the existing functionality into a standalone app, so it should be done pretty soon.</p>
 <p><img src="/images/wakastatus.png" alt="Waka Status Page"></p>
-<p>Waka now has a <a href="https://assets-us-west-2.waka.app/status/index.html">status page</a>. It's pretty rough right now, but it'll be integrated into service alerts when we add them in. This will probably happen pretty soon because I now live in Wellington, and it seems that every time I go try and catch a train, it's been replaced by a bus.</p>
+<p>Waka now has a <a href="https://assets-us-west-2.waka.app/status/index.html">status page</a>. It’s pretty rough right now, but it’ll be integrated into service alerts when we add them in. This will probably happen pretty soon because I now live in Wellington, and it seems that every time I go try and catch a train, it’s been replaced by a bus.</p>
 <p>In terms of a roadmap, the next things coming will be a new unified lines view, service alerts, and hopefully a switch to Docker containers.</p>
 <h2 id="nitro-3" tabindex="-1">Nitro 3 <a class="header-anchor" href="#nitro-3">#</a></h2>
-<p>I'm still working on Nitro! I get a lot of emails asking when Nitro 3 is coming, and the only thing I can say is &quot;soon&quot;.</p>
-<p>Nitro has taken a long time to build for a number of reasons. Firstly, it's trying to ship an interface that feels native on both mobile &amp; desktop. The end result is great - a single screen, like most native apps. However, it's much more difficult than building something in Bootstrap, with no animations, and calling it a day.</p>
+<p>I’m still working on Nitro! I get a lot of emails asking when Nitro 3 is coming, and the only thing I can say is “soon”.</p>
+<p>Nitro has taken a long time to build for a number of reasons. Firstly, it’s trying to ship an interface that feels native on both mobile &amp; desktop. The end result is great - a single screen, like most native apps. However, it’s much more difficult than building something in Bootstrap, with no animations, and calling it a day.</p>
 <p>The second reason for the slow development is the syncing. Nitro works perfectly offline, and it will merge changes when you go back online. I decided to write my own sync code with a standard postgres database, but definitely ran into more issues than I had envisioned.</p>
-<p>Lastly, I don't have enough time. I'm not a uni student anymore, and have less time to work on things. This will hopefully change when Nitro is released and is earning a little bit of money, but for now, I have to balance it around other things.</p>
-<p>Anyway, here's what Nitro looks like right now:</p>
+<p>Lastly, I don’t have enough time. I’m not a uni student anymore, and have less time to work on things. This will hopefully change when Nitro is released and is earning a little bit of money, but for now, I have to balance it around other things.</p>
+<p>Anyway, here’s what Nitro looks like right now:</p>
 <p><img src="/images/nitro-2018-oct-mobile.png" alt="Nitro Mobile"></p>
 <p>And here it is on the desktop:</p>
 <p><img src="/images/nitro-2018-oct-desktop.png" alt="Nitro Desktop"></p>
-<p>As you can see, it's taken a little bit of inspiration from Waka - that user interface works really well on mobile. It's also very easy to adapt it to the desktop.</p>
-<p>At the moment, I'm working on the expanded task. While the inside is done, there's quite a few weird bugs when you try open a task from a fresh reload, search, or click too fast. For performance reasons, it's rendered as an overlay, rather than inline with an expanding height, but it does make things a bit weird.</p>
-<p>Other than that, the next task is to finish off sync (add an indicator + fix edge cases), and add a little more polish (papercuts + settings + sign up). I haven't been adding features for some time now because I want to get a release out the door. If you haven't already, you can sign up for the beta at <a href="http://nitrotasks.com">nitrotasks.com</a>.</p>
+<p>As you can see, it’s taken a little bit of inspiration from Waka - that user interface works really well on mobile. It’s also very easy to adapt it to the desktop.</p>
+<p>At the moment, I’m working on the expanded task. While the inside is done, there’s quite a few weird bugs when you try open a task from a fresh reload, search, or click too fast. For performance reasons, it’s rendered as an overlay, rather than inline with an expanding height, but it does make things a bit weird.</p>
+<p>Other than that, the next task is to finish off sync (add an indicator + fix edge cases), and add a little more polish (papercuts + settings + sign up). I haven’t been adding features for some time now because I want to get a release out the door. If you haven’t already, you can sign up for the beta at <a href="http://nitrotasks.com">nitrotasks.com</a>.</p>
 <hr>
-<p>That's it for this month! If you have any questions, flick them through to me on <a href="https://twitter.com/consindo">Twitter</a>, and I'll try answer them in the next post.</p>
+<p>That’s it for this month! If you have any questions, flick them through to me on <a href="https://twitter.com/consindo">Twitter</a>, and I’ll try answer them in the next post.</p>
 
 
 	<ul class="post-metadata tags">
@@ -81,6 +81,6 @@
 			</ul>
 		</footer>
 
-		<!-- This page `/2018/10/22/devlog-2018-10/` was built on 2024-08-31T21:32:56.306Z -->
+		<!-- This page `/2018/10/22/devlog-2018-10/` was built on 2024-09-01T11:43:33.177Z -->
 	</body>
 </html>

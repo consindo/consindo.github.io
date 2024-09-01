@@ -11,7 +11,7 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
 		<meta name="generator" content="Eleventy v3.0.0">
-		<link rel="stylesheet" href="/bundle/Yp03E4HbuI.css">
+		<link rel="stylesheet" href="/bundle/pYH9WslUe_.css">
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -37,28 +37,28 @@
 		<li><time datetime="2018-02-25">25 February 2018</time></li>
 	</ul>
 
-	<p>Finally, part two of this guide! In part two, we'll go over how the frontend works. I managed to keep <a href="/2017/10/08/transit-part1/">part one</a> reasonably well updated, but contact me if you have any issues.</p>
+	<p>Finally, part two of this guide! In part two, we’ll go over how the frontend works. I managed to keep <a href="/2017/10/08/transit-part1/">part one</a> reasonably well updated, but contact me if you have any issues.</p>
 <h2 id="setting-up" tabindex="-1">Setting Up <a class="header-anchor" href="#setting-up">#</a></h2>
-<p>If you've already set up the server, it'll all good to go! If not, you'll need node.js &amp; npm installed - https://nodejs.org. Then, three easy steps:</p>
+<p>If you’ve already set up the server, it’ll all good to go! If not, you’ll need node.js &amp; npm installed - https://nodejs.org. Then, three easy steps:</p>
 <ul>
 <li>First, get the code with <code>git clone https://github.com/consindo/waka.git</code></li>
 <li>Install dependencies with <code>npm install</code></li>
 <li>Build the client with  <code>npm run build</code></li>
 </ul>
 <h2 id="development" tabindex="-1">Development <a class="header-anchor" href="#development">#</a></h2>
-<p>If you're only working on the frontend code, and don't want to go to the hassle of setting up your own server, you can simply use <code>npm run watch:live</code>. If you have the server set up, you can use <code>npm run watch</code> instead.</p>
+<p>If you’re only working on the frontend code, and don’t want to go to the hassle of setting up your own server, you can simply use <code>npm run watch:live</code>. If you have the server set up, you can use <code>npm run watch</code> instead.</p>
 <p>Waka uses Webpack, so you get all the fancy live reloading - just head to http://locahost:8009. In terms of code style, eslint &amp; prettier are all set up - just run it through them before you send a pull request.</p>
 <h2 id="react" tabindex="-1">React <a class="header-anchor" href="#react">#</a></h2>
-<p>Waka is written in React, with React Router for the single page routing. If adding a new page or view, it's super important to make sure it can be accessed with a URL - this is how the back button works on Android.</p>
-<p>For maps, Waka uses the DYMAJO OpenStreetMap Server, because it's too expensive to use Mapbox or something similar. We're currently using Leaflet with react-leaflet, but this will be replaced with mapbox-gl-js in the near future.</p>
+<p>Waka is written in React, with React Router for the single page routing. If adding a new page or view, it’s super important to make sure it can be accessed with a URL - this is how the back button works on Android.</p>
+<p>For maps, Waka uses the DYMAJO OpenStreetMap Server, because it’s too expensive to use Mapbox or something similar. We’re currently using Leaflet with react-leaflet, but this will be replaced with mapbox-gl-js in the near future.</p>
 <p>Lots of stuff in Waka is custom because most React components are designed for the desktop. 90% of Traffic to Waka is from mobile, so make sure always build mobile first. Often, I like to plug in my phone and debug directly on that.</p>
 <h2 id="scss" tabindex="-1">SCSS <a class="header-anchor" href="#scss">#</a></h2>
-<p>It's all custom. It's also a little bit of a mess, because the app has undergone a number of significant redesigns in its 1.5 year history. A new redesign is coming soon, so I'll do my best to clean it up a little more.</p>
+<p>It’s all custom. It’s also a little bit of a mess, because the app has undergone a number of significant redesigns in its 1.5 year history. A new redesign is coming soon, so I’ll do my best to clean it up a little more.</p>
 <h2 id="speed" tabindex="-1">Speed <a class="header-anchor" href="#speed">#</a></h2>
-<p>Waka uses Service Workers to run offline, and it falls back nicely. It's not very useful offline, but at least it will load when you're running out of the house and there's very bad Wi-Fi. Bundle size is also reasonably well optimized, so use dynamic imports if necessary.</p>
-<p>There's also the percieved speed - the app uses a large amount of animation in an effort to make things feel faster. If you think something needs an animation, please add it!</p>
+<p>Waka uses Service Workers to run offline, and it falls back nicely. It’s not very useful offline, but at least it will load when you’re running out of the house and there’s very bad Wi-Fi. Bundle size is also reasonably well optimized, so use dynamic imports if necessary.</p>
+<p>There’s also the percieved speed - the app uses a large amount of animation in an effort to make things feel faster. If you think something needs an animation, please add it!</p>
 <h2 id="now-what" tabindex="-1">Now what? <a class="header-anchor" href="#now-what">#</a></h2>
-<p>Please download the code and mess around! It's much easier to get started with the client than the server, so if there's something you're dying to fix or add, it would be greatly appreciated.</p>
+<p>Please download the code and mess around! It’s much easier to get started with the client than the server, so if there’s something you’re dying to fix or add, it would be greatly appreciated.</p>
 <p>Any questions, suggestions, or issues - <a href="http://localhost:4000/me/">contact me!</a></p>
 <p>https://github.com/consindo/waka</p>
 
@@ -81,6 +81,6 @@
 			</ul>
 		</footer>
 
-		<!-- This page `/2018/02/25/transit-part2/` was built on 2024-08-31T21:32:56.308Z -->
+		<!-- This page `/2018/02/25/transit-part2/` was built on 2024-09-01T11:43:33.179Z -->
 	</body>
 </html>

@@ -11,7 +11,7 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
 		<meta name="generator" content="Eleventy v3.0.0">
-		<link rel="stylesheet" href="/bundle/Yp03E4HbuI.css">
+		<link rel="stylesheet" href="/bundle/pYH9WslUe_.css">
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -39,33 +39,33 @@
 
 	<p>Happy New Year!</p>
 <h2 id="nitro-3" tabindex="-1">Nitro 3 ⚡ <a class="header-anchor" href="#nitro-3">#</a></h2>
-<p>I've sent the first couple of invites to the Nitro 3 private beta. It looks like everything went smoothly - the emails went out, and people were able to sign in and start using Nitro.</p>
+<p>I’ve sent the first couple of invites to the Nitro 3 private beta. It looks like everything went smoothly - the emails went out, and people were able to sign in and start using Nitro.</p>
 <p><img src="/images/nitro-2019-beta-wave-1.png" alt="Nitro Beta Wave 1 Sent"></p>
-<p>A couple of things happened to get Nitro to production: I fixed all the critical bugs, added JS Module support, but also had to build a new component to onboard new users. It ended up being pretty simple - if you have a valid invite code, you can login, and it'll set some metadata on your user in Auth0. If you try to login to Nitro without having activated your account (and thus having no metadata), it'll tell you that you don't have access to the application.</p>
-<p>I also added a rudimentary stats page for Admin users, as I decided not to add Google Analytics. At the moment, it's just a count of the lists, tasks, users, and archived tasks in Nitro, but is still useful. I implemented this properly too - it doesn't just connect straight to the database, but calls the Nitro API authenticating as a machine.</p>
-<p>It's common in a lot of environments to not have any authentication and simply trust other traffic because it's coming from the same network. The problem with this approach is that it's not only hard to audit what is requesting what, but ties you a little bit more into your cloud provider (peering VPCs can be a pain). If you use machine to machine authentication, you don't need to build a BFF (your private and public APIs are the same) but you can also make requests over a zero trust network. For example, I could run Nitro API as a container on AWS and Account Manager as a serverless function on Azure with no special networking. Auth0 made this really easy to do - you can grant an application access to an API by just flicking a switch and choosing some scopes.</p>
-<p>I've been using Nitro for months in a test environment - it's always a good idea to dogfood your own app! However, I didn't have any production infrastructure deployed. I've been using <a href="https://terraform.io">Terraform</a> to provision infrastructure, so deploying to production was as easy as renaming some configuration. I would highly recommend everyone to check out Terraform - you write your infrastructure as code, and it'll be built out like magic, even over multiple cloud server providers.</p>
+<p>A couple of things happened to get Nitro to production: I fixed all the critical bugs, added JS Module support, but also had to build a new component to onboard new users. It ended up being pretty simple - if you have a valid invite code, you can login, and it’ll set some metadata on your user in Auth0. If you try to login to Nitro without having activated your account (and thus having no metadata), it’ll tell you that you don’t have access to the application.</p>
+<p>I also added a rudimentary stats page for Admin users, as I decided not to add Google Analytics. At the moment, it’s just a count of the lists, tasks, users, and archived tasks in Nitro, but is still useful. I implemented this properly too - it doesn’t just connect straight to the database, but calls the Nitro API authenticating as a machine.</p>
+<p>It’s common in a lot of environments to not have any authentication and simply trust other traffic because it’s coming from the same network. The problem with this approach is that it’s not only hard to audit what is requesting what, but ties you a little bit more into your cloud provider (peering VPCs can be a pain). If you use machine to machine authentication, you don’t need to build a BFF (your private and public APIs are the same) but you can also make requests over a zero trust network. For example, I could run Nitro API as a container on AWS and Account Manager as a serverless function on Azure with no special networking. Auth0 made this really easy to do - you can grant an application access to an API by just flicking a switch and choosing some scopes.</p>
+<p>I’ve been using Nitro for months in a test environment - it’s always a good idea to dogfood your own app! However, I didn’t have any production infrastructure deployed. I’ve been using <a href="https://terraform.io">Terraform</a> to provision infrastructure, so deploying to production was as easy as renaming some configuration. I would highly recommend everyone to check out Terraform - you write your infrastructure as code, and it’ll be built out like magic, even over multiple cloud server providers.</p>
 <p><img src="/images/ecs-cluster-2019-jan.png" alt="Nitro ECS Cluster"></p>
-<p>Nitro itself is running on AWS, on an ECS Cluster (EC2 launch type) behind a load balancer. The Nitro client is deployed into a S3 bucket, sitting behind Cloudflare. Currently, all the Docker containers are running on a single instance, but I'll add some auto scaling when I onboard a few more people. Additionally, the database is fully managed by AWS (Postgres RDS), and again, I'm using Auth0 to provide login. This is all aided by Nitro being fully functional while offline, so if there is an outage, it's unlikely you'll even notice it 😁.</p>
-<p>In terms of what's next, I'm actually not sure! I'll definitely be checking out the feedback from the first beta users, as well as onboarding more people. Based off the feedback, I'll be able to prioritize the most important issues, and go from there!</p>
+<p>Nitro itself is running on AWS, on an ECS Cluster (EC2 launch type) behind a load balancer. The Nitro client is deployed into a S3 bucket, sitting behind Cloudflare. Currently, all the Docker containers are running on a single instance, but I’ll add some auto scaling when I onboard a few more people. Additionally, the database is fully managed by AWS (Postgres RDS), and again, I’m using Auth0 to provide login. This is all aided by Nitro being fully functional while offline, so if there is an outage, it’s unlikely you’ll even notice it 😁.</p>
+<p>In terms of what’s next, I’m actually not sure! I’ll definitely be checking out the feedback from the first beta users, as well as onboarding more people. Based off the feedback, I’ll be able to prioritize the most important issues, and go from there!</p>
 <h2 id="waka" tabindex="-1">Waka <a class="header-anchor" href="#waka">#</a></h2>
-<p>Because I actually managed to run out of things to do on Nitro, I put a little bit of work into Waka. After choosing a line on the lines screen, it'll show the live vehicle locations if there's any! It'll also show the services you can transfer to at each stop. I then removed the existing route map that is visible when you press route map on the stations page - it now sends you to the unified lines page.</p>
+<p>Because I actually managed to run out of things to do on Nitro, I put a little bit of work into Waka. After choosing a line on the lines screen, it’ll show the live vehicle locations if there’s any! It’ll also show the services you can transfer to at each stop. I then removed the existing route map that is visible when you press route map on the stations page - it now sends you to the unified lines page.</p>
 <p><img src="/images/waka-unified-lines-2019-jan.png" alt="Waka Unified Lines - Screenshot of OuterLink"></p>
 <p>This change is live for both Auckland and Wellington, and works for buses and trains!</p>
-<p>I'm definitely going to make it better though - here's a couple of plans for that page:</p>
+<p>I’m definitely going to make it better though - here’s a couple of plans for that page:</p>
 <ul>
 <li>Show transfers at transport hubs (e.g Otahuhu, Albany, Kilbirnie)</li>
 <li>Show how long it takes between stations</li>
 <li>A better way to select the route variant (e.g The NX1 can run to either Albany or the Hibiscus Coast, the 1 can run to one of three possible destinations)</li>
 </ul>
-<p>And if you've jumped in from the station page, or have selected a station:</p>
+<p>And if you’ve jumped in from the station page, or have selected a station:</p>
 <ul>
 <li>Show the live service info</li>
 <li>Show the time that a service yields at each station</li>
 </ul>
-<p>Once that work is all done, it should lead into a few other changes. Notably, showing the inactive stops on the station page, and making transport hubs more prominent on the map. There's also other work where we're disassembling the Waka monolith (okay, it's not really a monolith, but we want to split out the data import from the runtime).</p>
+<p>Once that work is all done, it should lead into a few other changes. Notably, showing the inactive stops on the station page, and making transport hubs more prominent on the map. There’s also other work where we’re disassembling the Waka monolith (okay, it’s not really a monolith, but we want to split out the data import from the runtime).</p>
 <hr>
-<p>That's all for January. I'm off to take a well needed holiday! ✈</p>
+<p>That’s all for January. I’m off to take a well needed holiday! ✈</p>
 
 
 	<ul class="post-metadata tags">
@@ -88,6 +88,6 @@
 			</ul>
 		</footer>
 
-		<!-- This page `/2019/01/17/devlog-2019-01/` was built on 2024-08-31T21:32:56.306Z -->
+		<!-- This page `/2019/01/17/devlog-2019-01/` was built on 2024-09-01T11:43:33.177Z -->
 	</body>
 </html>

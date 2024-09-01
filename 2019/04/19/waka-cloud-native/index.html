@@ -11,7 +11,7 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
 		<meta name="generator" content="Eleventy v3.0.0">
-		<link rel="stylesheet" href="/bundle/Yp03E4HbuI.css">
+		<link rel="stylesheet" href="/bundle/pYH9WslUe_.css">
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -40,9 +40,9 @@
 	<p>Recently, Waka has a had a bit of a rewrite to make it much easier to get started locally, and is now able to be run in a high-availability, cloud native configuration.</p>
 <h2 id="old-waka" tabindex="-1">Old Waka <a class="header-anchor" href="#old-waka">#</a></h2>
 <p>Old Waka was a little bit of a monolith. Everything was bundled together into the <a href="https://github.com/dymajo/waka">dymajo/waka</a> repository. The barrier to entry was high - you had to get everything going if you wanted to develop it.</p>
-<p>Everything also used a crazy, multi-process architecture /2017/10/08/transit-part1/. It provided a way to split cities processes from each other. This was helpful when the software was less stable - an import of a new Auckland timetable could crash Wellington. <strong>I would not recommend this</strong>. It's way more sensible to use a proper application orchestration technology, such as Amazon ECS or Kubernetes.</p>
+<p>Everything also used a crazy, multi-process architecture /2017/10/08/transit-part1/. It provided a way to split cities processes from each other. This was helpful when the software was less stable - an import of a new Auckland timetable could crash Wellington. <strong>I would not recommend this</strong>. It’s way more sensible to use a proper application orchestration technology, such as Amazon ECS or Kubernetes.</p>
 <h2 id="new-waka" tabindex="-1">New Waka <a class="header-anchor" href="#new-waka">#</a></h2>
-<p>New Waka addresses all these issues. The application has been split into a number of components, but still delivers an excellent development experience. It also <strong>doesn't require any set-up</strong> to get going.</p>
+<p>New Waka addresses all these issues. The application has been split into a number of components, but still delivers an excellent development experience. It also <strong>doesn’t require any set-up</strong> to get going.</p>
 <ul>
 <li><a href="https://github.com/dymajo/waka">waka</a> - the front end</li>
 <li><a href="https://github.com/dymajo/waka-importer">waka-importer</a> - task that downloads GTFS feeds, and imports them into SQL Server</li>
@@ -63,16 +63,16 @@
 <li>Auto-discovery of regions.</li>
 <li>Disabled import of line shapes into S3.</li>
 </ul>
-<p>With the split into multiple components, it was important to keep the development experience as good as a monolith - developing in Docker containers is not fun. Originally, I thought this was going to be difficult to do - we need multiple waka-workers for each city. I didn't want to go back to the multi-process mess. Then it hit me. <strong>Every component should be a class that can be instantiated</strong>.</p>
-<p>This is awesome. When it's running locally, the class exposes some routes that are added to waka-orchestrator's router. When it's running in a Docker container, it sets up its own web server, and grabs config from environmental variables.</p>
+<p>With the split into multiple components, it was important to keep the development experience as good as a monolith - developing in Docker containers is not fun. Originally, I thought this was going to be difficult to do - we need multiple waka-workers for each city. I didn’t want to go back to the multi-process mess. Then it hit me. <strong>Every component should be a class that can be instantiated</strong>.</p>
+<p>This is awesome. When it’s running locally, the class exposes some routes that are added to waka-orchestrator’s router. When it’s running in a Docker container, it sets up its own web server, and grabs config from environmental variables.</p>
 <h3 id="cloud-native" tabindex="-1">Cloud Native <a class="header-anchor" href="#cloud-native">#</a></h3>
-<p>With each component being a Docker container, we now run Waka on Amazon ECS. We chose ECS over Kubernetes, because ECS is easier and cheaper to get set-up with. I also spend a lot of time working with Kubernetes at work, so I'm fully aware that it's a much better system!</p>
+<p>With each component being a Docker container, we now run Waka on Amazon ECS. We chose ECS over Kubernetes, because ECS is easier and cheaper to get set-up with. I also spend a lot of time working with Kubernetes at work, so I’m fully aware that it’s a much better system!</p>
 <p><img src="/images/waka-ecs.png" alt="Waka ECS Services"></p>
-<p>waka-orchestrator speaks to the Amazon ECS API to adjust the active version, as well as launching Fargate waka-importer tasks. For bonus points, our SQL server instance also runs on ECS with an EBS mount (there's only timetables in there), and our cluster runs on 75% spot instances! Our stage environment runs on 100% spot instances, and auto-scales so is only available when we're awake.</p>
+<p>waka-orchestrator speaks to the Amazon ECS API to adjust the active version, as well as launching Fargate waka-importer tasks. For bonus points, our SQL server instance also runs on ECS with an EBS mount (there’s only timetables in there), and our cluster runs on 75% spot instances! Our stage environment runs on 100% spot instances, and auto-scales so is only available when we’re awake.</p>
 <p><img src="/images/waka-alb.png" alt="Waka ALB Routes"></p>
 <p>As waka has been designed in a way where no components actually talk to each other (apart from waka-proxy, which is doing auto-discovery), we effectively have a zero-trust network. All the components sit behind an Amazon Application Load Balancer (ALB), with routes to the ECS target groups. We also have the Waka admin console on the ALB, but using <a href="https://auth0.com">Auth0</a> to authenticate these requests on the Load Balancer.</p>
 <h2 id="help-us-build-waka" tabindex="-1">Help us build Waka! <a class="header-anchor" href="#help-us-build-waka">#</a></h2>
-<p>With these changes, Waka is ready for the future. We've got new cities in the pipeline and other exciting ideas!</p>
+<p>With these changes, Waka is ready for the future. We’ve got new cities in the pipeline and other exciting ideas!</p>
 <p>If you want to help us build Waka, you can now get going in a matter of minutes. Check out the <a href="https://github.com/dymajo/waka">front-end</a> or <a href="https://github.com/dymajo/waka-server">server</a> to get started.</p>
 
 
@@ -94,6 +94,6 @@
 			</ul>
 		</footer>
 
-		<!-- This page `/2019/04/19/waka-cloud-native/` was built on 2024-08-31T21:32:56.308Z -->
+		<!-- This page `/2019/04/19/waka-cloud-native/` was built on 2024-09-01T11:43:33.179Z -->
 	</body>
 </html>

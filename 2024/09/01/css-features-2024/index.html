@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CSS features I’ve been using recently</title>
+		<meta name="description" content="Jono Cooper is a product engineer based in Tāmaki Makaurau. He has a passion for delivering best-in-class products, from vision to execution.">
+
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="stylesheet" href="/bundle/pYH9WslUe_.css">
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link" title="Jono Cooper">JC</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/projects/">Projects</a></li>
+					<li class="nav-item"><a href="/archives/">Posts</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+
+<jc-container width="prose" class="post">
+	<h1>CSS features I’ve been using recently</h1>
+
+	<ul class="post-metadata">
+		<li><time datetime="2024-09-01">01 September 2024</time></li>
+	</ul>
+
+	<p>While recently redesigning this site and working on <a href="https://turbomaps.io/blog">new Turbomaps features</a>, I took the opportunity to use a few CSS techniques new to me. Here’s a list of CSS features I recommend taking a look at.</p>
+<h2 id="wide-gamut-color" tabindex="-1">Wide gamut color <a class="header-anchor" href="#wide-gamut-color">#</a></h2>
+<p>Plenty of devices these days have wide gamut displays that can display more than just sRGB, and make colors really <em>“pop”</em>. There’s a bunch of different methods for authoring these in CSS, but I recommend using <code>oklch()</code>.</p>
+<p>In fact, you can just use <code>oklch()</code> by default. Unlike <code>hsl()</code> the lightness is uniform, so you can predictably create color palettes based off a single color. If your chosen color is in the P3 gamut, you may want to specify a fallback color in sRGB.</p>
+<p>The OKLCH color picker is very nice for playing around with this.</p>
+<p><a href="https://oklch.com/">oklch.com</a></p>
+<h2 id="system-font-stacks" tabindex="-1">System font stacks <a class="header-anchor" href="#system-font-stacks">#</a></h2>
+<p>While I love web fonts, especially variable ones, you don’t always need to use them. I just used system fonts for this site and tweaked the families and weights a little to ensure everything is legible across platforms.</p>
+<p>I’ve learned to accept the quality of text rendering across platforms differs anyway, so using a completely different font isn’t such a bad thing.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p><a href="https://github.com/system-fonts/modern-font-stacks">github.com/system-fonts/modern-font-stacks</a></p>
+<h2 id="html-web-components" tabindex="-1">HTML web components <a class="header-anchor" href="#html-web-components">#</a></h2>
+<p>HTML custom elements have been around for a while now, and they seem like they’re a really good choice for building out a component library. The idea is that you can wrap existing native elements with your custom HTML elements, style with CSS, and <em>progressively enhance</em> with JavaScript.</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-button</span> <span class="token attr-name">bg</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>green<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Click me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-button</span><span class="token punctuation">></span></span></code></pre>
+<p>Writing components in this way plays nicely with server side rendering, and provides an easy way to scope styles. Many of the attributes you would usually pass into a React component can just be native HTML attributes, and styled with CSS. No Shadow DOM required!</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">my-button[bg="green"] > button</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>I found <a href="https://adactio.com/journal/20618">Jeremy Keith’s article</a> to be particularly compelling. I’ve had success with HTML web components in my projects so far, and would highly recommend considering them for any design system or component library.</p>
+<h2 id="styling-with-accessibility-attributes" tabindex="-1">Styling with accessibility attributes <a class="header-anchor" href="#styling-with-accessibility-attributes">#</a></h2>
+<p>When implementing custom UI, you should be using <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">ARIA roles and attributes</a>. However, you might be tempted to add additional classes to handle the styling. But you could just not—keep things simple and target the ARIA attribute.</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>your-element</span> <span class="token attr-name">aria-disabled</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token comment">/* Instead of introducing an extra class for styling: */</span>
+<span class="token selector">your-element.disabled</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> gray<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* You can just target the ARIA attribute: */</span>
+<span class="token selector">your-element[aria-disabled="true"]</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> gray<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>I find writing CSS in this way helps me keep accessibility top of mind.</p>
+<h2 id="is" tabindex="-1">:is <a class="header-anchor" href="#is">#</a></h2>
+<p>This can make your code much less verbose and more readable. I’ve noticed it’s particularly helpful when you’ve got lots of different attributes.</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token comment">/* Instead of adding separate selectors: */</span>
+<span class="token selector">your-element[bg="red"], your-element[bg="green"], your-element[bg="blue"]</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* You can simplify it to the following: */</span>
+<span class="token selector">your-element:is([bg="red"], [bg="green"], [bg="blue"])</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:is">developer.mozilla.org/en-US/docs/Web/CSS/:is</a></p>
+<h2 id="avif" tabindex="-1">AVIF <a class="header-anchor" href="#avif">#</a></h2>
+<p>This one isn’t a CSS feature, but AVIF is too good not to mention. The file sizes are tiny, browser support is great, and almost every modern piece of hardware has built in AV1 decode.</p>
+<p>For images on the web, I recommend:</p>
+<ul>
+<li>Don’t bother with WebP.</li>
+<li>Start with a minimum of 2x scale—you don’t need a 1x image.</li>
+<li>Use the <code>&lt;picture&gt;</code> element for a JPG/PNG fallback if you have to.</li>
+</ul>
+<p>I was using webp for a while on this blog, but I’ve now switched all the recent content to AVIF. I used the <a href="https://www.11ty.dev/docs/plugins/image/">11ty image plugin</a>, but if you’re not processing images at build time you can use <code>npx avif</code> to easily convert a whole directory.</p>
+<p>AVIF requires a decent amount of compute to encode, so I would not recommend conversion at runtime (i.e using some SaaS service).</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture">developer.mozilla.org/en-US/docs/Web/HTML/Element/picture</a></p>
+<h2 id="text-decoration" tabindex="-1">text-decoration-* <a class="header-anchor" href="#text-decoration">#</a></h2>
+<p>I always just assumed <code>text-decoration</code> could only be <code>underline</code>, <code>dotted</code>, <code>dashed</code>, or <code>none</code>. Turns out you can set the thickness, distance, color, and more.</p>
+<p>Upon learning this, I went with some fancy dotted links on this site. They even animate on hover.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration">developer.mozilla.org/en-US/docs/Web/CSS/text-decoration</a></p>
+<h2 id="text-wrap-pretty" tabindex="-1">text-wrap: pretty <a class="header-anchor" href="#text-wrap-pretty">#</a></h2>
+<p>This one is subtle, but a nice improvement for blog posts and documentation. You probably don’t want to apply this everywhere as it does negatively impact performance.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap">developer.mozilla.org/en-US/docs/Web/CSS/text-wrap</a></p>
+<h2 id="scrollbar-color" tabindex="-1">scrollbar-color <a class="header-anchor" href="#scrollbar-color">#</a></h2>
+<p>I don’t find myself often needing to customize the scrollbar, but it can be good for scrollable containers within the main page (e.g the Turbomaps sidebar).</p>
+<p>You can use <code>scrollbar-color</code> to customize the track and thumb, and <code>scrollbar-width</code> if you’re careful.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color">developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color</a></p>
+<h2 id="animated-masks" tabindex="-1">Animated Masks <a class="header-anchor" href="#animated-masks">#</a></h2>
+<p>I recently came across a loading spinner implemented as an animated SVG. While great in theory, it turns out that SVG animations don’t start until the <code>onload</code> event. This can make it problematic if you’re using the loading spinner in a <em>Single Page App</em>.</p>
+<p>Ideally, you should be server side rendering, but if it has to be a SPA you can use a CSS animation instead. Many loading spinners are easy to do with CSS animations—often just a <code>transform: rotate(360deg)</code>, but I was given a spinner than was clipping the path of a outlined square.</p>
+<p>You may be tempted to use <a href="https://caniuse.com/mdn-css_properties_clip-path_is_animatable">clip path animations</a>, but I learned it’s still not supported in Safari. Instead, you may be able to use CSS masks and animate the position(s) to achieve the same effect.</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> loader</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span>
+    <span class="token property">mask-position</span><span class="token punctuation">:</span> 50px 50px<span class="token punctuation">,</span> -50px -50px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">mask-position</span><span class="token punctuation">:</span> 25px -25px<span class="token punctuation">,</span> -25px 25px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">your-loader</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* the linear-gradient() just generates some square "images" */</span>
+  <span class="token property">mask</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>#000<span class="token punctuation">,</span> #000<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>#000<span class="token punctuation">,</span> #000<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> 1s loader infinite ease<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask">developer.mozilla.org/en-US/docs/Web/CSS/mask</a></p>
+<h2 id="dialog" tabindex="-1">&lt;dialog&gt; <a class="header-anchor" href="#dialog">#</a></h2>
+<p>I’ve found that the HTML <code>&lt;dialog&gt;</code> element is not only good for modals, but dropdown &amp; right-click menus too. They’re now used extensively throughout Turbomaps.</p>
+<p>However, they’re a bit tricky to animate. The trick is to use an animation in, but a transition out combined with <code>allow-discrete</code>. You can also use <code>@starting-style</code> instead of an animation, but the browser support still needs to improve.</p>
+<pre class="language-css" tabindex="0"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> show</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span> <span class="token property">opacity</span><span class="token punctuation">:</span> 0 <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span> <span class="token property">opacity</span><span class="token punctuation">:</span> 1 <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">dialog</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span>
+    100ms ease-out opacity<span class="token punctuation">,</span>
+    overlay 100ms ease-out allow-discrete<span class="token punctuation">,</span>
+    display 100ms ease-out allow-discrete<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">dialog[open]</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> 100ms ease-out show 1<span class="token punctuation">;</span> <span class="token comment">/* animate in, but use transition out */</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Depending on your needs, the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/popover">popover attribute</a> may be better than a <code>&lt;dialog&gt;</code>, but the same animation techniques still apply.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-behavior">developer.mozilla.org/en-US/docs/Web/CSS/transition-behavior</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>I will fight you if you think macOS has better text rendering than Windows. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+	<ul class="post-metadata tags">
+		<li><a href="/tags/dev/" class="post-tag">dev</a>, </li>
+		<li><a href="/tags/turbomaps/" class="post-tag">turbomaps</a></li>
+	</ul>
+	<ul class="links-nextprev"><li>Previous: <a href="/2022/07/15/rapid-kfc/">Auckland’s Rapid KFC Network</a></li>
+	</ul>
+</jc-container>
+
+		</main>
+
+		<footer>
+			<div class="copyright">&copy; 2024 Jono Cooper</div>
+			<ul>
+				<li><a href="/feed/feed.xml">rss</a></li>
+				<li><a href="https://github.com/consindo/jono.nz">source</a></li>
+			</ul>
+		</footer>
+
+		<!-- This page `/2024/09/01/css-features-2024/` was built on 2024-09-01T11:43:33.177Z -->
+	</body>
+</html>

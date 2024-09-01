@@ -11,7 +11,7 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
 		<meta name="generator" content="Eleventy v3.0.0">
-		<link rel="stylesheet" href="/bundle/Yp03E4HbuI.css">
+		<link rel="stylesheet" href="/bundle/pYH9WslUe_.css">
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -37,17 +37,17 @@
 		<li><time datetime="2019-07-15">15 July 2019</time></li>
 	</ul>
 
-	<p>Yikes. Haven't done one of these in a while. It's mostly because I'm really busy at work - turns out, everyone wants to use Kubernetes. I also bought a house, which turns out to be quite a stressful process.</p>
+	<p>Yikes. Haven’t done one of these in a while. It’s mostly because I’m really busy at work - turns out, everyone wants to use Kubernetes. I also bought a house, which turns out to be quite a stressful process.</p>
 <h2 id="waka" tabindex="-1">Waka <a class="header-anchor" href="#waka">#</a></h2>
-<p>We've been reducing technical debt in Waka. The server has been entirely rewritten in TypeScript, we're adding tests, and making it really easy to add more cities. The app itself is also getting a little bit of love, and we're looking at improving the route page and adding service alerts in the near future. Just for fun, we also rewrote waka-proxy in golang.</p>
-<p>The architecture itself hasn't changed a lot since the last post, but we have added a new component. It's called waka-realtime, and it's responsible for pulling realtime information from agencies and putting them in a Redis cache. waka-worker now pulls from the Redis cache, as opposed to doing the pulls itself, and storing it in RAM.</p>
-<p>This new component allows us to make more of Waka &quot;serverless&quot;, and run on AWS Lambda. Even though we run our ECS cluster on spot instances, it's still expensive to maintain a seperate test environment.</p>
-<p>There's a lot more coming to Waka really soon, we're looking forward to announcing the availbility of our next two cities - Sydney &amp; Christchurch.</p>
+<p>We’ve been reducing technical debt in Waka. The server has been entirely rewritten in TypeScript, we’re adding tests, and making it really easy to add more cities. The app itself is also getting a little bit of love, and we’re looking at improving the route page and adding service alerts in the near future. Just for fun, we also rewrote waka-proxy in golang.</p>
+<p>The architecture itself hasn’t changed a lot since the last post, but we have added a new component. It’s called waka-realtime, and it’s responsible for pulling realtime information from agencies and putting them in a Redis cache. waka-worker now pulls from the Redis cache, as opposed to doing the pulls itself, and storing it in RAM.</p>
+<p>This new component allows us to make more of Waka “serverless”, and run on AWS Lambda. Even though we run our ECS cluster on spot instances, it’s still expensive to maintain a seperate test environment.</p>
+<p>There’s a lot more coming to Waka really soon, we’re looking forward to announcing the availbility of our next two cities - Sydney &amp; Christchurch.</p>
 <h2 id="nitro" tabindex="-1">Nitro <a class="header-anchor" href="#nitro">#</a></h2>
-<p>Unfortunately, Nitro hasn't seen a lot of work on the last couple of months. I've mainly been fixing up UI bugs - the server is rock solid. Upon reflection, building a really fancy user interface isn't a good way to get a product out quickly. While it's a clean, simple experience, the animations and transitions have proved to be difficult to stabilize. I don't want to abandon things, and will look to getting a public beta out soon.</p>
-<p>In terms of infrastructure changes, I've moved the account manager (activates accounts and invitations) from ECS to Lambda.</p>
+<p>Unfortunately, Nitro hasn’t seen a lot of work on the last couple of months. I’ve mainly been fixing up UI bugs - the server is rock solid. Upon reflection, building a really fancy user interface isn’t a good way to get a product out quickly. While it’s a clean, simple experience, the animations and transitions have proved to be difficult to stabilize. I don’t want to abandon things, and will look to getting a public beta out soon.</p>
+<p>In terms of infrastructure changes, I’ve moved the account manager (activates accounts and invitations) from ECS to Lambda.</p>
 <hr>
-<p>That's really it for the last couple of months. Fingers crossed that I'll have more to post about soon!</p>
+<p>That’s really it for the last couple of months. Fingers crossed that I’ll have more to post about soon!</p>
 
 
 	<ul class="post-metadata tags">
@@ -70,6 +70,6 @@
 			</ul>
 		</footer>
 
-		<!-- This page `/2019/07/15/devlog-2019-07/` was built on 2024-08-31T21:32:56.306Z -->
+		<!-- This page `/2019/07/15/devlog-2019-07/` was built on 2024-09-01T11:43:33.178Z -->
 	</body>
 </html>

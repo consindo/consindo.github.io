@@ -11,7 +11,7 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
 		<meta name="generator" content="Eleventy v3.0.0">
-		<link rel="stylesheet" href="/bundle/Yp03E4HbuI.css">
+		<link rel="stylesheet" href="/bundle/pYH9WslUe_.css">
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -37,32 +37,32 @@
 		<li><time datetime="2016-12-30">30 December 2016</time></li>
 	</ul>
 
-	<p>While developing <a href="https://waka.app">Waka</a>, I've discovered that Mobile Safari is the new IE6. Most of this arises because Apple has layered on a number of fancy features that work great for most sites, but create problems when you trying making a web app. Here's a couple of issues and fixes for these things:</p>
+	<p>While developing <a href="https://waka.app">Waka</a>, I’ve discovered that Mobile Safari is the new IE6. Most of this arises because Apple has layered on a number of fancy features that work great for most sites, but create problems when you trying making a web app. Here’s a couple of issues and fixes for these things:</p>
 <h2 id="desktop-safari-is-completely-different-to-mobile-safari" tabindex="-1">Desktop Safari is completely different to Mobile Safari <a class="header-anchor" href="#desktop-safari-is-completely-different-to-mobile-safari">#</a></h2>
-<p><strong>Problem:</strong> Desktop Safari looks great, but the app doesn't work on iOS.
+<p><strong>Problem:</strong> Desktop Safari looks great, but the app doesn’t work on iOS.
 <strong>Solution:</strong> Unfortunately, you always have to be testing on real devices. This goes for Android too, because these devices are a lot slower than your dev machine.</p>
 <p><img src="/images/throttle.png" alt="Chrome CPU Throttling"></p>
-<p>It's also a good idea to enable CPU Throttling in Chrome in order to get an idea of how your app will perform.</p>
+<p>It’s also a good idea to enable CPU Throttling in Chrome in order to get an idea of how your app will perform.</p>
 <h2 id="viewport-height-is-too-high" tabindex="-1">Viewport Height is too high <a class="header-anchor" href="#viewport-height-is-too-high">#</a></h2>
-<p><strong>Problem:</strong> 100vh includes the height of the browser controls, which are overlaid so there's the fancy blur effect.</p>
+<p><strong>Problem:</strong> 100vh includes the height of the browser controls, which are overlaid so there’s the fancy blur effect.</p>
 <p><img src="/images/ios-vh-issue.png" alt="iOS Viewport Height Issue" title="Image from https://nicolas-hoizey.com/2015/02/viewport-height-is-taller-than-the-visible-part-of-the-document-in-some-mobile-browsers.html"></p>
-<p><strong>Fix:</strong> If you can't use height 100%, I would recommend using a CSS variable, and line of code like this:</p>
+<p><strong>Fix:</strong> If you can’t use height 100%, I would recommend using a CSS variable, and line of code like this:</p>
 <pre><code>document.body.style.setProperty('--real-height', document.documentElement.clientHeight + 'px')
 </code></pre>
 <p>Make sure to bind this to your window.onresize event!</p>
 <h2 id="no-kinetic-scrolling-in-child-elements" tabindex="-1">No Kinetic Scrolling in Child Elements <a class="header-anchor" href="#no-kinetic-scrolling-in-child-elements">#</a></h2>
-<p><strong>Problem:</strong> Having overflow:scroll in a container doesn't have any inertia.
+<p><strong>Problem:</strong> Having overflow:scroll in a container doesn’t have any inertia.
 <strong>Solution:</strong> On your element, set <code>-webkit-overflow-scrolling: touch;</code></p>
 <h2 id="webkit-overflow-scrolling-bubbles-to-page" tabindex="-1">-webkit-overflow-scrolling bubbles to page <a class="header-anchor" href="#webkit-overflow-scrolling-bubbles-to-page">#</a></h2>
-<p><strong>Problem:</strong> When you're at the top of the element, the entire page scrolls, not the element.
-<strong>Solution:</strong> You'll need two elements, something like this:</p>
+<p><strong>Problem:</strong> When you’re at the top of the element, the entire page scrolls, not the element.
+<strong>Solution:</strong> You’ll need two elements, something like this:</p>
 <pre><code>&lt;div class=&quot;scrollable&quot;&gt;
   &lt;div class=&quot;container&quot;&gt;
     Content
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>On the inner element, you'll need to set <code>min-height: 101%</code>. Then, <code>onTouchStart</code>, you'll need some JavaScript that moves the scroll position down a single pixel at the top of the page, or up a pixel at the bottom.</p>
+<p>On the inner element, you’ll need to set <code>min-height: 101%</code>. Then, <code>onTouchStart</code>, you’ll need some JavaScript that moves the scroll position down a single pixel at the top of the page, or up a pixel at the bottom.</p>
 <pre><code>let top = e.scrollTop
 let totalScroll = e.scrollHeight
 let currentScroll = top + e.offsetHeight
@@ -74,15 +74,15 @@ if (top === 0) {
 }
 </code></pre>
 <h2 id="flexbox-is-funky-in-row-direction" tabindex="-1">Flexbox is funky in row direction <a class="header-anchor" href="#flexbox-is-funky-in-row-direction">#</a></h2>
-<p><strong>Problem:</strong> Flexbox generally doesn't work in the row direction on iOS.
-<strong>Solution:</strong> If setting the container height with the CSS variable you made doesn't work, use <code>calc()</code> with that variable. It's really not ideal, but this is what I've found works best.</p>
+<p><strong>Problem:</strong> Flexbox generally doesn’t work in the row direction on iOS.
+<strong>Solution:</strong> If setting the container height with the CSS variable you made doesn’t work, use <code>calc()</code> with that variable. It’s really not ideal, but this is what I’ve found works best.</p>
 <h2 id="force-touch" tabindex="-1">Force Touch <a class="header-anchor" href="#force-touch">#</a></h2>
-<p><strong>Problem:</strong> If you force touch on an link that you styled like a button because you have fancy single page routing, it'll pop up a preview.
-<strong>Solution:</strong> If iOS, don't use the anchor tag (or at least a href). Bind an event to the button, <a href="https://developer.mozilla.org/en/docs/Web/API/History">and push the new URL to the History</a>.</p>
+<p><strong>Problem:</strong> If you force touch on an link that you styled like a button because you have fancy single page routing, it’ll pop up a preview.
+<strong>Solution:</strong> If iOS, don’t use the anchor tag (or at least a href). Bind an event to the button, <a href="https://developer.mozilla.org/en/docs/Web/API/History">and push the new URL to the History</a>.</p>
 <h2 id="no-caching-when-pinned-to-home-screen" tabindex="-1">No caching when pinned to home screen <a class="header-anchor" href="#no-caching-when-pinned-to-home-screen">#</a></h2>
-<p><strong>Problem:</strong> There's no HTTP caching when the app is pinned to home screen. Makes for long initial load times.
-<strong>Solution:</strong> You're gonna have to use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache">AppCache</a> for this one.</p>
-<p>That's all I can think of for now. If you have a Mobile Safari hack, message me, and I'll add it to this post!</p>
+<p><strong>Problem:</strong> There’s no HTTP caching when the app is pinned to home screen. Makes for long initial load times.
+<strong>Solution:</strong> You’re gonna have to use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache">AppCache</a> for this one.</p>
+<p>That’s all I can think of for now. If you have a Mobile Safari hack, message me, and I’ll add it to this post!</p>
 
 
 	<ul class="post-metadata tags">
@@ -102,6 +102,6 @@ if (top === 0) {
 			</ul>
 		</footer>
 
-		<!-- This page `/2016/12/30/ioshacks/` was built on 2024-08-31T21:32:56.307Z -->
+		<!-- This page `/2016/12/30/ioshacks/` was built on 2024-09-01T11:43:33.178Z -->
 	</body>
 </html>
