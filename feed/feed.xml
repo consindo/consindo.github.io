@@ -4,12 +4,48 @@
 	<subtitle>Jono Cooper is a product engineer based in Tāmaki Makaurau. He has a passion for delivering best-in-class products, from vision to execution.</subtitle>
 	<link href="https://jono.nz/feed/feed.xml" rel="self"/>
 	<link href="https://jono.nz/"/>
-	<updated>2024-09-01T10:30:00Z</updated>
+	<updated>2024-09-17T12:00:00Z</updated>
 	<id>https://jono.nz</id>
 	<author>
 		<name>Jono Cooper</name>
 		<email>jono@jono.nz</email>
 	</author>
+	
+	<entry>
+		<title>Gradiator</title>
+		<link href="https://jono.nz/2024/09/17/gradiator/"/>
+		<updated>2024-09-17T12:00:00Z</updated>
+		<id>https://jono.nz/2024/09/17/gradiator/</id>
+		<content type="html">&lt;p&gt;In 2011, we released Gradiator—a Mac &amp;amp; Linux app to create CSS3 gradients. This was one of the first apps I worked on, along with &lt;a href=&quot;https://czabania.com&quot;&gt;George Czabania&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Yesterday, I spent a couple of hours restoring it, so you can try it out in your web browser:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;button&quot; href=&quot;https://jono.nz/projects/gradiator/&quot;&gt;Gradiator&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;what-was-gradiator&quot; tabindex=&quot;-1&quot;&gt;What was Gradiator? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2024/09/17/gradiator/#what-was-gradiator&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When CSS3 first came out, it introduced CSS gradients. Skeuomorphism was quite popular in design at the time so the use of CSS gradients became popular very quickly.&lt;/p&gt;
+&lt;p&gt;However, creating these gradients was a little bit annoying. Vendor prefixes were still a thing, and different browsers had new and legacy syntax.&lt;/p&gt;
+&lt;p&gt;Gradiator solved these problems by generating all the vendor specific code, and providing a nice interface to create &amp;amp; save gradients.&lt;/p&gt;
+&lt;h2 id=&quot;why-couldn-t-it-run-in-a-web-browser-in-2011&quot; tabindex=&quot;-1&quot;&gt;Why couldn’t it run in a web browser in 2011? &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2024/09/17/gradiator/#why-couldn-t-it-run-in-a-web-browser-in-2011&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;There were a couple of web based gradient generators at the time but we decided to ship “native” apps for Mac &amp;amp; Linux. This was for two reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You couldn’t get access to the system color picker—we really wanted the app to be able to pick a color from the screen.&lt;/li&gt;
+&lt;li&gt;Copying to the clipboard was not possible without Adobe Flash.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To get around these limitations we wrapped up the HTML using the native webviews for each platform, and had a bit of Python/Objective-C to pass messages between JS and the native APIs. It was super nasty: it would set &lt;code&gt;document.title&lt;/code&gt; to send a message to the other context. There was probably a better way of doing it, but we didn’t really know what we were doing at the time.&lt;/p&gt;
+&lt;p&gt;This predated Electron by a couple of years, and it’s why we never released a version for Windows—EdgeHTML was still 4 years away.&lt;/p&gt;
+&lt;h2 id=&quot;a-code-review-on-your-13-year-old-code&quot; tabindex=&quot;-1&quot;&gt;A code review on your 13 year old code &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2024/09/17/gradiator/#a-code-review-on-your-13-year-old-code&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When we originally wrote it, I was about half the age I am now. I honestly think it holds up pretty well and it’s more just a product of it’s time—a 2500 line JS file with plenty of jQuery.&lt;/p&gt;
+&lt;p&gt;I’ve lost the original source code, which I believe used CoffeeScript and Sass. This was created before using a compiler and build system for JavaScript became popular, so the transform to JavaScript and CSS was actually very basic.&lt;/p&gt;
+&lt;p&gt;Making the tweaks to make it run today wasn’t difficult. To view the GPL source, you can use &lt;em&gt;view source&lt;/em&gt; in your browser.&lt;/p&gt;
+&lt;h2 id=&quot;changes-to-get-it-working&quot; tabindex=&quot;-1&quot;&gt;Changes to get it working &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2024/09/17/gradiator/#changes-to-get-it-working&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I pulled the source out of the last Linux package and made a couple of changes to get it running:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A system color picker is implemented with &lt;code&gt;input[type=color]&lt;/code&gt; (&lt;a href=&quot;https://caniuse.com/input-color&quot;&gt;good browser support circa 2019&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Copying to the clipboard is implemented using &lt;code&gt;navigator.clipboard&lt;/code&gt; (&lt;a href=&quot;https://caniuse.com/mdn-api_navigator_clipboard&quot;&gt;good browser support circa 2020&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Apart from fixing up a couple odd layout issues, it basically just works. I also upgraded jQuery 1.7 to 3.7 just by swapping a &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag.&lt;/p&gt;
+&lt;p&gt;There’s definitely something to be said for this older style of web development.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://jono.nz/projects/gradiator/&quot;&gt;jono.nz/projects/gradiator&lt;/a&gt;&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>CSS features I’ve been using recently</title>
