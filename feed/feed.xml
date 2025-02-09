@@ -4,12 +4,62 @@
 	<subtitle>Jono Cooper is a product engineer based in Tāmaki Makaurau. He has a passion for delivering best-in-class products, from vision to execution.</subtitle>
 	<link href="https://jono.nz/feed/feed.xml" rel="self"/>
 	<link href="https://jono.nz/"/>
-	<updated>2024-09-17T12:00:00Z</updated>
+	<updated>2025-02-09T12:00:00Z</updated>
 	<id>https://jono.nz</id>
 	<author>
 		<name>Jono Cooper</name>
 		<email>jono@jono.nz</email>
 	</author>
+	
+	<entry>
+		<title>Desktop Linux in 2025</title>
+		<link href="https://jono.nz/2025/02/09/desktop-linux-2025/"/>
+		<updated>2025-02-09T12:00:00Z</updated>
+		<id>https://jono.nz/2025/02/09/desktop-linux-2025/</id>
+		<content type="html">&lt;p&gt;I’ve been running Linux on my main computer again for 6 months now, after not having used it on the desktop for 10 years. I’ve mostly been very happy, and I don’t miss Windows 11 at all.&lt;/p&gt;
+&lt;p&gt;When trying to solve issues on Linux, you tend to find a lot of random information on personal websites and forum posts, so here’s my contribution to that. I’m currently running Fedora 41 (GNOME), but many of these tips &amp;amp; issues will apply to all distros.&lt;/p&gt;
+&lt;h2 id=&quot;hardware-issues-and-fixes&quot; tabindex=&quot;-1&quot;&gt;Hardware Issues &amp;amp; Fixes &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2025/02/09/desktop-linux-2025/#hardware-issues-and-fixes&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I’m running this on my desktop, but the laptop issues of the past (e.g no WiFi) don’t seem to be issues anymore.&lt;/p&gt;
+&lt;h3 id=&quot;usb-devices-not-being-detected&quot; tabindex=&quot;-1&quot;&gt;USB devices not being detected &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2025/02/09/desktop-linux-2025/#usb-devices-not-being-detected&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Initially, only my mouse and keyboard was being detected. I fixed this by &lt;strong&gt;turning on IOMMU&lt;/strong&gt; in the UEFI BIOS. Kind of weird, but everything was detected afterwards.&lt;/p&gt;
+&lt;h3 id=&quot;nvidia-drivers&quot; tabindex=&quot;-1&quot;&gt;Nvidia Drivers &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2025/02/09/desktop-linux-2025/#nvidia-drivers&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Unfortunately, this is still painful today. I actually had a good experience on Fedora 40 where everything worked out of the box, but my computer would no longer suspend after upgrading to Fedora 41—it either wouldn’t go to sleep at all, freeze trying to go to sleep, or freeze trying to wake up.&lt;/p&gt;
+&lt;p&gt;After lots of trial and error, the configuration I’ve found with working supend on Fedora 41 is using the &lt;strong&gt;570.86.16 Nvidia Drivers&lt;/strong&gt; from the &lt;a href=&quot;https://negativo17.org/nvidia-driver/&quot;&gt;negativo17 repo&lt;/a&gt;, combined with &lt;strong&gt;Linux Kernel 6.13.1&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I still can’t seem to get hardware accelerated AV1 decoding to work properly, but other codecs seem to work fine. I  wouldn’t recommend buying an Nvidia card for Linux, but the RTX 4060 is the only decent spec card that fits in &lt;a href=&quot;https://teenage.engineering/products/computer-1&quot;&gt;my case&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Also, good to remember the &lt;code&gt;akmods --rebuild&lt;/code&gt; command for when the kernel updates but the Nvidia driver didn’t get rebuilt with it.&lt;/p&gt;
+&lt;h3 id=&quot;flickering-on-monitor&quot; tabindex=&quot;-1&quot;&gt;Flickering on monitor &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2025/02/09/desktop-linux-2025/#flickering-on-monitor&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This is actually a problem with my monitor’s FreeSync implementation, and was a problem on Windows too. Turning off VRR in the GNOME display settings didn’t work, so disabling it in the monitor OSD did the trick.&lt;/p&gt;
+&lt;h2 id=&quot;tips&quot; tabindex=&quot;-1&quot;&gt;Tips &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2025/02/09/desktop-linux-2025/#tips&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;enable-airplay&quot; tabindex=&quot;-1&quot;&gt;Enable AirPlay &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2025/02/09/desktop-linux-2025/#enable-airplay&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I have a bunch of Sonos speakers around the house, and it’s nice to use AirPlay from your computer sometimes. This is easy to set up, just create a file &lt;code&gt;~/config/pipewire/pipewire.conf.d/raop-discover.conf&lt;/code&gt; with the following contents:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;context.modules = [
+  {
+    name = libpipewire-module-raop-discover
+    args = { }
+  }
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;use-rdp-from-a-mac&quot; tabindex=&quot;-1&quot;&gt;Use RDP from a Mac &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2025/02/09/desktop-linux-2025/#use-rdp-from-a-mac&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Using the built in GNOME RDP server works fine from a Windows client, but I received &lt;code&gt;Error code: 0x207&lt;/code&gt; from the Mac RDP client.&lt;/p&gt;
+&lt;p&gt;To fix this, export the server configuration and then pop it open a text editor. Find the line &lt;code&gt;use redirection server name:i:0&lt;/code&gt; and change it to &lt;code&gt;use redirection server name:i:1&lt;/code&gt;. Open the RDP file/import it, and it should fix the error.&lt;/p&gt;
+&lt;h3 id=&quot;adjust-monitor-brightness&quot; tabindex=&quot;-1&quot;&gt;Adjust monitor brightness &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2025/02/09/desktop-linux-2025/#adjust-monitor-brightness&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;On Windows I was using &lt;a href=&quot;https://github.com/emoacht/Monitorian&quot;&gt;Monitorian&lt;/a&gt; for this, but I found this &lt;a href=&quot;https://extensions.gnome.org/extension/4652/adjust-display-brightness/&quot;&gt;GNOME extension&lt;/a&gt; which works even better. The &lt;a href=&quot;https://extensions.gnome.org/extension/7281/display-configuration-switcher/&quot;&gt;display configuration switcher extension&lt;/a&gt; is also super useful if you have multiple monitors.&lt;/p&gt;
+&lt;h3 id=&quot;reboot-into-uefi&quot; tabindex=&quot;-1&quot;&gt;Reboot into UEFI &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2025/02/09/desktop-linux-2025/#reboot-into-uefi&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I also recommend a &lt;a href=&quot;https://extensions.gnome.org/extension/5105/reboottouefi/&quot;&gt;GNOME extension&lt;/a&gt; for this.&lt;/p&gt;
+&lt;h3 id=&quot;play-windows-games-through-steam&quot; tabindex=&quot;-1&quot;&gt;Play Windows games through Steam &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2025/02/09/desktop-linux-2025/#play-windows-games-through-steam&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;By default Steam will only show you games that have been verified to work on Linux. However, most games will just work - open the &lt;strong&gt;Steam Settings → Compatibility&lt;/strong&gt;, and &lt;strong&gt;Enable Steam Play for all other titles&lt;/strong&gt;. I just use Proton Experimental, and have yet to find a Windows game that doesn’t work (although I don’t play any games with anticheat).&lt;/p&gt;
+&lt;p&gt;For playing games through the Epic Game Store and EA, I’ve had good success with &lt;a href=&quot;https://lutris.net/&quot;&gt;Lutris&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;other-good-software&quot; tabindex=&quot;-1&quot;&gt;Other good software &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2025/02/09/desktop-linux-2025/#other-good-software&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.ventoy.net/en/index.html&quot;&gt;Ventoy&lt;/a&gt; - This is useful for the install. Write this to a USB drive, and then you can just drag and drop operating system .iso files into the filesystem, rather than overriding the contents of the drive every time.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://flathub.org/apps/org.freedesktop.Piper&quot;&gt;Piper&lt;/a&gt; - This is a great tool for configuring a Logitech gaming mouse.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://missioncenter.io/&quot;&gt;Mission Center&lt;/a&gt; - A Windows 10/11 style task manager—a big improvement over the default GNOME system monitor.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.pinta-project.com/&quot;&gt;Pinta&lt;/a&gt; - A basic drawing app, very similar to Paint.NET.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://tailscale.com/&quot;&gt;Tailscale&lt;/a&gt; - Join all your devices into a secure VPN. The Linux version is command line based, but there’s a great &lt;a href=&quot;https://extensions.gnome.org/extension/5112/tailscale-status/&quot;&gt;GNOME extension&lt;/a&gt; for it.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.sublimetext.com/&quot;&gt;Sublime Text&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://www.sublimemerge.com/&quot;&gt;Sublime Merge&lt;/a&gt; - It’s been my favourite text editor for 10+ years and their git client is great too.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Gradiator</title>
