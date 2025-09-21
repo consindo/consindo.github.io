@@ -40,7 +40,7 @@
 	<p>Recently, Waka has a had a bit of a rewrite to make it much easier to get started locally, and is now able to be run in a high-availability, cloud native configuration.</p>
 <h2 id="old-waka" tabindex="-1">Old Waka <a class="header-anchor" href="#old-waka">#</a></h2>
 <p>Old Waka was a little bit of a monolith. Everything was bundled together into the <a href="https://github.com/dymajo/waka">dymajo/waka</a> repository. The barrier to entry was high - you had to get everything going if you wanted to develop it.</p>
-<p>Everything also used a crazy, multi-process architecture /2017/10/08/transit-part1/. It provided a way to split cities processes from each other. This was helpful when the software was less stable - an import of a new Auckland timetable could crash Wellington. <strong>I would not recommend this</strong>. It’s way more sensible to use a proper application orchestration technology, such as Amazon ECS or Kubernetes.</p>
+<p>Everything also used a crazy, <a href="/2017/10/08/transit-part1/">multi-process architecture</a>. It provided a way to split cities processes from each other. This was helpful when the software was less stable - an import of a new Auckland timetable could crash Wellington. <strong>I would not recommend this</strong>. It’s way more sensible to use a proper application orchestration technology, such as Amazon ECS or Kubernetes.</p>
 <h2 id="new-waka" tabindex="-1">New Waka <a class="header-anchor" href="#new-waka">#</a></h2>
 <p>New Waka addresses all these issues. The application has been split into a number of components, but still delivers an excellent development experience. It also <strong>doesn’t require any set-up</strong> to get going.</p>
 <ul>
@@ -94,6 +94,6 @@
 			</ul>
 		</footer>
 
-		<!-- This page `/2019/04/19/waka-cloud-native/` was built on 2025-09-16T08:20:54.844Z -->
+		<!-- This page `/2019/04/19/waka-cloud-native/` was built on 2025-09-21T09:43:22.254Z -->
 	</body>
 </html>

@@ -4,12 +4,28 @@
 	<subtitle>Jono Cooper is a product engineer based in Tāmaki Makaurau. He has a passion for delivering best-in-class products, from vision to execution.</subtitle>
 	<link href="https://jono.nz/feed/feed.xml" rel="self"/>
 	<link href="https://jono.nz/"/>
-	<updated>2025-09-16T12:00:00Z</updated>
+	<updated>2025-09-21T11:45:00Z</updated>
 	<id>https://jono.nz</id>
 	<author>
 		<name>Jono Cooper</name>
 		<email>jono@jono.nz</email>
 	</author>
+	
+	<entry>
+		<title>Commuter Waka</title>
+		<link href="https://jono.nz/2025/09/21/commuter-waka/"/>
+		<updated>2025-09-21T11:45:00Z</updated>
+		<id>https://jono.nz/2025/09/21/commuter-waka/</id>
+		<content type="html">&lt;p&gt;Several years ago, I built a data visualisation for &lt;a href=&quot;https://jono.nz/2020/08/23/waka-commuter/&quot;&gt;NZ census commuter data&lt;/a&gt;. It ended up winning the competition, and recently I was asked to update it for the &lt;a href=&quot;https://www.stats.govt.nz/news/commuter-waka-updated-with-2023-census-data-and-new-features/&quot;&gt;2023 Census&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In the background, Commuter Waka has actually been quite successful. I’ve received feedback from people working at local councils &amp;amp; transport consultancies, and have had a few requests for features over the years. I was able to incorporate some of these into the new visualization for the 2023 data, so it has become quite a substantial upgrade all around.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jono.nz/images/8uoybvClvZ-1956.avif 1956w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jono.nz/images/8uoybvClvZ-1956.webp 1956w&quot;&gt;&lt;img alt=&quot;Commuter Waka in 2025&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://jono.nz/images/8uoybvClvZ-1956.png&quot; width=&quot;1956&quot; height=&quot;1430&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;New features include search, filtering by mode, comparison between different years, light/dark mode, more map display options, and new charts. I was able to work with Stats NZ this time around, so a few tweaks have been made to ensure that the visualisation accurately represents the data.&lt;/p&gt;
+&lt;p&gt;Notably, you can no longer select multiple areas at the same time. Due to how data is anonymized, adding values from different areas together can lead to misleading &amp;amp; inaccurate results. A mode which aggregates to the SA3 level has been added, which offers most of aggregation benefits while staying accurate.&lt;/p&gt;
+&lt;p&gt;Over the years, I’ve also received several requests for custom maps (&lt;em&gt;&lt;a href=&quot;https://jono.nz/#contact&quot;&gt;please reach out if you want one!&lt;/a&gt;&lt;/em&gt;), so I’ve been able to improve the code over time. I would no longer describe the code as a mess, and is now using Svelte to power things. I really like the way you can use D3 where you use Svelte to manage the DOM, but D3 for the calculations for the visualisation. Other than that, the way things work overall in the original post remains the same.&lt;/p&gt;
+&lt;p&gt;Commuter Waka is still &lt;a href=&quot;https://github.com/consindo/waka-commuter&quot;&gt;open source on GitHub&lt;/a&gt;. Feel free to send me feedback or raise a pull request!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://commuter.waka.app&quot;&gt;commuter.waka.app&lt;/a&gt;&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Expo 2025</title>
@@ -824,7 +840,7 @@
 		<content type="html">&lt;p&gt;Recently, Waka has a had a bit of a rewrite to make it much easier to get started locally, and is now able to be run in a high-availability, cloud native configuration.&lt;/p&gt;
 &lt;h2 id=&quot;old-waka&quot; tabindex=&quot;-1&quot;&gt;Old Waka &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/04/19/waka-cloud-native/#old-waka&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Old Waka was a little bit of a monolith. Everything was bundled together into the &lt;a href=&quot;https://github.com/dymajo/waka&quot;&gt;dymajo/waka&lt;/a&gt; repository. The barrier to entry was high - you had to get everything going if you wanted to develop it.&lt;/p&gt;
-&lt;p&gt;Everything also used a crazy, multi-process architecture /2017/10/08/transit-part1/. It provided a way to split cities processes from each other. This was helpful when the software was less stable - an import of a new Auckland timetable could crash Wellington. &lt;strong&gt;I would not recommend this&lt;/strong&gt;. It’s way more sensible to use a proper application orchestration technology, such as Amazon ECS or Kubernetes.&lt;/p&gt;
+&lt;p&gt;Everything also used a crazy, &lt;a href=&quot;https://jono.nz/2017/10/08/transit-part1/&quot;&gt;multi-process architecture&lt;/a&gt;. It provided a way to split cities processes from each other. This was helpful when the software was less stable - an import of a new Auckland timetable could crash Wellington. &lt;strong&gt;I would not recommend this&lt;/strong&gt;. It’s way more sensible to use a proper application orchestration technology, such as Amazon ECS or Kubernetes.&lt;/p&gt;
 &lt;h2 id=&quot;new-waka&quot; tabindex=&quot;-1&quot;&gt;New Waka &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2019/04/19/waka-cloud-native/#new-waka&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;New Waka addresses all these issues. The application has been split into a number of components, but still delivers an excellent development experience. It also &lt;strong&gt;doesn’t require any set-up&lt;/strong&gt; to get going.&lt;/p&gt;
 &lt;ul&gt;

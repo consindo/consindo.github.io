@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Commuter Waka</title>
+		<meta name="description" content="Jono Cooper is a product engineer based in Tāmaki Makaurau. He has a passion for delivering best-in-class products, from vision to execution.">
+
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="stylesheet" href="/bundle/BaEnOYtcib.css">
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link" title="Jono Cooper">JC</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/projects/">Projects</a></li>
+					<li class="nav-item"><a href="/archives/">Posts</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+
+<jc-container width="prose" class="post">
+	<h1>Commuter Waka</h1>
+
+	<ul class="post-metadata">
+		<li><time datetime="2025-09-21">21 September 2025</time></li>
+	</ul>
+
+	<p>Several years ago, I built a data visualisation for <a href="/2020/08/23/waka-commuter/">NZ census commuter data</a>. It ended up winning the competition, and recently I was asked to update it for the <a href="https://www.stats.govt.nz/news/commuter-waka-updated-with-2023-census-data-and-new-features/">2023 Census</a>.</p>
+<p>In the background, Commuter Waka has actually been quite successful. I’ve received feedback from people working at local councils &amp; transport consultancies, and have had a few requests for features over the years. I was able to incorporate some of these into the new visualization for the 2023 data, so it has become quite a substantial upgrade all around.</p>
+<p><picture><source type="image/avif" srcset="/images/8uoybvClvZ-1956.avif 1956w"><source type="image/webp" srcset="/images/8uoybvClvZ-1956.webp 1956w"><img alt="Commuter Waka in 2025" loading="lazy" decoding="async" src="/images/8uoybvClvZ-1956.png" width="1956" height="1430"></picture></p>
+<p>New features include search, filtering by mode, comparison between different years, light/dark mode, more map display options, and new charts. I was able to work with Stats NZ this time around, so a few tweaks have been made to ensure that the visualisation accurately represents the data.</p>
+<p>Notably, you can no longer select multiple areas at the same time. Due to how data is anonymized, adding values from different areas together can lead to misleading &amp; inaccurate results. A mode which aggregates to the SA3 level has been added, which offers most of aggregation benefits while staying accurate.</p>
+<p>Over the years, I’ve also received several requests for custom maps (<em><a href="/#contact">please reach out if you want one!</a></em>), so I’ve been able to improve the code over time. I would no longer describe the code as a mess, and is now using Svelte to power things. I really like the way you can use D3 where you use Svelte to manage the DOM, but D3 for the calculations for the visualisation. Other than that, the way things work overall in the original post remains the same.</p>
+<p>Commuter Waka is still <a href="https://github.com/consindo/waka-commuter">open source on GitHub</a>. Feel free to send me feedback or raise a pull request!</p>
+<p><a href="https://commuter.waka.app">commuter.waka.app</a></p>
+
+
+	<ul class="post-metadata tags">
+		<li><a href="/tags/waka/" class="post-tag">waka</a>, </li>
+		<li><a href="/tags/transport/" class="post-tag">transport</a></li>
+	</ul>
+	<ul class="links-nextprev"><li>Previous: <a href="/2025/09/16/expo-25/">Expo 2025</a></li>
+	</ul>
+</jc-container>
+
+		</main>
+
+		<footer>
+			<div class="copyright">&copy; 2025 Jono Cooper</div>
+			<ul>
+				<li><a href="/feed/feed.xml">rss</a></li>
+				<li><a href="https://github.com/consindo/jono.nz">source</a></li>
+			</ul>
+		</footer>
+
+		<!-- This page `/2025/09/21/commuter-waka/` was built on 2025-09-21T09:43:22.251Z -->
+	</body>
+</html>
