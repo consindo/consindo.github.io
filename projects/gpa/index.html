@@ -10,8 +10,8 @@
 		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Jono Cooper">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Jono Cooper">
-		<meta name="generator" content="Eleventy v3.0.0">
-		<link rel="stylesheet" href="/bundle/74TtoBqur7.css">
+		<meta name="generator" content="Eleventy v3.1.2">
+		<link rel="stylesheet" href="/bundle/j0h2rNBIq_.css">
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -37,23 +37,22 @@
   }
   .gpatitle {
     font-weight: 800;
-    color: #888;
+    color: var(--color-gray-50);
     text-transform: uppercase;
     text-align: center;
     margin-top: 50px;
-    font-family: var(--font-family-sans-serif);
+    font-family: var(--font-family);
   }
   .gpacalc h2 {
     margin: 10px 0;
-    font-family: var(--font-family-sans-serif);
+    font-family: var(--font-family);
   }
   .gpacalc h2 span {
     font-weight: normal;
   }
   .gpacalc  {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    background: #fff;
-    padding: 20px;
+    border: var(--border);
+    padding: 1rem;
     box-sizing: border-box;
     width: 100%;
     margin: 0 auto;
@@ -85,34 +84,24 @@
     height: 34px;
     box-sizing: border-box;
     outline: 0;
-    border: 1px solid #ccc;
+    border: var(--border);
   }
   .gpacalc input:active, input:focus {
     border-color: #2980b9;
   }
   .gpacalc button {
-    font-size: 16px;
-    padding: 5px 10px;
-    background: #eee;
-    border: 1px solid #ccc;
-    color: #222;
-    font-family: "San Francisco", "Segoe UI", sans-serif;
-    margin-bottom: 15px;
-  }
-  .gpacalc button:hover {
-    border-color: #2980b9;
+    margin-bottom: 1rem;
   }
   .gpacalc .lettergrade {
     padding: 0 5px;
     font-size: 22px;
     border-radius: 2px;
-    background: #eee;
+    background: var(--color-gray-20);
   }
   #instructions {
     width: 100%;
-    margin: 10px auto 50px;
+    margin: 1rem auto 2rem;
     font-size: 14px;
-    color: #333;
   }
   #instructions p {
     margin-bottom:0.5em;
@@ -129,7 +118,7 @@
       <span class="lettergrade"></span>
     </li>
   </ul>
-  <button id="add">Add Another Section</button> <button id="reset">Reset Everything</button>
+  <button class="button" id="add">Add Another Section</button> <button class="button" id="reset">Reset Everything</button>
   <h2 id="total">Total Grade: <span></span></h2>
   <h2 id="remainingEarnings">Percentage Left to Earn: <span></span></h2>
 </section>
@@ -247,6 +236,6 @@ $(function() {
 			</ul>
 		</footer>
 
-		<!-- This page `/projects/gpa/` was built on 2025-09-21T09:43:22.238Z -->
+		<!-- This page `/projects/gpa/` was built on 2025-09-21T21:29:44.972Z -->
 	</body>
 </html>
