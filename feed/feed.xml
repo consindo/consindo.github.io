@@ -4,12 +4,56 @@
 	<subtitle>Jono Cooper is a product engineer based in Tāmaki Makaurau. He has a passion for delivering best-in-class products, from vision to execution.</subtitle>
 	<link href="https://jono.nz/feed/feed.xml" rel="self"/>
 	<link href="https://jono.nz/"/>
-	<updated>2026-03-20T09:00:00Z</updated>
+	<updated>2026-08-11T12:00:00Z</updated>
 	<id>https://jono.nz</id>
 	<author>
 		<name>Jono Cooper</name>
 		<email>jono@jono.nz</email>
 	</author>
+	
+	<entry>
+		<title>Exporting HDR photos from Lightroom CC</title>
+		<link href="https://jono.nz/2026/08/11/lightroom-hdr-export/"/>
+		<updated>2026-08-11T12:00:00Z</updated>
+		<id>https://jono.nz/2026/08/11/lightroom-hdr-export/</id>
+		<content type="html">&lt;p&gt;&lt;strong&gt;tl;dr: export from Lightroom CC as a JPEG, check that the SDR preview looks okay, and make sure nothing processes your photo further&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;HDR is one of those annoying technologies where everything in the chain has to be setup correctly for it to work properly. However I think the results are worth it, and the experience can be very seamless when publishing on the web.&lt;/p&gt;
+&lt;p&gt;Lightroom has good HDR editing support, but there’s a few things to keep in mind when exporting your photos:&lt;/p&gt;
+&lt;h2 id=&quot;1-export-as-a-jpeg&quot; tabindex=&quot;-1&quot;&gt;1. Export as a JPEG &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2026/08/11/lightroom-hdr-export/#1-export-as-a-jpeg&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Normally, I would recommend exporting as an AVIF as the file size is much smaller. Unfortunately, it seems that the AVIF export from Lightroom doesn’t look the same as the Lightroom preview, and often looks really bad on non-HDR displays due to a lack of a gain map. They also seem to screw up Chrome on Android in weird ways.&lt;/p&gt;
+&lt;p&gt;I’m sure this will be fixed in the future, but for now, the Lightroom JPEG (sRGB) works properly: both the SDR and HDR versions of the image will display correctly.&lt;/p&gt;
+&lt;h2 id=&quot;2-check-the-sdr-preview&quot; tabindex=&quot;-1&quot;&gt;2. Check the SDR Preview &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2026/08/11/lightroom-hdr-export/#2-check-the-sdr-preview&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When editing a photo in Lightroom, just turning on HDR mode will instantly make the SDR version of the image quite dark. I recommend the following SDR settings as a starting point, and tweaking if you need:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Brightness:&lt;/strong&gt; +60&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Contrast:&lt;/strong&gt; 0&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clarity:&lt;/strong&gt; -100&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Highlights:&lt;/strong&gt; -50&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shadows:&lt;/strong&gt; -50&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Whites:&lt;/strong&gt; +50&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Highlight Saturation:&lt;/strong&gt; 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jono.nz/images/r51HXZlqsB-1920.avif 1920w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jono.nz/images/r51HXZlqsB-1920.webp 1920w&quot;&gt;&lt;img src=&quot;https://jono.nz/images/r51HXZlqsB-1920.jpeg&quot; alt=&quot;SDR version of a HDR image with the default settings&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;1920&quot; height=&quot;1280&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Above: A SDR version of a HDR image with the default Lightroom settings.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://jono.nz/images/RQnvLK9SJX-1920.avif 1920w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://jono.nz/images/RQnvLK9SJX-1920.webp 1920w&quot;&gt;&lt;img src=&quot;https://jono.nz/images/RQnvLK9SJX-1920.jpeg&quot; alt=&quot;SDR version of a HDR image with the modified settings&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;1920&quot; height=&quot;1280&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Above: A SDR version of a HDR image with the Lightroom settings above.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&quot;lazy&quot; alt=&quot;A HDR image. It will look like the second image if you don&#39;t have a HDR display.&quot; src=&quot;https://jono.nz/images/hdr.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Above: A HDR image. It will look the same as the second image if you don’t have a HDR display.&lt;/p&gt;
+&lt;h2 id=&quot;3-don-t-process-your-photo-further&quot; tabindex=&quot;-1&quot;&gt;3. Don’t process your photo further &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2026/08/11/lightroom-hdr-export/#3-don-t-process-your-photo-further&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;While web browsers support HDR images well, it feels like almost everything else does not (even Preview in Mac OS). When publishing on the web, just make sure your original photo is being used and isn’t being resized by your blog software or something else (it usually reverts your photo back to the SDR image).&lt;/p&gt;
+&lt;p&gt;In practice, this means you have to do two exports in Lightroom - for your thumbnails, and for the full sized image.&lt;/p&gt;
+&lt;h2 id=&quot;other-tips&quot; tabindex=&quot;-1&quot;&gt;Other Tips &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2026/08/11/lightroom-hdr-export/#other-tips&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Putting your exported HDR photos into Google Photos works well, and it’ll display your photos in HDR on supported displays. The thumbnails will be in SDR.&lt;/p&gt;
+&lt;p&gt;Immich also works, but by default the full sized preview will be in SDR (as it’s processed the photo). Change the setting in your mobile/browser client to “Display Original Photos” in order for your images to display properly.&lt;/p&gt;
+&lt;p&gt;I would also recommend using a Mac or iPad for all of this, as HDR works properly out of the box. I’ve found that HDR on Windows doesn’t really work particularly well: you’ll need to do quite a bit of calibration to get things looking reasonable.&lt;/p&gt;
+&lt;h2 id=&quot;further-reading&quot; tabindex=&quot;-1&quot;&gt;Further Reading &lt;a class=&quot;header-anchor&quot; href=&quot;https://jono.nz/2026/08/11/lightroom-hdr-export/#further-reading&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This post is more of a how to get things working, but this rabbit hole goes deep. If you’re interested in HDR on the web, I would recommend the following links:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://scottstuff.net/posts/2026/03/04/the-end-of-srgb-is-neigh-hdr-images/&quot;&gt;https://scottstuff.net/posts/2026/03/04/the-end-of-srgb-is-neigh-hdr-images/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gregbenzphotography.com/hdr/&quot;&gt;https://gregbenzphotography.com/hdr/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Building the Apple Maps drawer with CSS</title>
